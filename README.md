@@ -79,12 +79,12 @@ Deeper detail lives in each guide below.
 
 | Document | Purpose |
 |----------|---------|
-| [task-management-system.md](./task-management-system.md) | Board columns, task templates, priorities, WIP, weekly meetings, team rules |
-| [pr-review-system.md](./pr-review-system.md) | Cursor/AI PR review phases, prompts, and human-in-the-loop judgment |
-| [release-management-system.md](./release-management-system.md) | Branch model, release phases, checklists, hotfix path |
-| [Programming Documentation.md](./Programming%20Documentation.md) | New-project process, stack/setup, dev phases, tools, commands, AI workflow |
+| [task-management-system.md](./docs/systems/task-management-system.md) | Board columns, task templates, priorities, WIP, weekly meetings, team rules |
+| [pr-review-system.md](./docs/systems/pr-review-system.md) | Cursor/AI PR review phases, prompts, and human-in-the-loop judgment |
+| [release-management-system.md](./docs/systems/release-management-system.md) | Branch model, release phases, checklists, hotfix path |
+| [programming-documentation.md](./docs/reference/programming-documentation.md) | New-project process, stack/setup, dev phases, tools, commands, AI workflow |
 
-The [`docs/`](./docs/) folder is reserved for **team-specific** material: setup runbooks, adapted checklists, and notes after each rollout.
+See [docs/README.md](./docs/README.md) for the full layout. Use [`docs/teams/`](./docs/teams/) for **team-specific** setup runbooks and adapted checklists.
 
 ---
 
@@ -102,10 +102,10 @@ These apply across every document in the repo:
 
 ## Getting started (personal)
 
-1. **Pick one workflow** — start with [task-management-system.md](./task-management-system.md) on a single board (GitHub Projects, Linear, Notion, etc.).
-2. **Align Git** — use the branch names in [release-management-system.md](./release-management-system.md) on one repo.
-3. **Use PR review on your next change** — follow [pr-review-system.md](./pr-review-system.md) in Cursor before asking anyone else to look.
-4. **Log gaps** — anything you do repeatedly but is not documented yet belongs in this repo (new `.md` or under `docs/`).
+1. **Pick one workflow** — start with [task-management-system.md](./docs/systems/task-management-system.md) on a single board (GitHub Projects, Linear, Notion, etc.).
+2. **Align Git** — use the branch names in [release-management-system.md](./docs/systems/release-management-system.md) on one repo.
+3. **Use PR review on your next change** — follow [pr-review-system.md](./docs/systems/pr-review-system.md) in Cursor before asking anyone else to look.
+4. **Log gaps** — anything you do repeatedly but is not documented yet belongs in `docs/systems/`, `docs/reference/`, or `docs/teams/<name>/`.
 
 After two weeks, add the next system. Do not introduce everything at once.
 
@@ -116,7 +116,7 @@ After two weeks, add the next system. Do not introduce everything at once.
 When you onboard a team:
 
 1. Share only the systems you already run personally.
-2. Add a short `docs/<team-name>/` page: stack, branch names, board tool, meeting day/time, who approves releases.
+2. Add a short `docs/teams/<team-name>/README.md`: stack, branch names, board tool, meeting day/time, who approves releases.
 3. Run a **Monday planning** and **Friday delivery review** using the cadence in the task guide.
 4. Iterate in the retro; update the team doc, not necessarily the universal templates.
 
@@ -137,12 +137,18 @@ Contributions here are **your own notes evolving into team standards** — versi
 
 ```text
 AiNative/
-├── README.md                      # This file — vision and index
-├── task-management-system.md      # Engineering task workflow
-├── pr-review-system.md            # AI-assisted PR review
-├── release-management-system.md   # Release and branching workflow
-├── Programming Documentation.md   # Broader dev reference and processes
-└── docs/                          # Per-team setup and execution notes
+├── README.md
+├── .cursor/rules/                 # Cursor rules for this repo
+└── docs/
+    ├── README.md                  # Documentation index
+    ├── systems/                   # Universal workflows (all teams)
+    │   ├── task-management-system.md
+    │   ├── pr-review-system.md
+    │   └── release-management-system.md
+    ├── reference/                 # Technical reference & processes
+    │   └── programming-documentation.md
+    └── teams/                     # Per-team setup & overrides
+        └── <team-name>/README.md
 ```
 
 ---
