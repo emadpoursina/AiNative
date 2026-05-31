@@ -376,6 +376,7 @@
 * Ctrl+b :   
   * Rename-session \[name\]  
   * Rename-window \[name\]
+  * setw synchronize-panes \[on/off\]
 
 ## MongoDb
 
