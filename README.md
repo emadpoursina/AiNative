@@ -1,25 +1,27 @@
 # AiNative
 
-**Your technical operating system** — workflows, templates, and guides for how you build, review, ship, and lead as a developer/manager on the technical layer.
+**Your engineering operating system** — workflows, reference, prompts, and rituals for how you build, review, ship, and lead.
 
 Use it yourself first. Refine it in real work. Then bring the same playbook to each team you join.
+
+Architecture spec: [ENGINEERING-OS.md](./ENGINEERING-OS.md)
 
 ---
 
 ## What this is
 
-AiNative is not an application (yet). It is a **living system of practices** you implement in tools you already use: Git, GitHub, Cursor, boards, docs, and team rituals.
+AiNative is not an application. It is a **structured repository of knowledge, decisions, and operational patterns** that compounds over time — versioned in Git, no external tools required.
 
-It covers the work you repeat on every team:
+It covers work you repeat on every team:
 
-| Area | What you get |
-|------|----------------|
-| **Task management** | How work is captured, prioritized, moved, and finished |
-| **PR review** | Structured, AI-assisted review without noise |
-| **Release management** | Safe, predictable path from feature branch to production |
-| **Programming & setup** | Project lifecycle, stack choices, Cursor/MCP/rules, commands, references |
-
-Each piece is written to be **universal** (web, backend, SaaS, WordPress, etc.) and **lightweight** — enough process to improve delivery, not enough to slow people down.
+| Area | Where |
+|------|--------|
+| **Task management** | [docs/systems/task-management-system.md](./docs/systems/task-management-system.md) |
+| **PR review** | [docs/systems/pr-review-system.md](./docs/systems/pr-review-system.md) |
+| **Release management** | [docs/systems/release-management-system.md](./docs/systems/release-management-system.md) |
+| **Commands & setup** | [docs/reference/](./docs/reference/) |
+| **AI prompts** | [docs/ai-workflows/](./docs/ai-workflows/) |
+| **Bug patterns & ADRs** | [docs/debugging/](./docs/debugging/), [docs/decisions/](./docs/decisions/) |
 
 ---
 
@@ -27,27 +29,7 @@ Each piece is written to be **universal** (web, backend, SaaS, WordPress, etc.) 
 
 - **You** — hybrid developer/manager owning the technical layer
 - **Small teams** — startups, freelance squads, internal product groups
-- **Future teams** — same system, adapted per context with templates and setup guides
-
----
-
-## Rollout model
-
-```text
-Phase 1 — Personal (you)
-  Run every workflow on your own repos and side projects.
-  Fix friction, drop what you do not use, tighten templates.
-
-Phase 2 — Pilot (one team)
-  Introduce one system at a time (e.g. task board → PR review → release).
-  Document what changed for that stack and team size.
-
-Phase 3 — Repeat (each new team)
-  Copy the template bundle, run the setup guide, tune labels/WIP/rules.
-  Keep team-specific notes beside the universal docs.
-```
-
-**Rule:** Nothing ships to a team until you have used it yourself for at least one real delivery cycle.
+- **Future teams** — same system, adapted per context in [`docs/teams/`](./docs/teams/)
 
 ---
 
@@ -67,45 +49,19 @@ flowchart LR
   T --> P --> R
 ```
 
-1. **Tasks** move through a clear board (backlog → released) with ownership, WIP limits, and weekly planning/review.
-2. **PRs** leave “In Progress” only after self-test and a staged review (understanding → risk → deep dive → human decision).
+1. **Tasks** move through a clear board with ownership, WIP limits, and weekly planning/review.
+2. **PRs** use staged AI-assisted review before human merge decision.
 3. **Releases** follow a fixed branch flow: `feature/*` → `development` → staging → `master` → production.
-
-Deeper detail lives in each guide below.
-
----
-
-## Documentation map
-
-| Document | Purpose |
-|----------|---------|
-| [task-management-system.md](./docs/systems/task-management-system.md) | Board columns, task templates, priorities, WIP, weekly meetings, team rules |
-| [pr-review-system.md](./docs/systems/pr-review-system.md) | Cursor/AI PR review phases, prompts, and human-in-the-loop judgment |
-| [release-management-system.md](./docs/systems/release-management-system.md) | Branch model, release phases, checklists, hotfix path |
-| [programming-documentation.md](./docs/reference/programming-documentation.md) | New-project process, stack/setup, dev phases, tools, commands, AI workflow |
-
-See [docs/README.md](./docs/README.md) for the full layout. Use [`docs/teams/`](./docs/teams/) for **team-specific** setup runbooks and adapted checklists.
-
----
-
-## Core principles
-
-These apply across every document in the repo:
-
-1. **Simplicity over complexity** — if a step feels annoying, simplify or remove it.
-2. **Visibility over memory** — tasks, blockers, releases, and decisions should be written down.
-3. **Finish before you start** — fewer parallel items, smaller tasks, clearer done states.
-4. **AI as partner, not authority** — especially in review; you own the merge and the release.
-5. **One feature, one branch** — keeps integration and releases predictable.
 
 ---
 
 ## Getting started (personal)
 
-1. **Pick one workflow** — start with [task-management-system.md](./docs/systems/task-management-system.md) on a single board (GitHub Projects, Linear, Notion, etc.).
-2. **Align Git** — use the branch names in [release-management-system.md](./docs/systems/release-management-system.md) on one repo.
-3. **Use PR review on your next change** — follow [pr-review-system.md](./docs/systems/pr-review-system.md) in Cursor before asking anyone else to look.
-4. **Log gaps** — anything you do repeatedly but is not documented yet belongs in `docs/systems/`, `docs/reference/`, or `docs/teams/<name>/`.
+1. **Read the OS spec** — [ENGINEERING-OS.md](./ENGINEERING-OS.md) (5 min)
+2. **Create scratch locally** — `mkdir scratch` for raw capture during work
+3. **Pick one workflow** — start with [task management](./docs/systems/task-management-system.md) on one board
+4. **Use PR review on your next change** — prompts in [ai-workflows/pr-review-prompts.md](./docs/ai-workflows/pr-review-prompts.md)
+5. **Run Friday review** — promote scratch, update reference, delete junk (15 min)
 
 After two weeks, add the next system. Do not introduce everything at once.
 
@@ -113,23 +69,20 @@ After two weeks, add the next system. Do not introduce everything at once.
 
 ## Getting started (team)
 
-When you onboard a team:
-
-1. Share only the systems you already run personally.
-2. Add a short `docs/teams/<team-name>/README.md`: stack, branch names, board tool, meeting day/time, who approves releases.
-3. Run a **Monday planning** and **Friday delivery review** using the cadence in the task guide.
-4. Iterate in the retro; update the team doc, not necessarily the universal templates.
+1. Share only systems you already run personally.
+2. Add `docs/teams/<team-name>/README.md`: stack, board URL, meetings, release approver.
+3. Run Monday planning and Friday delivery per the task guide.
+4. Iterate in retro; update the team doc, not necessarily universal templates.
 
 ---
 
-## Roadmap (intended growth)
+## Three rituals
 
-- [ ] Team setup templates (Cursor rules, MCP, repo scaffolding)
-- [ ] Technical manager playbook (1:1s, escalation, cross-team alignment)
-- [ ] Onboarding checklist per stack (e.g. Node, PHP/WordPress, mobile)
-- [ ] Metrics that matter (cycle time, review time, release frequency) without heavy tooling
-
-Contributions here are **your own notes evolving into team standards** — versioned in git, not locked in a SaaS.
+| Ritual | When | Action |
+|--------|------|--------|
+| Capture | During work | Write badly in `scratch/` |
+| Friday review | Weekly, 15 min | Promote → right layer; update reference; delete |
+| Event response | Bug / decision / incident | Debug note, ADR, or postmortem |
 
 ---
 
@@ -138,24 +91,35 @@ Contributions here are **your own notes evolving into team standards** — versi
 ```text
 AiNative/
 ├── README.md
-├── .cursor/rules/                 # Cursor rules for this repo
+├── ENGINEERING-OS.md              # Architecture spec
+├── .cursor/rules/                 # Cursor rules (incl. engineering-os)
+├── scratch/                       # gitignored — create locally
 └── docs/
-    ├── README.md                  # Documentation index
-    ├── systems/                   # Universal workflows (all teams)
-    │   ├── task-management-system.md
-    │   ├── pr-review-system.md
-    │   └── release-management-system.md
-    ├── reference/                 # Technical reference & processes
-    │   └── programming-documentation.md
-    └── teams/                     # Per-team setup & overrides
-        └── <team-name>/README.md
+    ├── README.md
+    ├── systems/                   # Universal workflows
+    ├── ai-workflows/              # Versioned AI prompts
+    ├── reference/                 # Evergreen knowledge
+    │   ├── setup/
+    │   ├── commands/
+    │   └── architecture/
+    ├── debugging/                 # Bug pattern library
+    ├── snippets/                  # Copy-paste code
+    ├── decisions/                 # ADRs
+    ├── postmortems/               # Incident reviews
+    └── teams/                     # Per-team overrides
 ```
+
+Full index: [docs/README.md](./docs/README.md)
 
 ---
 
-## License & usage
+## Core principles
 
-Private working system. Use, copy, and adapt per team. When a practice is stable, keep the universal doc generic and push team quirks into `docs/`.
+1. **Retrieval over storage** — if you cannot find it in ten seconds, it does not exist
+2. **Capture now, organize Friday** — friction at capture time kills the system
+3. **AI as partner, not authority** — you own the merge and the release
+4. **One canonical location** — duplication is how systems rot
+5. **Finish before you start** — fewer parallel items, smaller tasks
 
 ---
 
