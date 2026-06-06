@@ -1,0 +1,59 @@
+# Cursor rules template
+
+Copy into `.cursor/rules/` or project rules. Adjust stack-specific constraints.
+
+---
+
+## Anthropic-optimized coding rules
+
+```markdown
+## Prompt structure
+- Always treat instructions wrapped in XML-style tags as high-priority.
+- Use <context>, <task>, <constraints>, and <files> to organize complex requests.
+
+## Role & behavior
+- Act as a Senior Full-Stack Engineer focused on performance and type safety.
+- Use a "Research -> Plan -> Execute" workflow. Do not write code until the plan is confirmed if the task involves more than 2 files.
+- Prioritize latency-efficient patterns (e.g., stale-while-revalidate, optimistic UI).
+
+## Code style & implementation
+- **Dry/partial updates:** Never rewrite an entire file to change a single function. Use comments like `// ... existing code` only when specifically asked to provide a snippet.
+- **Type safety:** Strict TypeScript is mandatory. No `any`. Use Zod for runtime validation of LLM outputs or API responses.
+- **Undercover mode:** Ensure all generated code matches the existing project's naming conventions and indentation perfectly. Remove all "AI-typical" comments (e.g., "This function was generated to...").
+- **Verification:** After writing code, mentally "lint" for common errors (missing imports, unused variables) before finalizing.
+
+## Tool use & safety
+- **Terminal:** Before suggesting a `bash` command, check it against a mental safety blacklist (no `rm -rf /`, etc.).
+- **Migrations:** Always output the SQL or Prisma schema change for manual review before suggesting a `db push` or `migrate`.
+
+## Critical constraints
+- Do not add external dependencies unless explicitly requested.
+- If a task is ambiguous, ask for <clarification> rather than guessing.
+- Optimize for large context windows by referencing specific `@files` instead of the whole `@codebase` when possible.
+```
+
+---
+
+## Claude / XML tagging
+
+- Wrap context, file paths, and instructions in tags like `<file_content>`, `<task_description>`
+- Spend prompt space on negative constraints (what NOT to do)
+- Keep [CLAUDE.md](https://docs.anthropic.com/) short — not a novel
+
+---
+
+## Useful one-liners
+
+```text
+Referencing my .cursorrules, let's start the Research Phase for [Feature Name]. Scan @folder and tell me what needs to change.
+```
+
+```text
+Don't omit code. Provide the full function block.
+```
+
+---
+
+## Commits
+
+Follow [Conventional Commits](https://www.conventionalcommits.org/) — see `.cursor/rules/Commit-style.mdc`.

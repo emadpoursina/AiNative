@@ -1,0 +1,12 @@
+# AI Workflows
+
+Standalone, versioned AI prompts. Copy into Cursor or any tool — no prose mixed in.
+
+| File | Purpose |
+|------|---------|
+| [coordinator-worker.md](./coordinator-worker.md) | Research → plan → implement → verify development pattern |
+| [pr-review-prompts.md](./pr-review-prompts.md) | Staged PR review prompts |
+| [task-grooming-prompts.md](./task-grooming-prompts.md) | Backlog grooming and meeting prep |
+| [cursor-rules.md](./cursor-rules.md) | Cursor / Anthropic-optimized coding rules template |
+
+Referenced from [systems/](../systems/) docs and [`.cursor/rules/`](../../.cursor/rules/).
