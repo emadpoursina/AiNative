@@ -51,3 +51,6 @@ venv/
 .vscode/
 *.swp
 
+# Engineering OS — raw capture (promote on Friday review)
+scratch/
+
