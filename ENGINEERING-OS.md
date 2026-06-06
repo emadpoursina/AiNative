@@ -145,7 +145,7 @@ The `architecture/` subfolder is where you move from "I know commands" to "I kno
 ## [Short title of the bug]
 
 **Date:** YYYY-MM-DD
-**Domain:** postgres / docker / nginx / auth / desktop
+**Domain:** postgres / docker / nginx / auth / billing / desktop
 
 ### Symptom
 What you saw. Exact error messages if available.
