@@ -7,3 +7,4 @@ Use [template.md](./template.md). If a decision is reversed, write a new ADR tha
 | ADR | Title |
 |-----|-------|
 | [2026-06-engineering-os.md](./2026-06-engineering-os.md) | Adopt Engineering Operating System structure |
+| [2026-06-no-teams-layer.md](./2026-06-no-teams-layer.md) | Remove teams layer — local context in project repos |

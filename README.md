@@ -28,8 +28,7 @@ It covers work you repeat on every team:
 ## Who this is for
 
 - **You** — hybrid developer/manager owning the technical layer
-- **Small teams** — startups, freelance squads, internal product groups
-- **Future teams** — same system, adapted per context in [`docs/teams/`](./docs/teams/)
+- **Small teams** — same universal workflows; local context (board URL, approvers) stays in the project or `scratch/`
 
 ---
 
@@ -67,12 +66,11 @@ After two weeks, add the next system. Do not introduce everything at once.
 
 ---
 
-## Getting started (team)
+## Getting started (with others)
 
 1. Share only systems you already run personally.
-2. Add `docs/teams/<team-name>/README.md`: stack, board URL, meetings, release approver.
-3. Run Monday planning and Friday delivery per the task guide.
-4. Iterate in retro; update the team doc, not necessarily universal templates.
+2. Run Monday planning and Friday delivery per the [task guide](./docs/systems/task-management-system.md).
+3. Keep project-specific notes (board URL, approvers) in the project repo or `scratch/` — not in this repo.
 
 ---
 
@@ -105,8 +103,7 @@ AiNative/
     ├── debugging/                 # Bug pattern library
     ├── snippets/                  # Copy-paste code
     ├── decisions/                 # ADRs
-    ├── postmortems/               # Incident reviews
-    └── teams/                     # Per-team overrides
+    └── postmortems/               # Incident reviews
 ```
 
 Full index: [docs/README.md](./docs/README.md)

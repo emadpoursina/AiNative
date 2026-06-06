@@ -178,24 +178,16 @@ After AI: validate in the meeting; move cards; confirm deploy per [release syste
 
 ---
 
-## Team documentation
+## Rollout checklist
 
-Each team keeps [`docs/teams/<team-name>/README.md`](../teams/README.md) with stack, board link, meeting schedule, release approver, and links to the three system docs.
-
-Also maintain: setup guide, deploy guide, architecture notes, recurring fixes.
-
----
-
-## New team rollout
-
-Record team-specific choices in [`docs/teams/<team-name>/README.md`](../teams/README.md). Universal rules stay here.
+Use when introducing this system on a new project or with a new group.
 
 **Day 0 — setup (~2–3 hours)**
 
 1. **Roles** — Process owner (board + meetings), default reviewer, release approver (can be same person).
 2. **Board** — Create the 8 columns above; add P0–P3 and core labels; paste the task template as the default card body.
-3. **WIP** — In Progress: 1 feature per developer; P0 exception documented in team README.
-4. **Team README** — Stack, repos, board URL, meetings, release approver; link [PR](./pr-review-system.md) and [release](./release-management-system.md) docs.
+3. **WIP** — In Progress: 1 feature per developer; document P0 exceptions in project notes.
+4. **Project notes** — Stack, repos, board URL, meetings, release approver (in the project repo or `scratch/`); link [PR](./pr-review-system.md) and [release](./release-management-system.md) docs.
 5. **Rules** — Todo needs owner, reviewer, acceptance criteria; tasks before long chat threads; decisions in card comments.
 
 **Column transitions**
@@ -221,13 +213,13 @@ Record team-specific choices in [`docs/teams/<team-name>/README.md`](../teams/RE
 
 - Process owner mid-week check: wrong column, missing owner, overloaded In Progress.
 - Retrospect: shorten one rule at a time if friction appears.
-- New member: read team README + this doc; board access; shadow one Monday/Friday; one P2 task end-to-end with buddy.
+- New member: read this doc; board access; shadow one Monday/Friday; one P2 task end-to-end with buddy.
 
-**Checklist (copy to team README)**
+**Checklist**
 
 ```text
 [ ] 8 columns, P0–P3, core labels, task template
-[ ] docs/teams/<team-name>/README.md
+[ ] Board URL and release approver written down (project repo or scratch)
 [ ] PR + release docs linked
 [ ] Monday + Friday scheduled; WIP communicated
 [ ] Pilot sprint; first release used Ready For Release → Released

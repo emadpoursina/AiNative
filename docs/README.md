@@ -17,7 +17,7 @@ How this repo is organized. Full spec: [ENGINEERING-OS.md](../ENGINEERING-OS.md)
 | A PR review prompt | [ai-workflows/pr-review-prompts.md](./ai-workflows/pr-review-prompts.md) |
 | Task grooming / meeting prep | [ai-workflows/task-grooming-prompts.md](./ai-workflows/task-grooming-prompts.md) |
 | Coordinator-worker dev pattern | [ai-workflows/coordinator-worker.md](./ai-workflows/coordinator-worker.md) |
-| This team's board and approvers | [teams/\<team-name\>/](./teams/) |
+| How to run planning / board setup | [systems/task-management-system.md](./systems/task-management-system.md) |
 
 ## `systems/`
 
@@ -44,10 +44,6 @@ Append-only operational records. Use templates in each folder.
 ## `snippets/`
 
 Copy-paste code only — see [snippets/README.md](./snippets/README.md).
-
-## `teams/`
-
-Per-team overrides: stack, board link, meeting schedule, release approver.
 
 ## Three rituals
 

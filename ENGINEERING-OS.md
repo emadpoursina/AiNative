@@ -78,13 +78,10 @@ AiNative/
     │   ├── template.md
     │   └── YYYY-MM-title.md
     │
-    ├── postmortems/                   # Incident reviews — dated, append-only
-    │   ├── README.md
-    │   ├── template.md
-    │   └── YYYY-MM-DD-title.md
-    │
-    └── teams/                         # Per-team overrides only
-        └── <team-name>/README.md
+    └── postmortems/                   # Incident reviews — dated, append-only
+        ├── README.md
+        ├── template.md
+        └── YYYY-MM-DD-title.md
 
 scratch/                               # Gitignored — raw capture, no quality bar
 └── .gitignore
@@ -254,16 +251,6 @@ What we considered and why we said no.
 
 ---
 
-### Layer 8 — Teams (`docs/teams/`)
-
-**What it holds:** Per-team overrides only. Stack, repos, board tool, meeting schedule, release approver, adapted checklists.
-
-**Why it exists:** The `systems/` layer is universal. The `teams/` layer holds everything that differs per context — the board URL for this team, the branch naming convention for this project, the person who approves production releases here. Universal rules stay in `systems/`; local quirks go here.
-
-**Rule:** If you are writing something in a team README that should apply to all teams, it belongs in `systems/` instead.
-
----
-
 ### Scratch (`scratch/`)
 
 **What it holds:** Raw capture. Meeting notes, pasted error logs, half-formed ideas, anything that happens during work.
@@ -290,7 +277,8 @@ The structure is designed so retrieval requires no search. The folder names are 
 | How to run a release | `systems/release-management-system.md` |
 | A PR review prompt | `ai-workflows/pr-review-prompts.md` |
 | How to run a planning meeting | `systems/task-management-system.md` |
-| This team's board and approvers | `teams/<team-name>/README.md` |
+
+Project-specific context (board URL, approvers, stack) belongs in the project repo or `scratch/` — not in this OS repo.
 
 If you find yourself searching instead of navigating, a document is in the wrong place.
 
