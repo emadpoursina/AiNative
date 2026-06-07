@@ -6,12 +6,12 @@ alwaysApply: true
 When working in AiNative or repos using this OS:
 
 - Architecture spec: `ENGINEERING-OS.md`
-- PR review: follow `docs/systems/pr-review-system.md`; prompts in `docs/ai-workflows/pr-review-prompts.md`
-- Task grooming / meetings: `docs/ai-workflows/task-grooming-prompts.md`
-- Multi-file features: use `docs/ai-workflows/coordinator-worker.md` (Research → Plan → Execute)
-- Commands and setup: `docs/reference/` — navigate by domain, do not guess
-- After hard bugs: append to `docs/debugging/<domain>/` using `docs/debugging/template.md`
-- Significant decisions: new ADR in `docs/decisions/` using `docs/decisions/template.md`
+- PR review: follow `docs/1. systems/pr-review-system.md`; prompts in `docs/2. ai-workflows/pr-review-prompts.md` — run Phase 1.5 architecture compliance for feature PRs in existing subsystems
+- Task grooming / meetings: `docs/2. ai-workflows/task-grooming-prompts.md`
+- Multi-file features: use `docs/2. ai-workflows/coordinator-worker.md` (Research → Plan → Execute)
+- Commands and setup: `docs/3. reference/` — navigate by domain, do not guess
+- After hard bugs: append to `docs/4. debugging/<domain>/` using `docs/4. debugging/template.md`
+- Significant decisions: new ADR in `docs/6. decisions/` using `docs/6. decisions/template.md`
 - Raw capture during work: write to `scratch/` (gitignored); promote on Friday review
 
 Commits: Conventional Commits, short messages (see Commit-style rule).
