@@ -31,6 +31,15 @@ services:
     volumes:
       - mongodb_data:/data/db
 
+  nginx:
+    image: nginx:stable-alpine-perl
+    container_name: shared_nginx
+    restart: unless-stopped
+    ports:
+      - "8080:80"
+    volumes:
+      - ./nginx:/etc/nginx/conf.d:ro
+
 volumes:
   mariadb_data:
   mongodb_data:
