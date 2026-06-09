@@ -1,6 +1,6 @@
 # Nginx
 
-Shared local reverse proxy: `shared_nginx` on host port **8080**. Configs: `/Users/emad/docker-infrastructure/nginx/`. Setup: [local-shared-services.md](../setup/local-shared-services.md).
+Shared local reverse proxy: `shared_nginx` on host port **80**. Configs: `/Users/emad/docker-infrastructure/nginx/`. Setup: [local-shared-services.md](../setup/local-shared-services.md).
 
 ## Docker proxy rule
 
@@ -22,5 +22,5 @@ docker compose -f ~/docker-infrastructure/docker-compose.yml logs -f nginx
 
 ```bash
 docker exec shared_nginx nginx -t
-curl -H "Host: <server_name>" http://localhost:8080/
+curl -H "Host: <server_name>" http://localhost/
 ```

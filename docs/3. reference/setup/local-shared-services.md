@@ -17,7 +17,7 @@ Snippet copy (for reference only — edit the canonical file): [shared-services.
 | MariaDB 10.11 | `shared_mariadb` | 3306 | MySQL-compatible |
 | MongoDB 7 | `shared_mongodb` | 27017 | |
 | Adminer | `shared_adminer` | 8081 | DB UI — http://localhost:8081 |
-| Nginx | `shared_nginx` | 8080 | Reverse proxy — configs in `~/docker-infrastructure/nginx/` |
+| Nginx | `shared_nginx` | 80 | Reverse proxy — configs in `~/docker-infrastructure/nginx/` |
 
 Data persists in Docker volumes: `mariadb_data`, `mongodb_data`.
 
@@ -65,17 +65,29 @@ Open http://localhost:8081 — default server is `mariadb` (set in compose). For
 
 **Nginx**
 
-Configs live in `/Users/emad/docker-infrastructure/nginx/` (mounted into the container). Each `server_name` is a local hostname (e.g. `nml.localhost`, `taskforge.localhost`). Add matching entries to `/etc/hosts` if needed:
+Configs live in `/Users/emad/docker-infrastructure/nginx/` (mounted into the container). `00-default.conf` handles bare `http://localhost` — it does **not** proxy to any project. Each project gets its own `server_name`:
 
-```text
-127.0.0.1 nml.localhost moss.localhost taskforge.localhost api.taskforge.localhost
-```
+| Hostname | Upstream port | Config file |
+|----------|---------------|-------------|
+| `nml.localhost` | 3000 | `mac.conf` |
+| `moss.localhost` | 3002 | `mac.conf` |
+| `villionadmin.localhost` | 3009 | `mac.conf` |
+| `voicedash.localhost` | 3001 | `mac.conf` |
+| `taskforge.localhost` | 3003 | `taskforge.conf` |
+| `api.taskforge.localhost` | 3004 | `taskforge.conf` |
+
+Open projects at `http://<hostname>` (e.g. http://nml.localhost). Modern browsers resolve `*.localhost` to 127.0.0.1; add `/etc/hosts` entries only if a name does not resolve.
 
 Proxy upstreams must use `host.docker.internal`, not `127.0.0.1` — inside Docker, localhost is the container, not your Mac.
 
+If port 80 is already in use on the Mac, stop the conflicting service or change the compose mapping (e.g. back to `"8080:80"`).
+
 ```bash
-# Test a vhost (Host header selects the server block)
-curl -H "Host: nml.localhost" http://localhost:8080/
+# Bare localhost → 404 (no project)
+curl http://localhost/
+
+# Project vhost
+curl http://nml.localhost/
 
 # Validate and reload after editing configs
 docker exec shared_nginx nginx -t
