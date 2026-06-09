@@ -41,7 +41,8 @@ AiNative/
     │   ├── setup/
     │   │   ├── new-project.md
     │   │   ├── cursor-setup.md
-    │   │   └── server-setup.md
+    │   │   ├── server-setup.md
+    │   │   └── local-shared-services.md
     │   ├── commands/
     │   │   ├── linux.md
     │   │   ├── git.md
@@ -269,6 +270,7 @@ The structure is designed so retrieval requires no search. The folder names are 
 |---|---|
 | A specific command | `reference/commands/<tool>.md` |
 | Project or server setup | `reference/setup/` |
+| Local databases (Docker) | `reference/setup/local-shared-services.md` |
 | An architecture pattern | `reference/architecture/` |
 | A bug you have seen before | `debugging/<domain>/` |
 | A working config or script | `snippets/<type>/` |

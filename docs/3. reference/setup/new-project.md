@@ -43,10 +43,11 @@
 ## Setup
 
 - [Cursor setup](./cursor-setup.md) — MCP, rules, skills, indexing
+- [Local shared services](./local-shared-services.md) — MariaDB, MongoDB, Adminer via Docker
 - Git/Github
 - Project setup
   - Backend
-  - Database
+  - Database — use shared services; create a DB per project
   - Frontend
 
 ## Development

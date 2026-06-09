@@ -10,6 +10,7 @@ When working in AiNative or repos using this OS:
 - Task grooming / meetings: `docs/2. ai-workflows/task-grooming-prompts.md`
 - Multi-file features: use `docs/2. ai-workflows/coordinator-worker.md` (Research → Plan → Execute)
 - Commands and setup: `docs/3. reference/` — navigate by domain, do not guess
+- Local shared databases (Docker): `docs/3. reference/setup/local-shared-services.md` — compose at `/Users/emad/docker-infrastructure/docker-compose.yml`
 - After hard bugs: append to `docs/4. debugging/<domain>/` using `docs/4. debugging/template.md`
 - Significant decisions: new ADR in `docs/6. decisions/` using `docs/6. decisions/template.md`
 - Raw capture during work: write to `scratch/` (gitignored); promote on Friday review

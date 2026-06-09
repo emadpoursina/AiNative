@@ -28,6 +28,19 @@ docker system df [-v]
 - `COPY`
 - `RUN`
 
+## Docker Compose (shared services)
+
+Local machine databases run from a single compose file — see [local-shared-services.md](../setup/local-shared-services.md).
+
+```bash
+cd /Users/emad/docker-infrastructure
+docker compose up -d
+docker compose ps
+docker compose logs -f [service]
+docker compose stop
+docker compose down
+```
+
 ## Dockerizing a project section
 
 1. Choose a base image

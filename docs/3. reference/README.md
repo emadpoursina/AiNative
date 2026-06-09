@@ -9,6 +9,7 @@ Evergreen technical knowledge — updated in place, no dates.
 | [new-project.md](./setup/new-project.md) | Planning, PRD, development phases, design, deployment |
 | [cursor-setup.md](./setup/cursor-setup.md) | MCP, rules, skills, indexing |
 | [server-setup.md](./setup/server-setup.md) | SSH keys, users, remote access |
+| [local-shared-services.md](./setup/local-shared-services.md) | Local Docker databases (MariaDB, MongoDB, Adminer) |
 
 ## Commands
 
@@ -43,6 +44,7 @@ Evergreen technical knowledge — updated in place, no dates.
 |------------------|----------|
 | A specific command | `commands/<tool>.md` |
 | Project setup | `setup/` |
+| Local databases (Docker) | `setup/local-shared-services.md` |
 | Architecture patterns | `architecture/` |
 | Backup strategy | `backup-system.md` |
 
