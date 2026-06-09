@@ -17,6 +17,7 @@ Snippet copy (for reference only — edit the canonical file): [shared-services.
 | MariaDB 10.11 | `shared_mariadb` | 3306 | MySQL-compatible |
 | MongoDB 7 | `shared_mongodb` | 27017 | |
 | Adminer | `shared_adminer` | 8081 | DB UI — http://localhost:8081 |
+| Nginx | `shared_nginx` | 8080 | Reverse proxy — configs in `~/docker-infrastructure/nginx/` |
 
 Data persists in Docker volumes: `mariadb_data`, `mongodb_data`.
 
@@ -61,6 +62,27 @@ mongodb://root:rootpass@localhost:27017/?authSource=admin
 **Adminer**
 
 Open http://localhost:8081 — default server is `mariadb` (set in compose). For MongoDB, use a Mongo client or `mongosh` instead.
+
+**Nginx**
+
+Configs live in `/Users/emad/docker-infrastructure/nginx/` (mounted into the container). Each `server_name` is a local hostname (e.g. `nml.localhost`, `taskforge.localhost`). Add matching entries to `/etc/hosts` if needed:
+
+```text
+127.0.0.1 nml.localhost moss.localhost taskforge.localhost api.taskforge.localhost
+```
+
+Proxy upstreams must use `host.docker.internal`, not `127.0.0.1` — inside Docker, localhost is the container, not your Mac.
+
+```bash
+# Test a vhost (Host header selects the server block)
+curl -H "Host: nml.localhost" http://localhost:8080/
+
+# Validate and reload after editing configs
+docker exec shared_nginx nginx -t
+docker exec shared_nginx nginx -s reload
+```
+
+See [nginx.md](../commands/nginx.md) for log paths.
 
 ## Project setup
 
