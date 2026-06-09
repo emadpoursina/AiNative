@@ -74,8 +74,9 @@ feature/\* → development → staging → master → production
   1. Ensure staging is stable  
   2. Verify all tests passed  
   3. Confirm what is currently in `development` is ready  
-  4. Create a version tag: v1.0.0  
-  5. Write release notes:  
+  4. Run the **Pre-Tag Compatibility Check** — [client-compatibility-system.md](./client-compatibility-system.md#phase-4--pre-tag-compatibility-check) (multi-client projects)  
+  5. Create a version tag: v1.0.0  
+  6. Write release notes:  
      * \#\# v1.0.0  
      *   
      * \#\#\# Added  
@@ -114,7 +115,8 @@ feature/\* → development → staging → master → production
   * Monitor logs and errors  
   * Watch key metrics  
   * Check user feedback  
-  * Validate critical flows
+  * Validate critical flows  
+  * Run the **Post-Deploy Compatibility Monitor** — [client-compatibility-system.md](./client-compatibility-system.md#phase-6--post-deploy-compatibility-monitor) (multi-client projects)
 
 ---
 

@@ -16,11 +16,12 @@ It covers work you repeat on every team:
 
 | Area | Where |
 |------|--------|
-| **Task management** | [docs/systems/task-management-system.md](./docs/systems/task-management-system.md) |
-| **PR review** | [docs/systems/pr-review-system.md](./docs/systems/pr-review-system.md) |
-| **Release management** | [docs/systems/release-management-system.md](./docs/systems/release-management-system.md) |
+| **Task management** | [docs/1. systems/task-management-system.md](./docs/1.%20systems/task-management-system.md) |
+| **PR review** | [docs/1. systems/pr-review-system.md](./docs/1.%20systems/pr-review-system.md) |
+| **Release management** | [docs/1. systems/release-management-system.md](./docs/1.%20systems/release-management-system.md) |
+| **Client compatibility** | [docs/1. systems/client-compatibility-system.md](./docs/1.%20systems/client-compatibility-system.md) |
 | **Commands & setup** | [docs/reference/](./docs/reference/) |
-| **AI prompts** | [docs/ai-workflows/](./docs/ai-workflows/) |
+| **AI prompts** | [docs/2. ai-workflows/](./docs/2.%20ai-workflows/) |
 | **Bug patterns & ADRs** | [docs/debugging/](./docs/debugging/), [docs/decisions/](./docs/decisions/) |
 
 ---
@@ -58,8 +59,8 @@ flowchart LR
 
 1. **Read the OS spec** — [ENGINEERING-OS.md](./ENGINEERING-OS.md) (5 min)
 2. **Create scratch locally** — `mkdir scratch` for raw capture during work
-3. **Pick one workflow** — start with [task management](./docs/systems/task-management-system.md) on one board
-4. **Use PR review on your next change** — prompts in [ai-workflows/pr-review-prompts.md](./docs/ai-workflows/pr-review-prompts.md)
+3. **Pick one workflow** — start with [task management](./docs/1.%20systems/task-management-system.md) on one board
+4. **Use PR review on your next change** — prompts in [ai-workflows/pr-review-prompts.md](./docs/2.%20ai-workflows/pr-review-prompts.md)
 5. **Run Friday review** — promote scratch, update reference, delete junk (15 min)
 
 After two weeks, add the next system. Do not introduce everything at once.
@@ -69,7 +70,7 @@ After two weeks, add the next system. Do not introduce everything at once.
 ## Getting started (with others)
 
 1. Share only systems you already run personally.
-2. Run Monday planning and Friday delivery per the [task guide](./docs/systems/task-management-system.md).
+2. Run Monday planning and Friday delivery per the [task guide](./docs/1.%20systems/task-management-system.md).
 3. Keep project-specific notes (board URL, approvers) in the project repo or `scratch/` — not in this repo.
 
 ---

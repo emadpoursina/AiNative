@@ -13,21 +13,23 @@ How this repo is organized. Full spec: [ENGINEERING-OS.md](../ENGINEERING-OS.md)
 | A working config or script | [snippets/](./snippets/) |
 | Why a decision was made | [decisions/](./decisions/) |
 | What broke and why | [postmortems/](./postmortems/) |
-| How to run a release | [systems/release-management-system.md](./systems/release-management-system.md) |
+| How to run a release | [1. systems/release-management-system.md](./1.%20systems/release-management-system.md) |
+| Client/server compatibility | [1. systems/client-compatibility-system.md](./1.%20systems/client-compatibility-system.md) |
 | A PR review prompt | [ai-workflows/pr-review-prompts.md](./ai-workflows/pr-review-prompts.md) |
 | Task grooming / meeting prep | [ai-workflows/task-grooming-prompts.md](./ai-workflows/task-grooming-prompts.md) |
 | Coordinator-worker dev pattern | [ai-workflows/coordinator-worker.md](./ai-workflows/coordinator-worker.md) |
-| How to run planning / board setup | [systems/task-management-system.md](./systems/task-management-system.md) |
+| How to run planning / board setup | [1. systems/task-management-system.md](./1.%20systems/task-management-system.md) |
 
-## `systems/`
+## `1. systems/`
 
 Universal workflows — stable, rarely changes.
 
 | File | Topic |
 |------|--------|
-| [task-management-system.md](./systems/task-management-system.md) | Board, tasks, WIP, meetings |
-| [pr-review-system.md](./systems/pr-review-system.md) | AI-assisted PR review in Cursor |
-| [release-management-system.md](./systems/release-management-system.md) | Branching and release flow |
+| [task-management-system.md](./1.%20systems/task-management-system.md) | Board, tasks, WIP, meetings |
+| [pr-review-system.md](./1.%20systems/pr-review-system.md) | AI-assisted PR review in Cursor |
+| [release-management-system.md](./1.%20systems/release-management-system.md) | Branching and release flow |
+| [client-compatibility-system.md](./1.%20systems/client-compatibility-system.md) | Server tags vs client adoption |
 
 ## `ai-workflows/`
 
