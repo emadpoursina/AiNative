@@ -16,10 +16,11 @@ Snippet copy (for reference only — edit the canonical file): [shared-services.
 |---------|-----------|-----------|-------|
 | MariaDB 10.11 | `shared_mariadb` | 3306 | MySQL-compatible |
 | MongoDB 7 | `shared_mongodb` | 27017 | |
+| Redis 7 | `shared_redis` | 6379 | |
 | Adminer | `shared_adminer` | 8081 | DB UI — http://localhost:8081 |
 | Nginx | `shared_nginx` | 80 | Reverse proxy — configs in `~/docker-infrastructure/nginx/` |
 
-Data persists in Docker volumes: `mariadb_data`, `mongodb_data`.
+Data persists in Docker volumes: `mariadb_data`, `mongodb_data`, `redis_data`.
 
 ## Lifecycle
 
@@ -57,6 +58,17 @@ mysql://root:rootpass@localhost:3306/<database>
 
 ```text
 mongodb://root:rootpass@localhost:27017/?authSource=admin
+```
+
+**Redis**
+
+```text
+Host: localhost
+Port: 6379
+```
+
+```text
+redis://localhost:6379
 ```
 
 **Adminer**
