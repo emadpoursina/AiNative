@@ -110,6 +110,6 @@ See [nginx.md](../commands/nginx.md) for log paths.
 
 ## Project setup
 
-Point app `.env` files at `localhost` and the ports above. Create per-project databases inside the shared instances rather than spinning up new containers per repo.
+Point app `.env` files at `localhost` and the ports above. Create per-project databases inside the shared instances rather than spinning up new containers per repo. For MongoDB provisioning (database, user, roles), see [mongodb.md](../commands/mongodb.md).
 
 When starting a new project, link here from [new-project.md](./new-project.md) database setup.

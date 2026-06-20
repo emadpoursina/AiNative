@@ -19,7 +19,7 @@ Evergreen technical knowledge — updated in place, no dates.
 | [git.md](./commands/git.md) | Branches, stash, fetch |
 | [docker.md](./commands/docker.md) | Containers, images, volumes, Dockerfile |
 | [postgres.md](./commands/postgres.md) | psql, backup, restore |
-| [mongodb.md](./commands/mongodb.md) | mongodump, mongorestore |
+| [mongodb.md](./commands/mongodb.md) | mongosh, create db/user, admin password, backup/restore |
 | [nginx.md](./commands/nginx.md) | Log paths |
 | [tmux.md](./commands/tmux.md) | Sessions, panes, shortcuts |
 
