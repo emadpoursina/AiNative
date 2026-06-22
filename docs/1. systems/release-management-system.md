@@ -13,6 +13,58 @@ It is designed to help you ship safely, predictably, and without confusion.
 
 ---
 
+## ❓ Release Questions
+
+Two questions to answer on every release. If you cannot answer both, do not deploy.
+
+### 1. If I release the server, will previous versions keep working?
+
+**Short answer:** Only if you designed for it. Deploying a new server tag does not automatically keep old clients or integrations working.
+
+| Change type | Old clients / integrations |
+|-------------|------------------------------|
+| Additive (new optional field, new route) | Usually keep working |
+| Breaking (removed route, required new field, auth change) | Break unless you provide a fallback |
+
+**What “previous versions” means:**
+
+* **Previous server tag** — always kept available for rollback (Phase 7). You can redeploy `v1.2.3` if `v1.3.0` fails.
+* **Previous clients** (mobile apps, desktop, third-party callers) — governed by a **compatibility contract**, not by the deploy itself. See [client-compatibility-system.md](./client-compatibility-system.md).
+
+**Rules:**
+
+* Never assume backward compatibility — verify it in staging with the oldest supported client version.
+* Breaking API changes require parallel paths or legacy fallbacks until clients catch up.
+* Run the **Pre-Tag Compatibility Check** before every tag — [client-compatibility-system.md](./client-compatibility-system.md#phase-4--pre-tag-compatibility-check) (multi-client projects).
+* Database migrations are part of this answer: a migration that removes a column or changes semantics can break a rolled-back server. Plan migrations to be reversible or forward-only with care.
+
+### 2. What setup is required before and after deploying?
+
+**Before deploy (Phases 4–5):**
+
+* [ ] Staging is stable — full test pass on the exact commit you will tag
+* [ ] Release scope confirmed — you are tagging a snapshot of `development`, not cherry-picking features
+* [ ] Version tag created (`vX.Y.Z`) and release notes written
+* [ ] **Pre-Tag Compatibility Check** complete (multi-client) — [checklist](./client-compatibility-system.md#phase-4--pre-tag-compatibility-check)
+* [ ] Environment ready — production env vars, secrets, and config verified (not just staging copies)
+* [ ] Database migrations reviewed — run order, rollback impact, and downtime window agreed
+* [ ] Rollback target identified — previous stable tag noted before you deploy
+* [ ] Deploy window communicated — stakeholders know when production will change
+
+**After deploy (Phase 6):**
+
+* [ ] Smoke-test critical flows in production immediately after deploy
+* [ ] Monitor logs and error rates for the first 30–60 minutes
+* [ ] Watch key metrics (latency, error rate, queue depth)
+* [ ] Confirm database migrations applied successfully
+* [ ] **Post-Deploy Compatibility Monitor** complete (multi-client) — [checklist](./client-compatibility-system.md#phase-6--post-deploy-compatibility-monitor)
+* [ ] Check user feedback and support channels
+* [ ] Roll back immediately if a critical flow is broken — do not wait to “see if it settles”
+
+Stack-specific setup (SSH, Docker, nginx, etc.) lives in [reference/setup/](../3.%20reference/setup/) — add a per-project deploy checklist there as you refine the stack.
+
+---
+
 ## 🌳 Branch Structure (Simple & Universal)
 
 * You use 3 main branches:  

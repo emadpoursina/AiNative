@@ -68,4 +68,6 @@ Overall process — use the [coordinator-worker pattern](../../ai-workflows/coor
 
 ## Deployment
 
-<!-- Add deploy checklist per stack as you refine it. -->
+Deploy checklists and release flow: [release-management-system.md](../../1.%20systems/release-management-system.md) — especially [Release Questions](../../1.%20systems/release-management-system.md#-release-questions) (before/after setup, backward compatibility).
+
+<!-- Add stack-specific deploy steps here as you refine the stack. -->

@@ -1,6 +1,6 @@
 # Client Compatibility System
 
-Answers the second release question: **which clients are bound to this server tag's contract?**
+Extends [Release Question 1](./release-management-system.md#1-if-i-release-the-server-will-previous-versions-keep-working) for multi-client projects: **which clients are bound to this server tag's contract?**
 
 Pair with [release-management-system.md](./release-management-system.md). Run the pre-tag check before every version tag. Run the post-deploy monitor after every production deploy.
 

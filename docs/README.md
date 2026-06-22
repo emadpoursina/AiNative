@@ -28,7 +28,7 @@ Universal workflows — stable, rarely changes.
 |------|--------|
 | [task-management-system.md](./1.%20systems/task-management-system.md) | Board, tasks, WIP, meetings |
 | [pr-review-system.md](./1.%20systems/pr-review-system.md) | AI-assisted PR review in Cursor |
-| [release-management-system.md](./1.%20systems/release-management-system.md) | Branching and release flow |
+| [release-management-system.md](./1.%20systems/release-management-system.md) | Branching, release flow, backward compatibility, deploy checklists |
 | [client-compatibility-system.md](./1.%20systems/client-compatibility-system.md) | Server tags vs client adoption |
 
 ## `ai-workflows/`
