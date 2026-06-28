@@ -74,6 +74,12 @@ Draft minimal updates only where the code change requires it.
 
 ---
 
+## Agent handoff
+
+When a phase finishes and another agent (or human) continues the work, fill out [agent-handoff-template.md](./agent-handoff-template.md). Save working copies in `scratch/` during active work; promote anything worth keeping after Friday review.
+
+---
+
 ## Guiding principles
 
 - Split large ambiguous tasks into smaller ones — never give AI one huge open-ended task
