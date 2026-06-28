@@ -42,6 +42,16 @@
 
 ## Setup
 
+### Agent setup
+
+When an agent bootstraps a new project, include a local `scratch/` folder for reference files and raw notes during work:
+
+- Add `scratch/` to `.gitignore` so nothing temporary is committed
+- Use it for pasted logs, drafts, handoff notes, and other working material — not for canonical docs
+- Promote anything worth keeping into the proper docs layer; delete the rest (see [ENGINEERING-OS.md](../../../ENGINEERING-OS.md#scratch-scratch))
+
+### Bootstrap checklist
+
 - [Cursor setup](./cursor-setup.md) — MCP, rules, skills, indexing
 - [Local shared services](./local-shared-services.md) — MariaDB, MongoDB, Adminer via Docker
 - Git/Github
