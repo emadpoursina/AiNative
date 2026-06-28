@@ -38,7 +38,7 @@ Copy into `.cursor/rules/` or project rules. Adjust stack-specific constraints.
 
 - Wrap context, file paths, and instructions in tags like `<file_content>`, `<task_description>`
 - Spend prompt space on negative constraints (what NOT to do)
-- Keep [CLAUDE.md](https://docs.anthropic.com/) short — not a novel
+- Keep [CLAUDE.md](https://docs.anthropic.com/) short — not a novel; blank template in [claude-md-template.md](./claude-md-template.md), live example at repo root
 
 ---
 

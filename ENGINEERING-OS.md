@@ -19,7 +19,8 @@ It works inside Git. It requires no external tools. It stays alive through three
 ```text
 AiNative/
 ├── README.md
-├── .cursor/rules/
+├── CLAUDE.md                      # AI rules for Claude Code and agent bootstrap
+├── .cursor/rules/                 # Cursor rules (engineering-os, ai-rules, Commit-style)
 │
 └── docs/
     ├── README.md
