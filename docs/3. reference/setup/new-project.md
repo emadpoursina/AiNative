@@ -68,7 +68,7 @@ When an agent bootstraps a new project, include a local `scratch/` folder for re
 
 ## Development
 
-Overall process — use the [coordinator-worker pattern](../../ai-workflows/coordinator-worker.md):
+Overall process — use the [coordinator-worker pattern](../../ai-workflows/coordinator-worker.md). **Cursor prompts:** [cursor-plan/](../../2.%20ai-workflows/cursor-plan/).
 
 1. **Research** — Coordinator agent analyzes the codebase for relevant files
 2. **Synthesis** — Second pass creates a plan from research

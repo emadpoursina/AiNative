@@ -2,6 +2,8 @@
 
 Multi-phase development with separate research, planning, and implementation passes.
 
+**Cursor prompts:** Use the [cursor-plan agent](./cursor-plan/) for copy-paste phase prompts with structured output formats. This file is the overview; the cursor-plan folder is canonical for Cursor sessions.
+
 ---
 
 ## Phase 1 — Research
@@ -91,6 +93,11 @@ When a phase finishes and another agent (or human) continues the work, fill out 
 ## Starter prompt (Cursor)
 
 ```text
-Referencing docs/ai-workflows/coordinator-worker.md, start the Research Phase for [Feature Name].
-Scan @folder and tell me what needs to change.
+Referencing docs/2. ai-workflows/cursor-plan/1-research.md, start Research for [Feature Name].
+
+FEATURE: [one sentence]
+REPO: [project name]
+ENTRY POINTS: @folder/or/files
 ```
+
+See [cursor-plan/README.md](./cursor-plan/README.md) for all phase starter prompts.

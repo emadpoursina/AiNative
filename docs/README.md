@@ -19,6 +19,7 @@ How this repo is organized. Full spec: [ENGINEERING-OS.md](../ENGINEERING-OS.md)
 | Task grooming / meeting prep | [ai-workflows/task-grooming-prompts.md](./ai-workflows/task-grooming-prompts.md) |
 | Agent handoff between AI passes | [2. ai-workflows/agent-handoff-template.md](./2.%20ai-workflows/agent-handoff-template.md) |
 | Coordinator-worker dev pattern | [2. ai-workflows/coordinator-worker.md](./2.%20ai-workflows/coordinator-worker.md) |
+| Cursor plan agent (feature phases) | [2. ai-workflows/cursor-plan/](./2.%20ai-workflows/cursor-plan/) |
 | How to run planning / board setup | [1. systems/task-management-system.md](./1.%20systems/task-management-system.md) |
 
 ## `1. systems/`

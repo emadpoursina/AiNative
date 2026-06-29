@@ -2,6 +2,8 @@
 
 Use when passing work between agents (coordinator, worker, reviewer, groomer). Fill every section so the next agent can continue without asking for missing context.
 
+Phase prompts: [cursor-plan/](./cursor-plan/) — coordinator (Phases 1, 2, 5), worker (Phase 3), reviewer (Phase 4).
+
 ---
 
 ## Frontmatter

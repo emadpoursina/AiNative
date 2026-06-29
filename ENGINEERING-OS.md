@@ -33,6 +33,7 @@ AiNative/
     ├── ai-workflows/                  # Reusable AI prompts — extracted and versioned
     │   ├── README.md
     │   ├── coordinator-worker.md
+    │   ├── cursor-plan/               # Phased Cursor prompts — research through docs
     │   ├── pr-review-prompts.md
     │   ├── task-grooming-prompts.md
     │   └── cursor-rules.md
@@ -107,7 +108,7 @@ scratch/                               # Gitignored — raw capture, no quality 
 
 ### Layer 2 — AI Workflows (`docs/ai-workflows/`)
 
-**What it holds:** Standalone, versioned AI prompts. The coordinator-worker development pattern. Agent handoff template. PR review phases. Task grooming. Cursor rules templates.
+**What it holds:** Standalone, versioned AI prompts. The coordinator-worker development pattern. Cursor plan agent (phased feature prompts). Agent handoff template. PR review phases. Task grooming. Cursor rules templates.
 
 **Why it exists:** AI prompts buried inside system documents are hard to find and impossible to reuse across contexts. Extracting them into their own folder gives them a canonical location you can reference from Cursor rules, paste into any tool, and improve independently of the workflow doc they originally came from.
 
@@ -279,6 +280,7 @@ The structure is designed so retrieval requires no search. The folder names are 
 | What broke and why | `postmortems/` |
 | How to run a release | `systems/release-management-system.md` |
 | Agent handoff between AI passes | `ai-workflows/agent-handoff-template.md` |
+| Cursor plan agent (feature work) | `ai-workflows/cursor-plan/` |
 | A PR review prompt | `ai-workflows/pr-review-prompts.md` |
 | How to run a planning meeting | `systems/task-management-system.md` |
 
