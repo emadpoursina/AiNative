@@ -15,6 +15,7 @@ FEATURE: [SAME AS PHASE 1]
 
 <context>
 Reference the implemented files: @path/to/changed/files
+Reference test flows from the synthesis plan: @docs/2. ai-workflows/cursor-plan/2-synthesis.md output
 </context>
 
 ## Review passes
@@ -30,6 +31,7 @@ Referencing docs/2. ai-workflows/cursor-plan/4-verification.md Pass A, review th
 
 Check:
 - Does the code match the intended behavior from the plan?
+- Do all test flows from the synthesis plan pass (happy path and edge cases)?
 - Are all edge cases from the synthesis plan handled?
 - Are there any missing branches or unhandled nulls?
 - Are Zod schemas validating all external inputs?

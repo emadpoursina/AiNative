@@ -11,7 +11,7 @@ Workflow overview: [coordinator-worker.md](../coordinator-worker.md). Handoffs b
 | Phase | File | Agent role | Output |
 |-------|------|------------|--------|
 | 1 | [1-research.md](./1-research.md) | Coordinator | Research report — files, risks, open questions |
-| 2 | [2-synthesis.md](./2-synthesis.md) | Coordinator | Implementation plan — steps, migrations, tests, commits |
+| 2 | [2-synthesis.md](./2-synthesis.md) | Coordinator | Plan — execution order (parallel/sequential), steps, test flows, commit plan |
 | 3 | [3-implementation.md](./3-implementation.md) | Worker | Code for one plan step at a time |
 | 4 | [4-verification.md](./4-verification.md) | Reviewer | Pass/fail review (correctness, security, reliability, adversarial) |
 | 5 | [5-update-docs.md](./5-update-docs.md) | Coordinator | CLAUDE.md, changelog, commit message |

@@ -44,6 +44,8 @@ PASTE_INPUT_HERE
 
 > The artifact this agent produced. Must be self-contained — the next agent should need nothing else.
 
+When `output_type: plan`, include all three sections from [2-synthesis.md](./cursor-plan/2-synthesis.md): **Execution plan**, **Test flows**, **Commit plan**.
+
 ```
 PASTE_OUTPUT_HERE
 ```

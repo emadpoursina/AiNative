@@ -28,12 +28,15 @@ Output:
 Based on the research above, create an implementation plan.
 
 Output:
-- numbered steps
-- files to change per step
-- test/verification approach
+- execution plan (parallel vs sequential steps)
+- numbered implementation steps with file paths
+- test flows to verify correctness
+- commit plan (Conventional Commits, one complete file set per commit)
 - what NOT to change
 
 Do not write code until the plan is confirmed if the task involves more than 2 files.
+
+Prompts: docs/2. ai-workflows/cursor-plan/2-synthesis.md
 ```
 
 ---
