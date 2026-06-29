@@ -47,6 +47,8 @@
 Add persistent AI rules so agents read your stack and constraints once per session:
 
 - Copy [claude-md-template.md](../../2.%20ai-workflows/claude-md-template.md) to the project root as `CLAUDE.md` (Claude Code) or into `.cursor/rules/ai-rules.mdc` (Cursor)
+- Copy `.cursor/skills/cursor-plan/` and `.cursor/rules/planning-gate.mdc` from AiNative for phased feature planning (`@cursor-plan`)
+- Copy or symlink [cursor-plan/](../../2.%20ai-workflows/cursor-plan/) phase prompts into `docs/2. ai-workflows/cursor-plan/` (or `.cursor/plans/` for shorter `@` paths — one canonical copy only)
 - Fill in project context, stack, and out-of-scope items — see [CLAUDE.md](../../../CLAUDE.md) in AiNative for a live example
 
 When an agent bootstraps a new project, include a local `scratch/` folder for reference files and raw notes during work:

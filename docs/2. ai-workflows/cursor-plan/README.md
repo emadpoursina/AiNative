@@ -4,6 +4,8 @@ Five-phase prompts for feature work in Cursor: research → plan → implement �
 
 Workflow overview: [coordinator-worker.md](../coordinator-worker.md). Handoffs between phases: [agent-handoff-template.md](../agent-handoff-template.md).
 
+**Cursor integration:** Project skill `@cursor-plan` (`.cursor/skills/cursor-plan/SKILL.md`). Auto gate for 2+ file tasks: `.cursor/rules/planning-gate.mdc`.
+
 ---
 
 ## Phases
@@ -27,9 +29,33 @@ Workflow overview: [coordinator-worker.md](../coordinator-worker.md). Handoffs b
 
 ---
 
+## How to use (quick start)
+
+1. Open a new Agent chat for the feature.
+2. Run `@cursor-plan phase=1` with FEATURE, REPO, and ENTRY POINTS.
+3. Confirm the research report, then `@cursor-plan phase=2` with Phase 1 output in `<context>`.
+4. Review the plan (execution order, test flows, commit plan). Approve explicitly.
+5. Run `@cursor-plan phase=3` once per implementation step.
+6. Run `@cursor-plan phase=4` — one pass (A, B, C, D) per prompt.
+7. Run `@cursor-plan phase=5` for docs and final commit message.
+
+The `planning-gate` rule applies automatically in this repo for 2+ file tasks — the agent should not skip to code without an approved plan.
+
+---
+
 ## Starter prompts (Cursor)
 
 **Phase 1 — Research**
+
+```text
+@cursor-plan phase=1
+
+FEATURE: [one sentence]
+REPO: [project name]
+ENTRY POINTS: @folder/or/files
+```
+
+Or without the skill:
 
 ```text
 Referencing docs/2. ai-workflows/cursor-plan/1-research.md, start Research for [Feature Name].
