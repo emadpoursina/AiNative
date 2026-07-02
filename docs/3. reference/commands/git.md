@@ -5,7 +5,7 @@
   - `git checkout development`
   - `git checkout -b [branch-name]`
   - `git push --set-upstream origin [branch-name]`
-- `git fetch origin --prune`
+- Updating all branches with remote on GitHub: `git fetch origin --prune`
 - `git stash push -m "Description"`
 
 See [release-management-system.md](../../systems/release-management-system.md) for branch flow.
