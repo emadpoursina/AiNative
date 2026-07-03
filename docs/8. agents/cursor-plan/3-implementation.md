@@ -15,7 +15,7 @@ CURRENT STEP: [e.g. Step 3 — Add RolesGuard to TasksController]
 </task>
 
 <context>
-Paste the relevant steps from the Phase 2 synthesis plan here, or reference with @docs/2. ai-workflows/cursor-plan/2-synthesis.md output.
+Paste the relevant steps from the Phase 2 synthesis plan here, or reference with @docs/8. agents/cursor-plan/2-synthesis.md output.
 </context>
 
 <implementation_rules>
@@ -42,7 +42,7 @@ Paste the relevant steps from the Phase 2 synthesis plan here, or reference with
 Run one step at a time:
 
 ```
-Referencing docs/2. ai-workflows/cursor-plan/3-implementation.md, implement Step [N]:
+Referencing docs/8. agents/cursor-plan/3-implementation.md, implement Step [N]:
 [paste the step description from the synthesis plan]
 
 Files involved: @path/to/file.ts

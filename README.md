@@ -21,7 +21,7 @@ It covers work you repeat on every team:
 | **Release management** | [docs/1. systems/release-management-system.md](./docs/1.%20systems/release-management-system.md) |
 | **Client compatibility** | [docs/1. systems/client-compatibility-system.md](./docs/1.%20systems/client-compatibility-system.md) |
 | **Commands & setup** | [docs/reference/](./docs/reference/) |
-| **AI prompts** | [docs/2. ai-workflows/](./docs/2.%20ai-workflows/) |
+| **AI prompts & agents** | [docs/8. agents/](./docs/8.%20agents/), [docs/2. ai-workflows/](./docs/2.%20ai-workflows/) |
 | **Bug patterns & ADRs** | [docs/debugging/](./docs/debugging/), [docs/decisions/](./docs/decisions/) |
 
 ---
@@ -60,7 +60,7 @@ flowchart LR
 1. **Read the OS spec** — [ENGINEERING-OS.md](./ENGINEERING-OS.md) (5 min)
 2. **Create scratch locally** — `mkdir scratch` for raw capture during work
 3. **Pick one workflow** — start with [task management](./docs/1.%20systems/task-management-system.md) on one board
-4. **Use PR review on your next change** — prompts in [ai-workflows/pr-review-prompts.md](./docs/2.%20ai-workflows/pr-review-prompts.md)
+4. **Use PR review on your next change** — prompts in [pr-reviewer agent](./docs/8.%20agents/pr-reviewer/)
 5. **Run Friday review** — promote scratch, update reference, delete junk (15 min)
 
 After two weeks, add the next system. Do not introduce everything at once.

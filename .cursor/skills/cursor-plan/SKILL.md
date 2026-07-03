@@ -7,7 +7,7 @@ description: Run the Coordinator-Worker planning cycle for features — research
 
 Use this skill to run the full Coordinator-Worker planning cycle for a feature.
 
-Phase prompts (canonical): `docs/2. ai-workflows/cursor-plan/`
+Phase prompts (canonical): `docs/8. agents/cursor-plan/`
 
 ## When to load this skill
 
@@ -33,13 +33,13 @@ ENTRY POINTS: [src/module/]
 
 | Command | Loads | Role |
 |---------|-------|------|
-| `phase=1` | `docs/2. ai-workflows/cursor-plan/1-research.md` | Coordinator — read only |
-| `phase=2` | `docs/2. ai-workflows/cursor-plan/2-synthesis.md` | Coordinator — plan only |
-| `phase=3` | `docs/2. ai-workflows/cursor-plan/3-implementation.md` | Worker — one step at a time |
-| `phase=4` | `docs/2. ai-workflows/cursor-plan/4-verification.md` | Reviewer — find problems |
-| `phase=5` | `docs/2. ai-workflows/cursor-plan/5-update-docs.md` | Coordinator — docs only |
+| `phase=1` | `docs/8. agents/cursor-plan/1-research.md` | Coordinator — read only |
+| `phase=2` | `docs/8. agents/cursor-plan/2-synthesis.md` | Coordinator — plan only |
+| `phase=3` | `docs/8. agents/cursor-plan/3-implementation.md` | Worker — one step at a time |
+| `phase=4` | `docs/8. agents/cursor-plan/4-verification.md` | Reviewer — find problems |
+| `phase=5` | `docs/8. agents/cursor-plan/5-update-docs.md` | Coordinator — docs only |
 
-In Cursor, `@` the phase file directly (e.g. `@docs/2. ai-workflows/cursor-plan/1-research.md`) instead of typing the full path.
+In Cursor, `@` the phase file directly (e.g. `@docs/8. agents/cursor-plan/1-research.md`) instead of typing the full path.
 
 ## Handoff rules
 
@@ -87,4 +87,4 @@ FEATURE: [same as phase 1]
 
 ## Other projects
 
-To use shorter `@` paths in an app repo, copy `docs/2. ai-workflows/cursor-plan/*.md` to `.cursor/plans/` and update this skill's phase map locally. Keep one canonical copy — do not maintain two diverging versions.
+To use shorter `@` paths in an app repo, copy `docs/8. agents/cursor-plan/*.md` to `.cursor/plans/` and update this skill's phase map locally. Keep one canonical copy — do not maintain two diverging versions.

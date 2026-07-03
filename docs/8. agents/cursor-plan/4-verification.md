@@ -15,7 +15,7 @@ FEATURE: [SAME AS PHASE 1]
 
 <context>
 Reference the implemented files: @path/to/changed/files
-Reference test flows from the synthesis plan: @docs/2. ai-workflows/cursor-plan/2-synthesis.md output
+Reference test flows from the synthesis plan: @docs/8. agents/cursor-plan/2-synthesis.md output
 </context>
 
 ## Review passes
@@ -27,7 +27,7 @@ Run each pass as a separate prompt. Do not combine them.
 ### Pass A — Correctness
 
 ```
-Referencing docs/2. ai-workflows/cursor-plan/4-verification.md Pass A, review the implementation for correctness.
+Referencing docs/8. agents/cursor-plan/4-verification.md Pass A, review the implementation for correctness.
 
 Check:
 - Does the code match the intended behavior from the plan?
@@ -45,7 +45,7 @@ Files: @path/to/file.ts
 ### Pass B — Security & Auth
 
 ```
-Referencing docs/2. ai-workflows/cursor-plan/4-verification.md Pass B, review for security issues.
+Referencing docs/8. agents/cursor-plan/4-verification.md Pass B, review for security issues.
 
 Check:
 - Auth guards applied to every new endpoint?
@@ -63,7 +63,7 @@ Files: @path/to/file.ts
 ### Pass C — Reliability
 
 ```
-Referencing docs/2. ai-workflows/cursor-plan/4-verification.md Pass C, review for production reliability.
+Referencing docs/8. agents/cursor-plan/4-verification.md Pass C, review for production reliability.
 
 Check:
 - All database operations wrapped in try/catch or handled by NestJS exception filters?
@@ -80,7 +80,7 @@ Files: @path/to/file.ts
 ### Pass D — Adversarial
 
 ```
-Referencing docs/2. ai-workflows/cursor-plan/4-verification.md Pass D, act as a hostile senior engineer.
+Referencing docs/8. agents/cursor-plan/4-verification.md Pass D, act as a hostile senior engineer.
 
 Assume this code will fail in production. Find:
 - Hidden assumptions that break under real traffic

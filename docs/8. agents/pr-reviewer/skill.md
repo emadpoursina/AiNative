@@ -1,10 +1,10 @@
-# PR review prompts
+# Skills — PR reviewer agent
 
-Copy-paste prompts for staged PR review. Workflow context: [pr-review-system.md](../1.%20systems/pr-review-system.md).
+Review phase prompts copied inline for self-contained use.
 
 ---
 
-## Phase 1 — PR understanding
+## PR understanding (Phase 1)
 
 ```text
 Analyze this PR first.
@@ -20,7 +20,7 @@ Do not review yet.
 
 ---
 
-## Phase 1.5 — Architecture compliance
+## Architecture compliance (Phase 1.5)
 
 **When to run:** Any PR that adds or changes behavior in an existing subsystem. Skip for typo-only, dependency-only, or config-only changes with no logic.
 
@@ -61,7 +61,7 @@ Run Phase 1.5 architecture compliance only.
 
 ---
 
-## Phase 2 — Risk classification
+## Risk classification (Phase 2)
 
 ```text
 Classify the risks in this PR.
@@ -76,7 +76,7 @@ Explain why.
 
 ---
 
-## Phase 3 — Select review focus
+## Select review focus (Phase 3)
 
 Do NOT run all review types. Choose one based on PR type:
 
@@ -87,7 +87,7 @@ Do NOT run all review types. Choose one based on PR type:
 
 ---
 
-## Phase 4 — Deep focus review
+## Deep focus review (Phase 4)
 
 ### Security
 
@@ -149,7 +149,7 @@ Focus on:
 
 ---
 
-## Phase 5 — Adversarial review
+## Adversarial review (Phase 5)
 
 ```text
 Act like a hostile senior engineer.

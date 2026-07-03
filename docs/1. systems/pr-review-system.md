@@ -9,7 +9,7 @@ Do NOT ask AI to "review this PR" directly.
 Instead, run a staged workflow that builds understanding → architecture compliance → risk awareness → deep analysis → adversarial testing → human judgment.  
 AI is a thinking partner, not an authority.  
 
-**Prompts:** [pr-review-prompts.md](../2.%20ai-workflows/pr-review-prompts.md)
+**Prompts:** [pr-reviewer agent](../8.%20agents/pr-reviewer/)
 
 ---
 
@@ -28,7 +28,7 @@ Before using AI:
 ### Phase 1 — PR Understanding
 
 * Goal: Build a mental model of the change.  
-* Use **Phase 1** prompt in [pr-review-prompts.md](../2.%20ai-workflows/pr-review-prompts.md).
+* Use **Phase 1** prompt in [pr-reviewer agent](../8.%20agents/pr-reviewer/).
 
 ---
 
@@ -37,7 +37,7 @@ Before using AI:
 * Goal: Verify the PR reuses existing design and abstractions — not just "good code" in isolation.  
 * **Run for any feature PR** in an existing subsystem. Skip typo-only or dependency-only changes.  
 * Attach design docs, ADRs, and 2–3 similar features with `@` before pasting the prompt.  
-* Use **Phase 1.5** prompt in [pr-review-prompts.md](../2.%20ai-workflows/pr-review-prompts.md).  
+* Use **Phase 1.5** prompt in [pr-reviewer agent](../8.%20agents/pr-reviewer/).  
 * If verdict is **blocking**, stop and request rework before Phase 2.
 
 ---
@@ -45,7 +45,7 @@ Before using AI:
 ### Phase 2 — Risk Classification
 
 * Goal: Identify where attention should go.  
-* Use **Phase 2** prompt in [pr-review-prompts.md](../2.%20ai-workflows/pr-review-prompts.md).
+* Use **Phase 2** prompt in [pr-reviewer agent](../8.%20agents/pr-reviewer/).
 
 ---
 
@@ -62,14 +62,14 @@ Before using AI:
 
 ### Phase 4 — Deep Focus Review
 
-Run **one** focus prompt from [pr-review-prompts.md](../2.%20ai-workflows/pr-review-prompts.md) matching the PR type (security, reliability, maintainability, or performance).
+Run **one** focus prompt from [pr-reviewer agent](../8.%20agents/pr-reviewer/) matching the PR type (security, reliability, maintainability, or performance).
 
 ---
 
 ### Phase 5 — Adversarial Review
 
 * Goal: Break the system mentally.  
-* Use **Phase 5** prompt in [pr-review-prompts.md](../2.%20ai-workflows/pr-review-prompts.md).
+* Use **Phase 5** prompt in [pr-reviewer agent](../8.%20agents/pr-reviewer/).
 
 ---
 

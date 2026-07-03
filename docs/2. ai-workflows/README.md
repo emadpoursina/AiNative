@@ -1,16 +1,14 @@
 # AI Workflows
 
-Standalone, versioned AI prompts. Copy into Cursor or any tool — no prose mixed in.
+Generic AI templates shared across agents — not task-specific.
 
 | File | Purpose |
 |------|---------|
-| [agent-handoff-template.md](./agent-handoff-template.md) | Structured handoff between coordinator, worker, reviewer, and groomer agents |
 | [coordinator-worker.md](./coordinator-worker.md) | Research → plan → implement → verify development pattern (overview) |
-| [cursor-plan/](./cursor-plan/) | Cursor plan agent — phased prompts; use with `@cursor-plan` skill and `planning-gate` rule |
-| [specs-md.md](./specs-md.md) | [specs.md](https://specs.md/) — planning and implementation in application repos (FIRE / Simple / AI-DLC) |
-| [pr-review-prompts.md](./pr-review-prompts.md) | Staged PR review prompts (includes Phase 1.5 architecture compliance) |
-| [task-grooming-prompts.md](./task-grooming-prompts.md) | Backlog grooming and meeting prep |
+| [agent-handoff-template.md](./agent-handoff-template.md) | Structured handoff between coordinator, worker, reviewer, and groomer agents |
 | [cursor-rules.md](./cursor-rules.md) | Cursor / Anthropic-optimized coding rules template |
 | [claude-md-template.md](./claude-md-template.md) | Blank `CLAUDE.md` / `.cursor/rules/ai-rules.mdc` template for new projects |
 
-Referenced from [systems/](../systems/) docs and [`.cursor/rules/`](../../.cursor/rules/).
+**Per-task agents** (cursor-plan, pr-reviewer, task-groomer, specs-planner): [8. agents/](../8.%20agents/)
+
+Referenced from [systems/](../1.%20systems/) docs and [`.cursor/rules/`](../../.cursor/rules/).

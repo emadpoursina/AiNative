@@ -30,14 +30,21 @@ AiNative/
     │   ├── pr-review-system.md
     │   └── release-management-system.md
     │
-    ├── ai-workflows/                  # Reusable AI prompts — extracted and versioned
+    ├── ai-workflows/                  # Generic AI templates — coordinator pattern, handoffs, rules
     │   ├── README.md
     │   ├── coordinator-worker.md
-    │   ├── cursor-plan/               # Phased Cursor prompts — research through docs
-    │   ├── specs-md.md                # specs.md framework — app planning & implementation
-    │   ├── pr-review-prompts.md
-    │   ├── task-grooming-prompts.md
-    │   └── cursor-rules.md
+    │   ├── agent-handoff-template.md
+    │   ├── cursor-rules.md
+    │   └── claude-md-template.md
+    │
+    ├── agents/                        # Per-task AI agents — agent.md, skill.md, rule.md per task
+    │   ├── README.md
+    │   ├── _skills/                   # Central skill library (source of truth)
+    │   ├── template/                  # Scaffold for new agents
+    │   ├── cursor-plan/
+    │   ├── pr-reviewer/
+    │   ├── task-groomer/
+    │   └── specs-planner/
     │
     ├── reference/                     # Evergreen technical knowledge — updated in place
     │   ├── README.md
@@ -109,13 +116,25 @@ scratch/                               # Gitignored — raw capture, no quality 
 
 ### Layer 2 — AI Workflows (`docs/ai-workflows/`)
 
-**What it holds:** Standalone, versioned AI prompts. The coordinator-worker development pattern. Cursor plan agent (phased feature prompts). specs.md integration guide for application repos. Agent handoff template. PR review phases. Task grooming. Cursor rules templates.
+**What it holds:** Generic AI templates not tied to one task — the coordinator-worker development pattern, agent handoff template, Cursor rules template, and `CLAUDE.md` bootstrap template.
 
-**Why it exists:** AI prompts buried inside system documents are hard to find and impossible to reuse across contexts. Extracting them into their own folder gives them a canonical location you can reference from Cursor rules, paste into any tool, and improve independently of the workflow doc they originally came from.
+**Why it exists:** Some AI artifacts are shared infrastructure, not task-specific agents. Keeping them here avoids duplicating the coordinator pattern in every agent folder.
 
-**How it compounds:** This becomes your prompt library. Every time you write a prompt that works well — for release notes, architecture review, onboarding docs, debugging assistance — you add it here. Over time it encodes your thinking patterns in a reusable form. It is the most leveraged folder in the repo.
+**How it compounds:** The coordinator-worker pattern and handoff template anchor all per-task agents in `agents/`. New generic templates land here; task-specific tuning lives in agent folders.
 
-**Rule:** Each file in this folder is a standalone prompt or prompt system. No prose explanations mixed in — those belong in `systems/`.
+**Rule:** No task-specific prompts here — those belong in `agents/<name>/`. No prose workflow explanations — those belong in `systems/`.
+
+---
+
+### Layer 8 — Agents (`docs/agents/`)
+
+**What it holds:** Per-task AI agents. Each agent is a folder with three core files: `agent.md` (what it does, when to use), `skill.md` (skills copied inline from `_skills/`), and `rule.md` (agent-specific constraints). A central `_skills/` library is the source of truth; each agent's `skill.md` copies what it needs for self-contained use.
+
+**Why it exists:** Prompts scattered across workflow docs are hard to tune per task. One folder per agent lets you iterate `agent.md`, `skill.md`, and `rule.md` independently as you learn what works for that job — without cross-contaminating other agents.
+
+**How it compounds:** For every new task, add a new agent folder from `template/`. Reusable skills discovered during tuning go into `_skills/` and get copied to other agents. Over time you build a library of tuned agents and skills that encode how you work with AI on specific jobs.
+
+**Rule:** One agent per task type. Three core files always present. Skills are copied inline in `skill.md` (not just linked). Supporting phase files stay in the same agent folder.
 
 ---
 
@@ -281,9 +300,12 @@ The structure is designed so retrieval requires no search. The folder names are 
 | What broke and why | `postmortems/` |
 | How to run a release | `systems/release-management-system.md` |
 | Agent handoff between AI passes | `ai-workflows/agent-handoff-template.md` |
-| Cursor plan agent (feature work) | `ai-workflows/cursor-plan/` |
-| specs.md (app planning & implementation) | `ai-workflows/specs-md.md` |
-| A PR review prompt | `ai-workflows/pr-review-prompts.md` |
+| A per-task AI agent | `agents/<name>/` — start with `agent.md` |
+| Cursor plan agent (feature work) | `agents/cursor-plan/` |
+| specs.md (app planning & implementation) | `agents/specs-planner/` |
+| PR review prompts | `agents/pr-reviewer/` |
+| Task grooming / meeting prep | `agents/task-groomer/` |
+| Reusable agent skills | `agents/_skills/` |
 | How to run a planning meeting | `systems/task-management-system.md` |
 
 Project-specific context (board URL, approvers, stack) belongs in the project repo or `scratch/` — not in this OS repo.
@@ -343,7 +365,8 @@ Three rules that do the most work:
 | Layer | What it builds |
 |---|---|
 | `systems/` | Operational reliability and consistency |
-| `ai-workflows/` | Thinking leverage and automation |
+| `ai-workflows/` | Shared AI patterns and templates |
+| `agents/` | Per-task agent tuning and skill library |
 | `reference/commands/` | Tool fluency and fast recall |
 | `reference/architecture/` | Architectural judgment |
 | `debugging/` | Pattern recognition and debugging speed |

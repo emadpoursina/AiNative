@@ -7,11 +7,11 @@ alwaysApply: true
 
 For any task touching 2 or more files:
 
-1. Run Phase 1 research first — reference `docs/2. ai-workflows/cursor-plan/1-research.md` or `@cursor-plan phase=1`
+1. Run Phase 1 research first — reference `docs/8. agents/cursor-plan/1-research.md` or `@cursor-plan phase=1`
 2. Present the research report and wait for confirmation before planning
-3. Run Phase 2 synthesis — reference `docs/2. ai-workflows/cursor-plan/2-synthesis.md` or `@cursor-plan phase=2`
+3. Run Phase 2 synthesis — reference `docs/8. agents/cursor-plan/2-synthesis.md` or `@cursor-plan phase=2`
 4. Present the plan and wait for explicit approval before writing any code
-5. Only then implement, one step at a time — reference `docs/2. ai-workflows/cursor-plan/3-implementation.md`
+5. Only then implement, one step at a time — reference `docs/8. agents/cursor-plan/3-implementation.md`
 
 Do not write code before the plan is confirmed. If the task is ambiguous, ask one clarifying question before starting research.
 

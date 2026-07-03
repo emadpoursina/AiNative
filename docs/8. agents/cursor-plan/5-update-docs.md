@@ -15,7 +15,7 @@ FEATURE: [SAME AS PHASE 1]
 
 <context>
 Reference changed files: @path/to/changed/files
-Reference synthesis plan: @docs/2. ai-workflows/cursor-plan/2-synthesis.md output
+Reference synthesis plan: @docs/8. agents/cursor-plan/2-synthesis.md output
 </context>
 
 ---
@@ -25,7 +25,7 @@ Reference synthesis plan: @docs/2. ai-workflows/cursor-plan/2-synthesis.md outpu
 ### 1. CLAUDE.md / README.md
 
 ```
-Referencing docs/2. ai-workflows/cursor-plan/5-update-docs.md, update the repo CLAUDE.md to reflect this feature.
+Referencing docs/8. agents/cursor-plan/5-update-docs.md, update the repo CLAUDE.md to reflect this feature.
 
 Add or update:
 - Any new environment variables introduced
@@ -41,7 +41,7 @@ Keep it short. CLAUDE.md is for AI context, not a tutorial.
 ### 2. Inline code comments
 
 ```
-Referencing docs/2. ai-workflows/cursor-plan/5-update-docs.md, add or update inline comments for the changed code.
+Referencing docs/8. agents/cursor-plan/5-update-docs.md, add or update inline comments for the changed code.
 
 Rules:
 - Comment the WHY, not the WHAT
@@ -57,7 +57,7 @@ Files: @path/to/file.ts
 ### 3. Changelog entry
 
 ```
-Referencing docs/2. ai-workflows/cursor-plan/5-update-docs.md, write a changelog entry for this feature.
+Referencing docs/8. agents/cursor-plan/5-update-docs.md, write a changelog entry for this feature.
 
 Format:
 ## [Unreleased]
@@ -79,7 +79,7 @@ Keep each bullet to one sentence. No implementation details.
 ### 4. Commit message
 
 ```
-Referencing docs/2. ai-workflows/cursor-plan/5-update-docs.md, write the final commit message for this feature.
+Referencing docs/8. agents/cursor-plan/5-update-docs.md, write the final commit message for this feature.
 
 Follow Conventional Commits:
 - Type: feat / fix / refactor / test / docs / chore

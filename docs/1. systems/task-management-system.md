@@ -124,7 +124,7 @@ Optional blockers or related tasks.
 
 ### AI — Todo-ready grooming
 
-Use when a Backlog card is rough and you want it ready for **Todo**. Read [template](#template), [good vs bad](#good-vs-bad), [priority](#priority-use-only-these-four), and [labels](#labels) first — then run the **Todo-ready grooming** prompt in [task-grooming-prompts.md](../ai-workflows/task-grooming-prompts.md).
+Use when a Backlog card is rough and you want it ready for **Todo**. Read [template](#template), [good vs bad](#good-vs-bad), [priority](#priority-use-only-these-four), and [labels](#labels) first — then run the **Todo-ready grooming** prompt in [task-groomer agent](../8.%20agents/task-groomer/).
 
 AI drafts; you fix assumptions, assign owner + reviewer, then move to Todo.
 
@@ -160,7 +160,7 @@ No deep debugging or architecture debates.
 
 #### AI — Monday planning prep (async)
 
-Run day before or morning of the meeting. Use **Monday planning prep** in [task-grooming-prompts.md](../ai-workflows/task-grooming-prompts.md). AI drafts; team confirms in the meeting.
+Run day before or morning of the meeting. Use **Monday planning prep** in [task-groomer agent](../8.%20agents/task-groomer/). AI drafts; team confirms in the meeting.
 
 After AI: confirm shortlist in the meeting; run [Todo-ready grooming](#ai--todo-ready-grooming) on any card still rough.
 
@@ -172,7 +172,7 @@ After AI: confirm shortlist in the meeting; run [Todo-ready grooming](#ai--todo-
 
 #### AI — Friday meeting prep (async)
 
-Run day before or morning of the meeting. Use **Friday delivery prep** in [task-grooming-prompts.md](../ai-workflows/task-grooming-prompts.md). AI drafts; team validates in the meeting.
+Run day before or morning of the meeting. Use **Friday delivery prep** in [task-groomer agent](../8.%20agents/task-groomer/). AI drafts; team validates in the meeting.
 
 After AI: validate in the meeting; move cards; confirm deploy per [release system](./release-management-system.md).
 

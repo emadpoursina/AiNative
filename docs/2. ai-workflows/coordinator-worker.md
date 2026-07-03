@@ -2,9 +2,11 @@
 
 Multi-phase development with separate research, planning, and implementation passes.
 
-**Cursor prompts:** Use the [cursor-plan agent](./cursor-plan/) for copy-paste phase prompts with structured output formats. This file is the overview; the cursor-plan folder is canonical for Cursor sessions on AiNative itself.
+**Cursor prompts:** Use the [cursor-plan agent](../8.%20agents/cursor-plan/) for copy-paste phase prompts with structured output formats. This file is the overview; the cursor-plan agent folder is canonical for Cursor sessions on AiNative itself.
 
-**Application repos:** Use [specs.md](./specs-md.md) ([specs.md](https://specs.md/)) for planning and implementation — FIRE flow maps directly to the phases below.
+**Application repos:** Use [specs-planner agent](../8.%20agents/specs-planner/) ([specs.md](https://specs.md/)) for planning and implementation — FIRE flow maps directly to the phases below.
+
+**Concrete agents:** See [8. agents/](../8.%20agents/) for all per-task agent implementations of this pattern.
 
 ---
 
@@ -38,7 +40,7 @@ Output:
 
 Do not write code until the plan is confirmed if the task involves more than 2 files.
 
-Prompts: docs/2. ai-workflows/cursor-plan/2-synthesis.md
+Prompts: docs/8. agents/cursor-plan/2-synthesis.md
 ```
 
 ---
@@ -98,11 +100,11 @@ When a phase finishes and another agent (or human) continues the work, fill out 
 ## Starter prompt (Cursor)
 
 ```text
-Referencing docs/2. ai-workflows/cursor-plan/1-research.md, start Research for [Feature Name].
+Referencing docs/8. agents/cursor-plan/1-research.md, start Research for [Feature Name].
 
 FEATURE: [one sentence]
 REPO: [project name]
 ENTRY POINTS: @folder/or/files
 ```
 
-See [cursor-plan/README.md](./cursor-plan/README.md) for all phase starter prompts.
+See [cursor-plan/agent.md](../8.%20agents/cursor-plan/agent.md) for all phase starter prompts.

@@ -13,7 +13,8 @@
   ├── scratch/                  # gitignored — raw capture during work
   └── docs/
       ├── 1. systems/           # Universal workflows (task, PR, release)
-      ├── 2. ai-workflows/      # Versioned AI prompts
+      ├── 2. ai-workflows/      # Generic AI templates (coordinator pattern, handoffs)
+      ├── 8. agents/            # Per-task agents — agent.md, skill.md, rule.md
       ├── 3. reference/         # Evergreen setup, commands, architecture
       ├── 4. debugging/         # Bug pattern library
       ├── 6. decisions/       # ADRs
@@ -49,8 +50,9 @@
 When working in AiNative or repos using this OS:
 
 - Architecture spec: [ENGINEERING-OS.md](./ENGINEERING-OS.md)
-- PR review: [pr-review-system.md](./docs/1.%20systems/pr-review-system.md); prompts in [pr-review-prompts.md](./docs/2.%20ai-workflows/pr-review-prompts.md) — run Phase 1.5 architecture compliance for feature PRs in existing subsystems
-- Task grooming / meetings: [task-grooming-prompts.md](./docs/2.%20ai-workflows/task-grooming-prompts.md)
+- PR review: [pr-review-system.md](./docs/1.%20systems/pr-review-system.md); prompts in [pr-reviewer agent](./docs/8.%20agents/pr-reviewer/) — run Phase 1.5 architecture compliance for feature PRs in existing subsystems
+- Task grooming / meetings: [task-groomer agent](./docs/8.%20agents/task-groomer/)
+- Multi-file features: [cursor-plan agent](./docs/8.%20agents/cursor-plan/) — overview in [coordinator-worker.md](./docs/2.%20ai-workflows/coordinator-worker.md)
 - Multi-client releases: [client-compatibility-system.md](./docs/1.%20systems/client-compatibility-system.md) — pair with release management; run pre-tag check and post-deploy monitor
 - Commands and setup: [docs/3. reference/](./docs/3.%20reference/) — navigate by domain, do not guess
 - Local shared databases (Docker): [local-shared-services.md](./docs/3.%20reference/setup/local-shared-services.md) — compose at `/Users/emad/docker-infrastructure/docker-compose.yml`

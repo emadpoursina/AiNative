@@ -16,7 +16,7 @@ FEATURE: [SAME AS PHASE 1]
 </task>
 
 <context>
-Paste the Phase 1 research report here, or reference it with @docs/2. ai-workflows/cursor-plan/1-research.md output or a filled handoff artifact.
+Paste the Phase 1 research report here, or reference it with @docs/8. agents/cursor-plan/1-research.md output or a filled handoff artifact.
 </context>
 
 <plan_requirements>

@@ -1,0 +1,16 @@
+# Skill — Doc update after work
+
+Keep docs, comments, and changelogs in sync with what shipped.
+
+## What to update
+
+1. **CLAUDE.md / README.md** — new env vars, scripts, modules, dependencies (concise, AI context only)
+2. **Inline comments** — WHY not WHAT; flag non-obvious business logic; mark workarounds with `TODO: [reason]`
+3. **Changelog** — Added / Changed / Fixed bullets, one sentence each, no implementation details
+4. **Commit message** — Conventional Commits format
+
+## Rules
+
+- Do not document what is already clear from code
+- Do not update docs for unchanged files
+- CLAUDE.md stays concise — read on every session

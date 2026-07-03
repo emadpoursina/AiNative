@@ -1,6 +1,6 @@
-# Task grooming prompts
+# Skills — Task groomer agent
 
-Copy-paste prompts for backlog grooming and meeting prep. Workflow context: [task-management-system.md](../systems/task-management-system.md).
+Grooming and meeting prep prompts copied inline for self-contained use.
 
 ---
 
