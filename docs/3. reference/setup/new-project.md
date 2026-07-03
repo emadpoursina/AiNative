@@ -47,10 +47,10 @@
 Add persistent AI rules so agents read your stack and constraints once per session:
 
 - Copy [claude-md-template.md](../../2.%20ai-workflows/claude-md-template.md) to the project root as `CLAUDE.md` (Claude Code) or into `.cursor/rules/ai-rules.mdc` (Cursor)
-- Install [specs-planner agent](../../8.%20agents/specs-planner/) for planning and implementation: `npx specsmd@latest install` (default: FIRE flow)
-- Optional: copy `.cursor/skills/cursor-plan/` and `.cursor/rules/planning-gate.mdc` from AiNative if you prefer `@cursor-plan` over specs.md slash commands
-- If using cursor-plan: copy or symlink [cursor-plan/](../../8.%20agents/cursor-plan/) phase prompts into `docs/8. agents/cursor-plan/` (one canonical copy only)
+- Install [specs-planner agent](../../8.%20agents/specs-planner/) for planning and implementation: `npx specsmd@latest install` (default: FIRE flow) — this is the default planning tool for application repos
+- Add a planning-gate rule that enforces `/specsmd-fire-planner` approval before multi-file implementation (adapt `.cursor/rules/planning-gate.mdc` from AiNative — swap the `cursor-plan` references for the specs.md FIRE commands)
 - Fill in project context, stack, and out-of-scope items — see [CLAUDE.md](../../../CLAUDE.md) in AiNative for a live example
+- `cursor-plan` is AiNative-specific (used only for editing this docs repo's own workflows) — do not install it in application repos
 
 When an agent bootstraps a new project, include a local `scratch/` folder for reference files and raw notes during work:
 
@@ -71,7 +71,7 @@ When an agent bootstraps a new project, include a local `scratch/` folder for re
 
 ## Development
 
-Overall process — use the [coordinator-worker pattern](../../2.%20ai-workflows/coordinator-worker.md). **Application repos:** [specs-planner agent](../../8.%20agents/specs-planner/) (`/specsmd-fire-planner`, `/specsmd-fire-builder`). **AiNative-style cursor-plan:** [cursor-plan/](../../8.%20agents/cursor-plan/).
+Overall process — use the [coordinator-worker pattern](../../2.%20ai-workflows/coordinator-worker.md) via [specs-planner](../../8.%20agents/specs-planner/): `/specsmd-fire-planner` to plan, `/specsmd-fire-builder` to execute. (`cursor-plan` is only used inside AiNative itself.)
 
 1. **Research** — Coordinator agent analyzes the codebase for relevant files
 2. **Synthesis** — Second pass creates a plan from research
