@@ -20,6 +20,7 @@ Supporting files (phase prompts, etc.) live in the same folder when the workflow
 | [pr-reviewer](./pr-reviewer/) | Staged PR review: understanding → architecture → risk → deep focus → adversarial |
 | [task-groomer](./task-groomer/) | Backlog grooming and Monday/Friday meeting prep |
 | [specs-planner](./specs-planner/) | specs.md integration for application repo planning and implementation |
+| [project-bootstrapper](./project-bootstrapper/) | New-project environment setup from a single spec doc, up to the point specs-planner takes over |
 
 ## Skill library
 

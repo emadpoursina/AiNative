@@ -44,6 +44,8 @@
 
 ### Agent setup
 
+Run [project-bootstrapper](../../8.%20agents/project-bootstrapper/) with your project documentation file (spec/PRD) to automate the steps below in one pass. Manual steps if doing it yourself:
+
 Add persistent AI rules so agents read your stack and constraints once per session:
 
 - Copy [claude-md-template.md](../../2.%20ai-workflows/claude-md-template.md) to the project root as `CLAUDE.md` (Claude Code) or into `.cursor/rules/ai-rules.mdc` (Cursor)
