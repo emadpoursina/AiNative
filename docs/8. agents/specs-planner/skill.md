@@ -6,10 +6,10 @@ specs.md integration skills copied inline for self-contained use.
 
 ## Install (application repos)
 
-Prerequisites: Node.js 18+, Cursor (or another supported AI tool).
+Prerequisites: [Bun](https://bun.sh), Cursor (or another supported AI tool).
 
 ```bash
-npx specsmd@latest install
+bunx specsmd@latest install
 ```
 
 Select a flow when prompted. Installer adds agent definitions, standards templates, and Cursor slash commands under `.cursor/commands/`.

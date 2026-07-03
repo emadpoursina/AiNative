@@ -18,8 +18,8 @@ Default for most app work: **FIRE**.
 
 ## Inputs
 
-- Node.js 18+, Cursor (or supported AI tool)
-- Project repo with `npx specsmd@latest install` completed
+- Bun, Cursor (or supported AI tool)
+- Project repo with `bunx specsmd@latest install` completed
 
 ## Outputs
 

@@ -7,7 +7,7 @@ Constraints specific to this agent. Generic repo rules live in `.cursor/rules/` 
 - Read the input project documentation file fully before proposing a stack or structure
 - Confirm the tech stack, package versions, and repo layout with the user before running installs — ask, do not guess, on anything the doc leaves ambiguous
 - Follow the [Bootstrap checklist](../../3.%20reference/setup/new-project.md#bootstrap-checklist) in `new-project.md`
-- Install [specs-planner](../../specs-planner/) (`npx specsmd@latest install`, default FIRE) as the last setup step, so the input doc becomes the working `specs.md`/intent source
+- Install [specs-planner](../../specs-planner/) (`bunx specsmd@latest install`, default FIRE) as the last setup step, so the input doc becomes the working `specs.md`/intent source
 - Write `CLAUDE.md` or `.cursor/rules/ai-rules.mdc` from [claude-md-template.md](../../2.%20ai-workflows/claude-md-template.md), filled with the confirmed stack and constraints
 - Create `scratch/` and add it to `.gitignore`
 - Use Conventional Commits for the initial scaffold commit(s)
@@ -15,7 +15,7 @@ Constraints specific to this agent. Generic repo rules live in `.cursor/rules/` 
 ## Must not
 
 - Write feature/business logic — this agent only sets up the environment; implementation happens afterward via `specs-planner`
-- Pick dependency versions without checking latest via the package manager
+- Pick dependency versions without checking latest via `bun` (or the doc's package manager)
 - Install `cursor-plan` in the new project — that agent is AiNative-specific
 - Skip the planning-gate confirmation before scaffolding multiple files/directories
 

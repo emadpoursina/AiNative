@@ -49,7 +49,7 @@ Run [project-bootstrapper](../../8.%20agents/project-bootstrapper/) with your pr
 Add persistent AI rules so agents read your stack and constraints once per session:
 
 - Copy [claude-md-template.md](../../2.%20ai-workflows/claude-md-template.md) to the project root as `CLAUDE.md` (Claude Code) or into `.cursor/rules/ai-rules.mdc` (Cursor)
-- Install [specs-planner agent](../../8.%20agents/specs-planner/) for planning and implementation: `npx specsmd@latest install` (default: FIRE flow) — this is the default planning tool for application repos
+- Install [specs-planner agent](../../8.%20agents/specs-planner/) for planning and implementation: `bunx specsmd@latest install` (default: FIRE flow) — this is the default planning tool for application repos
 - Add a planning-gate rule that enforces `/specsmd-fire-planner` approval before multi-file implementation (adapt `.cursor/rules/planning-gate.mdc` from AiNative — swap the `cursor-plan` references for the specs.md FIRE commands)
 - Fill in project context, stack, and out-of-scope items — see [CLAUDE.md](../../../CLAUDE.md) in AiNative for a live example
 - `cursor-plan` is AiNative-specific (used only for editing this docs repo's own workflows) — do not install it in application repos
