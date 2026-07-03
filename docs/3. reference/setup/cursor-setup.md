@@ -11,7 +11,8 @@ Configure MCP servers for tools the agent needs (database, Stripe, Firebase, etc
 - Claude Code reads [CLAUDE.md](../../../CLAUDE.md) at repo root — same constraints as Cursor rules
 - Bootstrap new projects: copy [claude-md-template.md](../../2.%20ai-workflows/claude-md-template.md) to project root
 - Reusable prompt templates: [cursor-rules.md](../../2.%20ai-workflows/cursor-rules.md)
-- Feature planning (research → plan → implement): [cursor-plan/](../../2.%20ai-workflows/cursor-plan/) — phase prompts; skill wires them together
+- Feature planning (research → plan → implement): [cursor-plan/](../../2.%20ai-workflows/cursor-plan/) — phase prompts; skill wires them together (AiNative repo)
+- Application repos: [specs.md](../../2.%20ai-workflows/specs-md.md) — install with `npx specsmd@latest install`; Cursor slash commands under `.cursor/commands/`
 - Agent skills: `.cursor/skills/` or user skills directory
 
 ## Indexing and docs

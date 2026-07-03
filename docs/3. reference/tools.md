@@ -26,8 +26,9 @@
 - [Dribbble](https://dribbble.com/)
 - [Best Website Gallery](https://bestwebsite.gallery/)
 
-### LLM
+### LLM / AI dev
 
+- [specs.md](https://specs.md/) — planning and implementation framework; see [specs-md.md](../2.%20ai-workflows/specs-md.md)
 - [DeepSeek Chat](https://chat.deepseek.com/)
 - [raphael.app](https://raphael.app/)
 - [Perplexity](https://www.perplexity.ai/)

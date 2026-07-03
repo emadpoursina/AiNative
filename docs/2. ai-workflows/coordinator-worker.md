@@ -2,7 +2,9 @@
 
 Multi-phase development with separate research, planning, and implementation passes.
 
-**Cursor prompts:** Use the [cursor-plan agent](./cursor-plan/) for copy-paste phase prompts with structured output formats. This file is the overview; the cursor-plan folder is canonical for Cursor sessions.
+**Cursor prompts:** Use the [cursor-plan agent](./cursor-plan/) for copy-paste phase prompts with structured output formats. This file is the overview; the cursor-plan folder is canonical for Cursor sessions on AiNative itself.
+
+**Application repos:** Use [specs.md](./specs-md.md) ([specs.md](https://specs.md/)) for planning and implementation — FIRE flow maps directly to the phases below.
 
 ---
 

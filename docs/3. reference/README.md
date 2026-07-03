@@ -7,7 +7,7 @@ Evergreen technical knowledge — updated in place, no dates.
 | File | Topic |
 |------|-------|
 | [new-project.md](./setup/new-project.md) | Planning, PRD, development phases, design, deployment |
-| [cursor-setup.md](./setup/cursor-setup.md) | MCP, rules, skills, indexing |
+| [cursor-setup.md](./setup/cursor-setup.md) | MCP, rules, skills, specs.md, indexing |
 | [server-setup.md](./setup/server-setup.md) | SSH keys, users, remote access |
 | [local-shared-services.md](./setup/local-shared-services.md) | Local Docker databases (MariaDB, MongoDB, Adminer) |
 
