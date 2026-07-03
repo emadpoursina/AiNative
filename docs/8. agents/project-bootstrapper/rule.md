@@ -8,6 +8,7 @@ Constraints specific to this agent. Generic repo rules live in `.cursor/rules/` 
 - Confirm the tech stack, package versions, and repo layout with the user before running installs — ask, do not guess, on anything the doc leaves ambiguous
 - Follow the [Bootstrap checklist](../../3.%20reference/setup/new-project.md#bootstrap-checklist) in `new-project.md`
 - Install [specs-planner](../../specs-planner/) (`bunx specsmd@latest install`, default FIRE) as the last setup step, so the input doc becomes the working `specs.md`/intent source
+- After install, run `/specsmd-fire` in Cursor to initialize the project (state.yaml, standards) — do not leave specs.md installed but uninitialized
 - Write `CLAUDE.md` or `.cursor/rules/ai-rules.mdc` from [claude-md-template.md](../../2.%20ai-workflows/claude-md-template.md), filled with the confirmed stack and constraints
 - Create `scratch/` and add it to `.gitignore`
 - Use Conventional Commits for the initial scaffold commit(s)

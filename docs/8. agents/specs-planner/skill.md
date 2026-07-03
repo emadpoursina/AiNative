@@ -14,6 +14,8 @@ bunx specsmd@latest install
 
 Select a flow when prompted. Installer adds agent definitions, standards templates, and Cursor slash commands under `.cursor/commands/`.
 
+After install, run `/specsmd-fire` in Cursor to initialize the project — the orchestrator sets up `.specs-fire/state.yaml` and standards. Install alone does not initialize specs.md.
+
 Optional: [IDE extension](https://specs.md/getting-started/ide-extension.md) for progress tracking.
 
 ---

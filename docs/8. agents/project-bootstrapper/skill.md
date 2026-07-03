@@ -23,8 +23,9 @@ Run in order, confirming stack/structure with the user before step 3:
 5. **Install dependencies** — `bun install` (or the doc's package manager if it specifies one), latest versions unless pinned
 6. **Agent config** — copy [claude-md-template.md](../../2.%20ai-workflows/claude-md-template.md) to `CLAUDE.md` or `.cursor/rules/ai-rules.mdc`; fill in project context, stack, and out-of-scope items from the input doc
 7. **Install specs.md** — `bunx specsmd@latest install` (default FIRE flow) per [specs-planner](../../specs-planner/skill.md#install-application-repos); the input doc becomes the seed for the first intent
-8. **Scratch folder** — create `scratch/`, confirm it's gitignored
-9. **Handoff** — tell the user to run `/specsmd-fire-planner` against the spec to break it into sections/work items, then `/specsmd-fire-builder` per section
+8. **Initialize specs.md** — run `/specsmd-fire` in Cursor right after install so the orchestrator sets up `.specs-fire/state.yaml` and standards; installing alone is not enough
+9. **Scratch folder** — create `scratch/`, confirm it's gitignored
+10. **Handoff** — tell the user to run `/specsmd-fire-planner` against the spec to break it into sections/work items, then `/specsmd-fire-builder` per section
 
 ---
 
@@ -42,6 +43,6 @@ One commit per complete file set. Types: `feat`, `fix`, `refactor`, `test`, `doc
 |---------------------|-----------------------|
 | Research | Parse input doc, confirm stack |
 | Synthesis | Repo layout + install plan |
-| Implementation | Git init, scaffold, install deps, agent config, specs.md install |
+| Implementation | Git init, scaffold, install deps, agent config, specs.md install + init |
 | Verification | Confirm scaffold runs, agent config loads |
 | Update documents | Handoff to specs-planner for `specs.md`-driven implementation |
