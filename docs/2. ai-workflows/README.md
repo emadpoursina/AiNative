@@ -4,6 +4,7 @@ Generic AI templates shared across agents — not task-specific.
 
 | File | Purpose |
 |------|---------|
+| [agentic-coding.md](./agentic-coding.md) | Agentic coding system — AI layer (specs.md) and PIV (plan, implementation, validation) |
 | [coordinator-worker.md](./coordinator-worker.md) | Research → plan → implement → verify development pattern (overview) |
 | [agent-handoff-template.md](./agent-handoff-template.md) | Structured handoff between coordinator, worker, reviewer, and groomer agents |
 | [cursor-rules.md](./cursor-rules.md) | Cursor / Anthropic-optimized coding rules template |

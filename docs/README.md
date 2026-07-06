@@ -22,6 +22,7 @@ How this repo is organized. Full spec: [ENGINEERING-OS.md](../ENGINEERING-OS.md)
 | specs.md (app planning & implementation) | [8. agents/specs-planner/](./8.%20agents/specs-planner/) |
 | Reusable agent skills | [8. agents/_skills/](./8.%20agents/_skills/) |
 | Agent handoff between AI passes | [2. ai-workflows/agent-handoff-template.md](./2.%20ai-workflows/agent-handoff-template.md) |
+| Agentic coding system (AI layer + PIV) | [2. ai-workflows/agentic-coding.md](./2.%20ai-workflows/agentic-coding.md) |
 | Coordinator-worker dev pattern | [2. ai-workflows/coordinator-worker.md](./2.%20ai-workflows/coordinator-worker.md) |
 | How to run planning / board setup | [1. systems/task-management-system.md](./1.%20systems/task-management-system.md) |
 
