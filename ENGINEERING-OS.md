@@ -304,6 +304,7 @@ The structure is designed so retrieval requires no search. The folder names are 
 | Agent handoff between AI passes | `ai-workflows/agent-handoff-template.md` |
 | A per-task AI agent | `agents/<name>/` — start with `agent.md` |
 | PIV methodology (Plan, Implementation, Validation) | `ai-workflows/agentic-coding.md` |
+| Validation layer architecture | `ai-workflows/validation-layer.md` |
 | specs.md planning & implementation (PIV Plan + Implementation) | `agents/specs-planner/` |
 | PIV Validation — adversarial review | `agents/critic/` |
 | PIV Validation — prove the code works | `agents/tester/` |

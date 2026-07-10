@@ -1,6 +1,6 @@
 # Tester agent
 
-Proves the code works. Runs the test flows defined in the PIV Plan phase — unit, integration, E2E (with browser automation), and customer/user-flow tests — and reports concrete pass/fail per flow. Produces specific failure feedback that drives the Implement loop-back. Does not critique design (that is the [critic](../critic/)).
+Proves the code works. Runs the test flows defined in the PIV Plan phase through two sub-roles: **unit tester** (isolated components) and **system tester** (integration, E2E with browser automation, customer/user-flow tests). Reports concrete pass/fail per flow. Produces specific failure feedback that drives the Implement loop-back. Does not critique design (that is the [critic](../critic/)).
 
 Methodology: [PIV — Plan, Implementation, Validation](../../2.%20ai-workflows/agentic-coding.md). Runs as the second half of Validation, after the [critic](../critic/) agent. [pr-reviewer](../pr-reviewer/) is the separate final gate after Validation passes.
 
@@ -25,5 +25,7 @@ Methodology: [PIV — Plan, Implementation, Validation](../../2.%20ai-workflows/
 
 | File | Purpose |
 |------|---------|
-| skill.md | _To be filled in — test execution and E2E/browser-automation prompts_ |
-| rule.md | _To be filled in — when to loop back to Implement vs Plan_ |
+| [skill.md](./skill.md) | Unit tester and system tester prompts, re-verification after loop-back |
+| [rule.md](./rule.md) | Sub-role ordering, loop-back criteria, stop conditions |
+
+Architecture: [validation-layer.md](../../2.%20ai-workflows/validation-layer.md). Prompts: [skill.md](./skill.md). Constraints: [rule.md](./rule.md).

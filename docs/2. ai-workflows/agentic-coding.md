@@ -41,7 +41,7 @@ An agentic coding system has two main parts.
 
 ### Validation
 
-Validation is owned by two in-house agents: [critic](../8.%20agents/critic/) (adversarial review of plan and implementation — design holes, edge cases, spec/code mismatch) and [tester](../8.%20agents/tester/) (prove the code works — run the test flows defined in Plan; browser automation for E2E). Run critic first, then tester.
+Validation is owned by two in-house agents: [critic](../8.%20agents/critic/) (adversarial review of plan and implementation — design holes, edge cases, spec/code mismatch) and [tester](../8.%20agents/tester/) (prove the code works — run the test flows defined in Plan; browser automation for E2E). Run critic first, then tester. Full architecture: [validation-layer.md](./validation-layer.md).
 
 1. Multi-layer pyramid for catching bugs and problems before they reach PR.
 2. Prove the code actually works.

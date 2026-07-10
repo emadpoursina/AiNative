@@ -25,5 +25,7 @@ Methodology: [PIV — Plan, Implementation, Validation](../../2.%20ai-workflows/
 
 | File | Purpose |
 |------|---------|
-| skill.md | _To be filled in — review passes and output format (reuse `_skills/verification.md` shape)_ |
-| rule.md | _To be filled in — phase ordering and stop conditions_ |
+| [skill.md](./skill.md) | Plan, implementation, and post-execution review prompts (verification passes A–D) |
+| [rule.md](./rule.md) | Phase ordering, PASS/FAIL stop conditions, loop-back to Implement vs Plan |
+
+Architecture: [validation-layer.md](../../2.%20ai-workflows/validation-layer.md). Prompts: [skill.md](./skill.md). Constraints: [rule.md](./rule.md).

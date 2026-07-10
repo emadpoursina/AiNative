@@ -76,7 +76,7 @@ Overall process — follow [PIV (Plan, Implementation, Validation)](../../2.%20a
 
 1. **Plan** — specs.md planner captures intent and breaks it into work items (include test flows and validation strategy)
 2. **Implementation** — specs.md builder executes work items with small atomic commits
-3. **Validation** — [critic](../../8.%20agents/critic/) reviews plan + implementation, then [tester](../../8.%20agents/tester/) runs the Plan's test flows; loop back to Implement on fixable failures, or to Plan on a misunderstanding
+3. **Validation** — [critic](../../8.%20agents/critic/) reviews plan + implementation, then [tester](../../8.%20agents/tester/) runs the Plan's test flows; see [validation-layer.md](../../2.%20ai-workflows/validation-layer.md); loop back to Implement on fixable failures, or to Plan on a misunderstanding
 4. **PR review** — [pr-reviewer](../../8.%20agents/pr-reviewer/) is the final gate after Validation passes; a surprise there means Validation missed something
 
 ## Design

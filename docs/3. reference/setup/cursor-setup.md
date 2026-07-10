@@ -11,7 +11,7 @@ Configure MCP servers for tools the agent needs (database, Stripe, Firebase, etc
 - Bootstrap new projects: copy [claude-md-template.md](../../2.%20ai-workflows/claude-md-template.md) to project root
 - Reusable prompt templates: [cursor-rules.md](../../2.%20ai-workflows/cursor-rules.md)
 - PIV Plan + Implementation: [specs-planner agent](../../8.%20agents/specs-planner/) — install with `bunx specsmd@latest install`; use `/specsmd-fire-planner` then `/specsmd-fire-builder` under `.cursor/commands/`
-- PIV Validation: [critic](../../8.%20agents/critic/) and [tester](../../8.%20agents/tester/) agents; final gate via [pr-reviewer](../../8.%20agents/pr-reviewer/)
+- PIV Validation: [critic](../../8.%20agents/critic/) and [tester](../../8.%20agents/tester/) agents; architecture in [validation-layer.md](../../2.%20ai-workflows/validation-layer.md); final gate via [pr-reviewer](../../8.%20agents/pr-reviewer/)
 - Agent skills: `.cursor/skills/` or user skills directory
 
 ## Indexing and docs

@@ -17,6 +17,7 @@ How this repo is organized. Full spec: [ENGINEERING-OS.md](../ENGINEERING-OS.md)
 | Client/server compatibility | [1. systems/client-compatibility-system.md](./1.%20systems/client-compatibility-system.md) |
 | A per-task AI agent | [8. agents/](./8.%20agents/) — start with `agent.md` |
 | PIV methodology (Plan, Implementation, Validation) | [2. ai-workflows/agentic-coding.md](./2.%20ai-workflows/agentic-coding.md) |
+| Validation layer architecture | [2. ai-workflows/validation-layer.md](./2.%20ai-workflows/validation-layer.md) |
 | specs.md planning & implementation (PIV Plan + Implementation) | [8. agents/specs-planner/](./8.%20agents/specs-planner/) |
 | PIV Validation — adversarial review | [8. agents/critic/](./8.%20agents/critic/) |
 | PIV Validation — prove the code works | [8. agents/tester/](./8.%20agents/tester/) |

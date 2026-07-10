@@ -100,4 +100,4 @@ One commit per complete file set. Types: `feat`, `fix`, `refactor`, `test`, `doc
 
 <!-- source: _skills/verification.md -->
 
-specs.md stops at Implementation. After the builder passes, run the PIV Validation phase: [critic](../critic/) (adversarial review of plan + implementation), then [tester](../tester/) (execute the Plan's test flows). [pr-reviewer](../pr-reviewer/) is the separate final gate run only after Validation passes — a surprise there means the Validation layer missed something.
+specs.md stops at Implementation. After the builder passes, run the PIV Validation phase: [critic](../critic/) (adversarial review of plan + implementation), then [tester](../tester/) (execute the Plan's test flows). Architecture: [validation-layer.md](../../2.%20ai-workflows/validation-layer.md). [pr-reviewer](../pr-reviewer/) is the separate final gate run only after Validation passes — a surprise there means the Validation layer missed something.

@@ -32,7 +32,8 @@ Reusable skills in [`_skills/`](./_skills/). When tuning an agent, copy needed s
 | [research-first](./_skills/research-first.md) | Codebase scan before planning |
 | [mermaid-diagrams](./_skills/mermaid-diagrams.md) | Architecture and flow diagrams in plans |
 | [conventional-commits](./_skills/conventional-commits.md) | Commit message format |
-| [verification](./_skills/verification.md) | Post-implementation review passes |
+| [verification](./_skills/verification.md) | Post-implementation review passes (critic) |
+| [test-execution](./_skills/test-execution.md) | Unit and system test execution (tester) |
 | [doc-update-after-work](./_skills/doc-update-after-work.md) | Docs, changelog, comments after shipping |
 
 ## Add a new agent
