@@ -21,7 +21,7 @@ Run in order, confirming stack/structure with the user before step 3:
 3. **Git init** — initialize repo, first commit with `.gitignore` (include `scratch/`)
 4. **Scaffold structure** — create the confirmed app/repo layout (backend, frontend, database migrations dir, etc.)
 5. **Install dependencies** — `bun install` (or the doc's package manager if it specifies one), latest versions unless pinned
-6. **Agent config** — copy [claude-md-template.md](../../2.%20ai-workflows/claude-md-template.md) to `CLAUDE.md` or `.cursor/rules/ai-rules.mdc`; fill in project context, stack, and out-of-scope items from the input doc
+6. **Agent config** — copy [ai-rules-template.md](../../2.%20ai-workflows/ai-rules-template.md) into `.cursor/rules/ai-rules.mdc`; fill in project context, stack, and out-of-scope items from the input doc
 7. **Install specs.md** — `bunx specsmd@latest install` (default FIRE flow) per [specs-planner](../../specs-planner/skill.md#install-application-repos); the input doc becomes the seed for the first intent
 8. **Initialize specs.md** — run `/specsmd-fire` in Cursor right after install so the orchestrator sets up `.specs-fire/state.yaml` and standards; installing alone is not enough
 9. **Scratch folder** — create `scratch/`, confirm it's gitignored

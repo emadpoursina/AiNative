@@ -5,8 +5,6 @@ alwaysApply: true
 
 # AiNative — AI Rules
 
-Canonical copy also lives in `CLAUDE.md` at repo root (for Claude Code).
-
 ## Workflow
 
 - Always follow: **PIV — Plan → Implementation → Validation** — see `docs/2. ai-workflows/agentic-coding.md`. Plan and Implementation use specs.md; Validation uses the critic and tester agents.

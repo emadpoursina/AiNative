@@ -1,12 +1,17 @@
-# CLAUDE.md template
+# AI rules template
 
-Copy to a project root as `CLAUDE.md` (Claude Code) or into `.cursor/rules/ai-rules.mdc` (Cursor). Fill in placeholders; keep it short.
+Copy into `.cursor/rules/ai-rules.mdc` (Cursor). Fill in placeholders; keep it short.
 
-See live example: [CLAUDE.md](../../CLAUDE.md) in this repo.
+See live example: [ai-rules.mdc](../../.cursor/rules/ai-rules.mdc) in this repo.
 
 ---
 
 ```markdown
+---
+description: Core AI workflow, code style, and constraints for [PROJECT_NAME]
+alwaysApply: true
+---
+
 # [PROJECT_NAME] — AI Rules
 
 ## Project Context
@@ -21,8 +26,6 @@ See live example: [CLAUDE.md](../../CLAUDE.md) in this repo.
   └── config/       # Config service and env schema
   ```
 
----
-
 ## Workflow
 
 - Always follow: **PIV — Plan → Implementation → Validation** (Plan + Implementation via specs.md; Validation via critic and tester agents)
@@ -30,8 +33,6 @@ See live example: [CLAUDE.md](../../CLAUDE.md) in this repo.
 - After making changes, update related documentation if it exists
 - For ambiguous tasks: ask, do not guess
 - Commit style: Conventional Commits (`feat:`, `fix:`, `chore:`, `refactor:`, `test:`)
-
----
 
 ## Code Rules
 
@@ -43,16 +44,12 @@ See live example: [CLAUDE.md](../../CLAUDE.md) in this repo.
 - Remove filler and AI-style narration before finishing (`// This function handles...`)
 - Remove unused imports and variables before finalizing
 
----
-
 ## Constraints
 
 - No new external dependencies without explicit approval
 - Always output SQL / migration for manual review before suggesting `db push` or `migrate`
 - Terminal commands: check mentally before suggesting — no destructive defaults
 - Never expose secrets, tokens, or credentials in output
-
----
 
 ## Project-Specific Notes
 
@@ -61,8 +58,6 @@ See live example: [CLAUDE.md](../../CLAUDE.md) in this repo.
 <!-- - Auth is JWT with refresh token rotation — do not change the token flow -->
 <!-- - Multi-tenant: always scope queries by organizationId -->
 <!-- - BullMQ queues are defined in src/queues/ — follow the existing processor pattern -->
-
----
 
 ## Out of Scope
 

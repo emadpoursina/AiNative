@@ -14,7 +14,7 @@ Select **Simple** when prompted for the SDLC flow.
 
 The installer will:
 
-1. Detect available agentic coding tools (Claude Code, Cursor, etc.)
+1. Detect available agentic coding tools (Cursor, etc.)
 2. Install the spec agent and skills
 3. Set up slash commands for your tools
 

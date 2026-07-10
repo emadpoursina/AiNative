@@ -36,11 +36,11 @@ Copy into `.cursor/rules/` or project rules. Adjust stack-specific constraints.
 
 ---
 
-## Claude / XML tagging
+## Anthropic / XML tagging
 
 - Wrap context, file paths, and instructions in tags like `<file_content>`, `<task_description>`
 - Spend prompt space on negative constraints (what NOT to do)
-- Keep [CLAUDE.md](https://docs.anthropic.com/) short — not a novel; blank template in [claude-md-template.md](./claude-md-template.md), live example at repo root
+- Keep `.cursor/rules/ai-rules.mdc` short — not a novel; blank template in [ai-rules-template.md](./ai-rules-template.md), live example in [ai-rules.mdc](../../.cursor/rules/ai-rules.mdc)
 
 ---
 

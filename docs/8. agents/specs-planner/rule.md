@@ -8,7 +8,7 @@ AiNative conventions to keep when using specs.md in application repos.
 - Run [critic](../critic/) then [tester](../tester/) as the PIV Validation phase after the builder passes; run [pr-reviewer](../pr-reviewer/) only after Validation passes
 - Follow [release-management-system.md](../../1.%20systems/release-management-system.md) for releases
 - Capture raw notes in `scratch/`; promote to project docs on Friday review
-- Copy [claude-md-template.md](../../2.%20ai-workflows/claude-md-template.md) to `CLAUDE.md` or `.cursor/rules/ai-rules.mdc` in app repos
+- Copy [ai-rules-template.md](../../2.%20ai-workflows/ai-rules-template.md) into `.cursor/rules/ai-rules.mdc` in app repos
 - Commit `.specsmd/` and `.specs-fire/` (or `memory-bank/` for AI-DLC) with the project
 
 ## Must not

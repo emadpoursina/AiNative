@@ -19,7 +19,6 @@ It works inside Git. It requires no external tools. It stays alive through three
 ```text
 AiNative/
 ├── README.md
-├── CLAUDE.md                      # AI rules for Claude Code and agent bootstrap
 ├── .cursor/rules/                 # Cursor rules (engineering-os, ai-rules, Commit-style)
 │
 └── docs/
@@ -35,7 +34,7 @@ AiNative/
     │   ├── agentic-coding.md
     │   ├── agent-handoff-template.md
     │   ├── cursor-rules.md
-    │   └── claude-md-template.md
+    │   └── ai-rules-template.md
     │
     ├── agents/                        # Per-task AI agents — agent.md, skill.md, rule.md per task
     │   ├── README.md
@@ -118,7 +117,7 @@ scratch/                               # Gitignored — raw capture, no quality 
 
 ### Layer 2 — AI Workflows (`docs/ai-workflows/`)
 
-**What it holds:** Generic AI templates not tied to one task — the PIV methodology (Plan, Implementation, Validation), agent handoff template, Cursor rules template, and `CLAUDE.md` bootstrap template.
+**What it holds:** Generic AI templates not tied to one task — the PIV methodology (Plan, Implementation, Validation), agent handoff template, Cursor rules template, and `.cursor/rules/ai-rules.mdc` bootstrap template.
 
 **Why it exists:** Some AI artifacts are shared infrastructure, not task-specific agents. Keeping them here avoids duplicating the methodology in every agent folder.
 

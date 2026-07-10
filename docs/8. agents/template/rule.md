@@ -1,6 +1,6 @@
 # Rules — [Agent name]
 
-Constraints specific to this agent. Generic repo rules live in `.cursor/rules/` and `CLAUDE.md`.
+Constraints specific to this agent. Generic repo rules live in `.cursor/rules/`.
 
 ## Must
 

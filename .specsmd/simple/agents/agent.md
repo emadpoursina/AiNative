@@ -133,9 +133,8 @@ specs/                               # Existing specs (for state detection)
 When you need to ask the user a question (e.g., clarifying vague input), check for these tools:
 
 - `userInput` (Kiro)
-- `AskUserQuestionTool` (Claude Code)
 
-If either tool is available, use it to ask structured questions. If neither is available, ask directly in your response text.
+If a structured question tool is available, use it. Otherwise ask directly in your response text (Cursor and other tools).
 
 ## State Detection
 

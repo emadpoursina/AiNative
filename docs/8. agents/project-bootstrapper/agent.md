@@ -5,7 +5,7 @@ Bootstraps a brand-new project repo from a single project documentation file (sp
 ## When to use
 
 - Starting a new project repo and you have one project doc (spec, PRD, or `specs.md` draft) describing what to build
-- You want git, dependencies, and AI agent config (`CLAUDE.md`, specs.md) set up in one pass before implementation starts
+- You want git, dependencies, and AI agent config (`.cursor/rules/ai-rules.mdc`, specs.md) set up in one pass before implementation starts
 
 ## Inputs
 
@@ -14,7 +14,7 @@ Bootstraps a brand-new project repo from a single project documentation file (sp
 ## Outputs
 
 - Initialized git repo with the confirmed stack scaffolded and dependencies installed
-- `CLAUDE.md` (or `.cursor/rules/ai-rules.mdc`) filled in from [claude-md-template.md](../../2.%20ai-workflows/claude-md-template.md)
+- `.cursor/rules/ai-rules.mdc` filled in from [ai-rules-template.md](../../2.%20ai-workflows/ai-rules-template.md)
 - specs.md installed via [specs-planner](../../specs-planner/) (default: FIRE flow), ready to plan work items from the input spec
 - `scratch/` folder + `.gitignore` entry
 - Handoff: user runs `/specsmd-fire-planner` against the spec to break it into sections/work items, then `/specsmd-fire-builder` to implement

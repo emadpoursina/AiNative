@@ -90,7 +90,6 @@ After two weeks, add the next system. Do not introduce everything at once.
 ```text
 AiNative/
 ├── README.md
-├── CLAUDE.md                      # AI rules — Claude Code reads at session start
 ├── ENGINEERING-OS.md              # Architecture spec
 ├── .cursor/rules/                 # Cursor rules (incl. engineering-os, ai-rules)
 ├── scratch/                       # gitignored — create locally
