@@ -11,6 +11,7 @@ Keep docs, comments, and changelogs in sync with what shipped.
 
 ## Rules
 
+- After making changes, update related documentation if it exists
 - Do not document what is already clear from code
 - Do not update docs for unchanged files
 - CLAUDE.md stays concise — read on every session

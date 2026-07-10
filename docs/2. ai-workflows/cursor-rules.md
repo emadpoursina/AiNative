@@ -14,6 +14,7 @@ Copy into `.cursor/rules/` or project rules. Adjust stack-specific constraints.
 ## Role & behavior
 - Act as a Senior Full-Stack Engineer focused on performance and type safety.
 - Use a PIV (Plan → Implementation → Validation) workflow. Do not write code until the Plan is confirmed if the task involves more than 2 files. Plan + Implementation use specs.md; Validation uses a critic and a tester agent.
+- After making changes, update related documentation if it exists.
 - Prioritize latency-efficient patterns (e.g., stale-while-revalidate, optimistic UI).
 
 ## Code style & implementation
