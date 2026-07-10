@@ -19,7 +19,8 @@ Copy into `.cursor/rules/` or project rules. Adjust stack-specific constraints.
 ## Code style & implementation
 - **Dry/partial updates:** Never rewrite an entire file to change a single function. Use comments like `// ... existing code` only when specifically asked to provide a snippet.
 - **Type safety:** Strict TypeScript is mandatory. No `any`. Use Zod for runtime validation of LLM outputs or API responses.
-- **Undercover mode:** Ensure all generated code matches the existing project's naming conventions and indentation perfectly. Remove all "AI-typical" comments (e.g., "This function was generated to...").
+- **Function comments:** Add one minimal line immediately before each function definition stating what it does — straight to the point, not filler.
+- **Undercover mode:** Ensure all generated code matches the existing project's naming conventions and indentation perfectly. Remove "AI-typical" narration (e.g., "This function was generated to..."); keep only purposeful function comments.
 - **Verification:** After writing code, mentally "lint" for common errors (missing imports, unused variables) before finalizing.
 
 ## Tool use & safety

@@ -5,7 +5,7 @@ Keep docs, comments, and changelogs in sync with what shipped.
 ## What to update
 
 1. **CLAUDE.md / README.md** — new env vars, scripts, modules, dependencies (concise, AI context only)
-2. **Inline comments** — WHY not WHAT; flag non-obvious business logic; mark workarounds with `TODO: [reason]`
+2. **Inline comments** — one minimal line before each function stating what it does; elsewhere prefer WHY not WHAT; flag non-obvious business logic; mark workarounds with `TODO: [reason]`
 3. **Changelog** — Added / Changed / Fixed bullets, one sentence each, no implementation details
 4. **Commit message** — Conventional Commits format
 

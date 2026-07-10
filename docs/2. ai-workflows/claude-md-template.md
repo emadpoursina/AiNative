@@ -38,7 +38,8 @@ See live example: [CLAUDE.md](../../CLAUDE.md) in this repo.
 - Validate all external inputs with Zod
 - Never rewrite an entire file to change one function — surgical edits only
 - Match existing naming conventions and indentation exactly
-- Remove all AI-style comments before finishing (`// This function handles...`)
+- Add one minimal line immediately before each function definition stating what it does
+- Remove filler and AI-style narration before finishing (`// This function handles...`)
 - Remove unused imports and variables before finalizing
 
 ---
