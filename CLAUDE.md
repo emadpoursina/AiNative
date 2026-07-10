@@ -36,6 +36,7 @@
 ## Doc and Code Rules
 
 - One canonical location per topic — do not duplicate content across layers
+- After making changes, update related documentation if it exists
 - Match existing naming, folder numbering, and markdown style exactly
 - Never rewrite an entire file to change one section — surgical edits only
 - Remove AI-style comments before finishing (`// This function handles...`, filler prose in docs)
