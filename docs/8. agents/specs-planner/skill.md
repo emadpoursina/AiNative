@@ -43,15 +43,16 @@ FIRE overview: [fire-flow/overview](https://specs.md/fire-flow/overview.md)
 
 ---
 
-## Map to coordinator-worker
+## Map to PIV
 
-| Coordinator-worker | specs.md (FIRE) |
-|--------------------|-----------------|
-| Research | Planner explores codebase, captures intent |
-| Synthesis | Work items with execution order and complexity |
-| Implementation | Builder runs (Autopilot / Confirm / Validate) |
-| Verification | Walkthroughs + your test flows |
-| Update documents | Standards and walkthrough artifacts |
+specs.md owns Plan and Implementation. Validation is owned by the critic and tester agents, not specs.md.
+
+| PIV phase | Owner | specs.md (FIRE) mapping |
+|-----------|-------|-------------------------|
+| Plan | specs-planner | Planner explores codebase, captures intent, breaks into work items |
+| Implementation | specs-planner | Builder runs (Autopilot / Confirm / Validate) |
+| Validation | [critic](../critic/) + [tester](../tester/) | Adversarial review + execute the Plan's test flows (walkthroughs feed the tester) |
+| Update documents | specs-planner | Standards and walkthrough artifacts |
 
 Handoffs between agents or sessions: use [agent-handoff-template.md](../../2.%20ai-workflows/agent-handoff-template.md) in `scratch/` when useful.
 
@@ -95,8 +96,8 @@ One commit per complete file set. Types: `feat`, `fix`, `refactor`, `test`, `doc
 
 ---
 
-## Verification
+## Validation
 
 <!-- source: _skills/verification.md -->
 
-After builder runs, verify via walkthroughs and your test flows. For PRs, hand off to [pr-reviewer](../pr-reviewer/) agent.
+specs.md stops at Implementation. After the builder passes, run the PIV Validation phase: [critic](../critic/) (adversarial review of plan + implementation), then [tester](../tester/) (execute the Plan's test flows). [pr-reviewer](../pr-reviewer/) is the separate final gate run only after Validation passes — a surprise there means the Validation layer missed something.

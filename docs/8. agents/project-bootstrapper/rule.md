@@ -17,8 +17,7 @@ Constraints specific to this agent. Generic repo rules live in `.cursor/rules/` 
 
 - Write feature/business logic — this agent only sets up the environment; implementation happens afterward via `specs-planner`
 - Pick dependency versions without checking latest via `bun` (or the doc's package manager)
-- Install `cursor-plan` in the new project — that agent is AiNative-specific
-- Skip the planning-gate confirmation before scaffolding multiple files/directories
+- Skip the PIV-gate plan confirmation before scaffolding multiple files/directories
 
 ## Stop conditions
 
@@ -28,5 +27,5 @@ Constraints specific to this agent. Generic repo rules live in `.cursor/rules/` 
 
 ## Related enforcement
 
-- Planning gate: `.cursor/rules/planning-gate.mdc`
+- PIV gate: `.cursor/rules/piv-gate.mdc`
 - Handoff target for implementation: [specs-planner](../../specs-planner/)

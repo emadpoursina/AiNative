@@ -30,9 +30,9 @@ AiNative/
     │   ├── pr-review-system.md
     │   └── release-management-system.md
     │
-    ├── ai-workflows/                  # Generic AI templates — coordinator pattern, handoffs, rules
+    ├── ai-workflows/                  # Generic AI templates — PIV methodology, handoffs, rules
     │   ├── README.md
-    │   ├── coordinator-worker.md
+    │   ├── agentic-coding.md
     │   ├── agent-handoff-template.md
     │   ├── cursor-rules.md
     │   └── claude-md-template.md
@@ -41,10 +41,12 @@ AiNative/
     │   ├── README.md
     │   ├── _skills/                   # Central skill library (source of truth)
     │   ├── template/                  # Scaffold for new agents
-    │   ├── cursor-plan/
+    │   ├── specs-planner/
+    │   ├── critic/
+    │   ├── tester/
     │   ├── pr-reviewer/
     │   ├── task-groomer/
-    │   └── specs-planner/
+    │   └── project-bootstrapper/
     │
     ├── reference/                     # Evergreen technical knowledge — updated in place
     │   ├── README.md
@@ -116,11 +118,11 @@ scratch/                               # Gitignored — raw capture, no quality 
 
 ### Layer 2 — AI Workflows (`docs/ai-workflows/`)
 
-**What it holds:** Generic AI templates not tied to one task — the coordinator-worker development pattern, agent handoff template, Cursor rules template, and `CLAUDE.md` bootstrap template.
+**What it holds:** Generic AI templates not tied to one task — the PIV methodology (Plan, Implementation, Validation), agent handoff template, Cursor rules template, and `CLAUDE.md` bootstrap template.
 
-**Why it exists:** Some AI artifacts are shared infrastructure, not task-specific agents. Keeping them here avoids duplicating the coordinator pattern in every agent folder.
+**Why it exists:** Some AI artifacts are shared infrastructure, not task-specific agents. Keeping them here avoids duplicating the methodology in every agent folder.
 
-**How it compounds:** The coordinator-worker pattern and handoff template anchor all per-task agents in `agents/`. New generic templates land here; task-specific tuning lives in agent folders.
+**How it compounds:** The PIV methodology and handoff template anchor all per-task agents in `agents/`. New generic templates land here; task-specific tuning lives in agent folders.
 
 **Rule:** No task-specific prompts here — those belong in `agents/<name>/`. No prose workflow explanations — those belong in `systems/`.
 
@@ -301,10 +303,13 @@ The structure is designed so retrieval requires no search. The folder names are 
 | How to run a release | `systems/release-management-system.md` |
 | Agent handoff between AI passes | `ai-workflows/agent-handoff-template.md` |
 | A per-task AI agent | `agents/<name>/` — start with `agent.md` |
-| Cursor plan agent (feature work) | `agents/cursor-plan/` |
-| specs.md (app planning & implementation) | `agents/specs-planner/` |
+| PIV methodology (Plan, Implementation, Validation) | `ai-workflows/agentic-coding.md` |
+| specs.md planning & implementation (PIV Plan + Implementation) | `agents/specs-planner/` |
+| PIV Validation — adversarial review | `agents/critic/` |
+| PIV Validation — prove the code works | `agents/tester/` |
 | PR review prompts | `agents/pr-reviewer/` |
 | Task grooming / meeting prep | `agents/task-groomer/` |
+| New-project scaffolding | `agents/project-bootstrapper/` |
 | Reusable agent skills | `agents/_skills/` |
 | How to run a planning meeting | `systems/task-management-system.md` |
 

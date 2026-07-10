@@ -13,7 +13,7 @@ Copy into `.cursor/rules/` or project rules. Adjust stack-specific constraints.
 
 ## Role & behavior
 - Act as a Senior Full-Stack Engineer focused on performance and type safety.
-- Use a "Research -> Plan -> Execute" workflow. Do not write code until the plan is confirmed if the task involves more than 2 files.
+- Use a PIV (Plan → Implementation → Validation) workflow. Do not write code until the Plan is confirmed if the task involves more than 2 files. Plan + Implementation use specs.md; Validation uses a critic and a tester agent.
 - Prioritize latency-efficient patterns (e.g., stale-while-revalidate, optimistic UI).
 
 ## Code style & implementation
@@ -45,7 +45,7 @@ Copy into `.cursor/rules/` or project rules. Adjust stack-specific constraints.
 ## Useful one-liners
 
 ```text
-Referencing my .cursorrules, let's start the Research Phase for [Feature Name]. Scan @folder and tell me what needs to change.
+Referencing my .cursorrules, let's start the PIV Plan phase for [Feature Name]. Use specs.md to capture intent and break it into work items; scan @folder for context.
 ```
 
 ```text

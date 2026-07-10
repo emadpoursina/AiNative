@@ -8,7 +8,7 @@ When working in AiNative or repos using this OS:
 - Architecture spec: `ENGINEERING-OS.md`
 - PR review: follow `docs/1. systems/pr-review-system.md`; prompts in `docs/8. agents/pr-reviewer/` — run Phase 1.5 architecture compliance for feature PRs in existing subsystems
 - Task grooming / meetings: `docs/8. agents/task-groomer/`
-- Multi-file features: use `docs/8. agents/cursor-plan/` (Research → Plan → Execute); overview in `coordinator-worker.md`
+- Multi-file features: follow PIV — `docs/2. ai-workflows/agentic-coding.md`. Plan + Implementation via `docs/8. agents/specs-planner/` (specs.md); Validation via `docs/8. agents/critic/` and `docs/8. agents/tester/`
 - Multi-client releases: `docs/1. systems/client-compatibility-system.md` — pair with release management; run pre-tag check and post-deploy monitor
 - Commands and setup: `docs/3. reference/` — navigate by domain, do not guess
 - Local shared databases (Docker): `docs/3. reference/setup/local-shared-services.md` — compose at `/Users/emad/docker-infrastructure/docker-compose.yml`

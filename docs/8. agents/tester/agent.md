@@ -1,0 +1,29 @@
+# Tester agent
+
+Proves the code works. Runs the test flows defined in the PIV Plan phase — unit, integration, E2E (with browser automation), and customer/user-flow tests — and reports concrete pass/fail per flow. Produces specific failure feedback that drives the Implement loop-back. Does not critique design (that is the [critic](../critic/)).
+
+Methodology: [PIV — Plan, Implementation, Validation](../../2.%20ai-workflows/agentic-coding.md). Runs as the second half of Validation, after the [critic](../critic/) agent. [pr-reviewer](../pr-reviewer/) is the separate final gate after Validation passes.
+
+## When to use
+
+- Implementation has passed the critic and is ready to be proven
+- Test flows from the Plan phase need to be executed
+- An Implement loop-back fix needs re-verification
+
+## Inputs
+
+- Test flows from the Plan artifact
+- Changed files (`@` references)
+
+## Outputs
+
+- Per-test-flow result: **PASS** / **FAIL** with the specific failure detail
+- When FAIL, explicit feedback for the Implement loop-back (e.g. "function returns undefined for empty array — expected empty array")
+- Overall verdict: **PASS** or **FAIL**
+
+## Supporting files
+
+| File | Purpose |
+|------|---------|
+| skill.md | _To be filled in — test execution and E2E/browser-automation prompts_ |
+| rule.md | _To be filled in — when to loop back to Implement vs Plan_ |

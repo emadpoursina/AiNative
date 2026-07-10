@@ -16,14 +16,15 @@ How this repo is organized. Full spec: [ENGINEERING-OS.md](../ENGINEERING-OS.md)
 | How to run a release | [1. systems/release-management-system.md](./1.%20systems/release-management-system.md) |
 | Client/server compatibility | [1. systems/client-compatibility-system.md](./1.%20systems/client-compatibility-system.md) |
 | A per-task AI agent | [8. agents/](./8.%20agents/) — start with `agent.md` |
-| Cursor plan agent (feature phases) | [8. agents/cursor-plan/](./8.%20agents/cursor-plan/) |
+| PIV methodology (Plan, Implementation, Validation) | [2. ai-workflows/agentic-coding.md](./2.%20ai-workflows/agentic-coding.md) |
+| specs.md planning & implementation (PIV Plan + Implementation) | [8. agents/specs-planner/](./8.%20agents/specs-planner/) |
+| PIV Validation — adversarial review | [8. agents/critic/](./8.%20agents/critic/) |
+| PIV Validation — prove the code works | [8. agents/tester/](./8.%20agents/tester/) |
 | PR review prompts | [8. agents/pr-reviewer/](./8.%20agents/pr-reviewer/) |
 | Task grooming / meeting prep | [8. agents/task-groomer/](./8.%20agents/task-groomer/) |
-| specs.md (app planning & implementation) | [8. agents/specs-planner/](./8.%20agents/specs-planner/) |
+| New-project scaffolding | [8. agents/project-bootstrapper/](./8.%20agents/project-bootstrapper/) |
 | Reusable agent skills | [8. agents/_skills/](./8.%20agents/_skills/) |
 | Agent handoff between AI passes | [2. ai-workflows/agent-handoff-template.md](./2.%20ai-workflows/agent-handoff-template.md) |
-| Agentic coding system (AI layer + PIV) | [2. ai-workflows/agentic-coding.md](./2.%20ai-workflows/agentic-coding.md) |
-| Coordinator-worker dev pattern | [2. ai-workflows/coordinator-worker.md](./2.%20ai-workflows/coordinator-worker.md) |
 | How to run planning / board setup | [1. systems/task-management-system.md](./1.%20systems/task-management-system.md) |
 
 ## `1. systems/`

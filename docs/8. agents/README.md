@@ -16,10 +16,11 @@ Supporting files (phase prompts, etc.) live in the same folder when the workflow
 
 | Agent | Purpose |
 |-------|---------|
-| [cursor-plan](./cursor-plan/) | Five-phase feature work: research → plan → implement → verify → document |
-| [pr-reviewer](./pr-reviewer/) | Staged PR review: understanding → architecture → risk → deep focus → adversarial |
+| [specs-planner](./specs-planner/) | specs.md planning and implementation (Plan + Implementation phases of PIV) |
+| [critic](./critic/) | Adversarial review of plan and implementation (first half of PIV Validation) |
+| [tester](./tester/) | Prove the code works via the Plan's test flows (second half of PIV Validation) |
+| [pr-reviewer](./pr-reviewer/) | Staged PR review — the final gate after Validation passes |
 | [task-groomer](./task-groomer/) | Backlog grooming and Monday/Friday meeting prep |
-| [specs-planner](./specs-planner/) | specs.md integration for application repo planning and implementation |
 | [project-bootstrapper](./project-bootstrapper/) | New-project environment setup from a single spec doc, up to the point specs-planner takes over |
 
 ## Skill library
@@ -29,7 +30,6 @@ Reusable skills in [`_skills/`](./_skills/). When tuning an agent, copy needed s
 | Skill | Use for |
 |-------|---------|
 | [research-first](./_skills/research-first.md) | Codebase scan before planning |
-| [planning-gate](./_skills/planning-gate.md) | Approval gates before multi-file implementation |
 | [mermaid-diagrams](./_skills/mermaid-diagrams.md) | Architecture and flow diagrams in plans |
 | [conventional-commits](./_skills/conventional-commits.md) | Commit message format |
 | [verification](./_skills/verification.md) | Post-implementation review passes |
@@ -47,6 +47,5 @@ Reusable skills in [`_skills/`](./_skills/). When tuning an agent, copy needed s
 
 ## Related
 
-- Overarching pattern: [coordinator-worker.md](../2.%20ai-workflows/coordinator-worker.md)
+- Methodology: [PIV — Plan, Implementation, Validation](../2.%20ai-workflows/agentic-coding.md)
 - Generic templates (not agents): [ai-workflows/](../2.%20ai-workflows/)
-- Cursor-loaded skill for cursor-plan: `.cursor/skills/cursor-plan/SKILL.md`

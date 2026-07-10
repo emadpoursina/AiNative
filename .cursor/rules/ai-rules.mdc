@@ -9,7 +9,7 @@ Canonical copy also lives in `CLAUDE.md` at repo root (for Claude Code).
 
 ## Workflow
 
-- Always follow: **Research → Plan → Execute** — see `docs/2. ai-workflows/coordinator-worker.md`
+- Always follow: **PIV — Plan → Implementation → Validation** — see `docs/2. ai-workflows/agentic-coding.md`. Plan and Implementation use specs.md; Validation uses the critic and tester agents.
 - Do not write code until the plan is confirmed if the change touches 2+ files
 - For ambiguous tasks: ask, do not guess
 - Commit style: Conventional Commits — short messages (see Commit-style rule)
@@ -32,7 +32,6 @@ Canonical copy also lives in `CLAUDE.md` at repo root (for Claude Code).
 - Terminal commands: check mentally before suggesting — no destructive defaults
 - Never expose secrets, tokens, or credentials in output
 - Never commit `scratch/` contents
-- Only create git commits when explicitly requested
 
 ## Out of Scope
 

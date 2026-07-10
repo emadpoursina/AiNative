@@ -9,7 +9,7 @@ Workflow context: [pr-review-system.md](../../1.%20systems/pr-review-system.md).
 - Reviewing any pull request in Cursor
 - Feature PRs in existing subsystems — always run Phase 1.5
 - Large PRs — use diff compression first
-- After implementation passes from cursor-plan or specs.md
+- After the PIV Validation phase (critic + tester) passes — pr-reviewer is the final gate; a surprise here means Validation missed something
 
 ## Inputs
 

@@ -1,8 +1,8 @@
 # Agent Handoff Artifact
 
-Use when passing work between agents (coordinator, worker, reviewer, groomer). Fill every section so the next agent can continue without asking for missing context.
+Use when passing work between agents (planner, implementer, critic, tester, groomer). Fill every section so the next agent can continue without asking for missing context.
 
-Phase prompts: [cursor-plan/](./cursor-plan/) — coordinator (Phases 1, 2, 5), worker (Phase 3), reviewer (Phase 4).
+Methodology: [PIV — Plan, Implementation, Validation](./agentic-coding.md). Plan and Implementation run via [specs-planner](../8.%20agents/specs-planner/); Validation runs via [critic](../8.%20agents/critic/) and [tester](../8.%20agents/tester/).
 
 ---
 
@@ -11,10 +11,10 @@ Phase prompts: [cursor-plan/](./cursor-plan/) — coordinator (Phases 1, 2, 5), 
 ```yaml
 ---
 task_id: feat/TASK_NAME
-agent: coordinator | worker | reviewer | groomer
+agent: planner | implementer | critic | tester | groomer
 status: in_progress | complete | failed | blocked
-output_type: plan | code | review | groomed_task | release_notes
-next_agent: worker | reviewer | coordinator | human
+output_type: plan | code | review | test_results | groomed_task | release_notes
+next_agent: implementer | critic | tester | planner | human
 timestamp: YYYY-MM-DD
 ---
 ```
@@ -44,7 +44,7 @@ PASTE_INPUT_HERE
 
 > The artifact this agent produced. Must be self-contained — the next agent should need nothing else.
 
-When `output_type: plan`, include all three sections from [2-synthesis.md](./cursor-plan/2-synthesis.md): **Execution plan**, **Test flows**, **Commit plan**.
+When `output_type: plan`, include all three sections from the PIV Plan phase: **Execution plan**, **Test flows**, **Commit plan**.
 
 ```
 PASTE_OUTPUT_HERE

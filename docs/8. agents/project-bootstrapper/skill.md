@@ -37,12 +37,11 @@ One commit per complete file set. Types: `feat`, `fix`, `refactor`, `test`, `doc
 
 ---
 
-## Map to coordinator-worker
+## Map to PIV
 
-| Coordinator-worker | Project bootstrapper |
-|---------------------|-----------------------|
-| Research | Parse input doc, confirm stack |
-| Synthesis | Repo layout + install plan |
+| PIV phase | Project bootstrapper |
+|-----------|-----------------------|
+| Plan | Parse input doc, confirm stack, repo layout + install plan |
 | Implementation | Git init, scaffold, install deps, agent config, specs.md install + init |
-| Verification | Confirm scaffold runs, agent config loads |
+| Validation | Confirm scaffold runs, agent config loads |
 | Update documents | Handoff to specs-planner for `specs.md`-driven implementation |

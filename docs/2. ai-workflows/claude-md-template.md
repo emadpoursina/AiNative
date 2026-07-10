@@ -25,7 +25,7 @@ See live example: [CLAUDE.md](../../CLAUDE.md) in this repo.
 
 ## Workflow
 
-- Always follow: **Research → Plan → Execute**
+- Always follow: **PIV — Plan → Implementation → Validation** (Plan + Implementation via specs.md; Validation via critic and tester agents)
 - Do not write code until the plan is confirmed if the change touches 2+ files
 - For ambiguous tasks: ask, do not guess
 - Commit style: Conventional Commits (`feat:`, `fix:`, `chore:`, `refactor:`, `test:`)

@@ -1,6 +1,6 @@
 # Specs planner agent
 
-Guide for using [specs.md](https://specs.md/) — AI-native planning and implementation in application repos. Install per project, not in AiNative itself.
+Guide for using [specs.md](https://specs.md/) — AI-native planning and implementation. Owns the **Plan** and **Implementation** phases of [PIV](../../2.%20ai-workflows/agentic-coding.md). Installed in every repo, including AiNative itself.
 
 Docs index: [specs.md/llms.txt](https://specs.md/llms.txt)
 
@@ -8,13 +8,12 @@ Docs index: [specs.md/llms.txt](https://specs.md/llms.txt)
 
 | Context | Tool |
 |---------|------|
-| Application / product repos — feature planning and execution | **specs.md** |
-| AiNative repo — editing workflows, systems, reference docs | **cursor-plan** agent |
+| Any repo (app or AiNative) — PIV Plan and Implementation | **specs.md** |
 | Quick spec docs only, no execution tracking | specs.md **Simple** flow |
 | Brownfield features, adaptive rigor, monorepos | specs.md **FIRE** flow |
 | Full traceability, DDD, regulatory documentation | specs.md **AI-DLC** flow |
 
-Default for most app work: **FIRE**.
+Default for most work: **FIRE**. Validation (the third PIV phase) is owned by the [critic](../critic/) and [tester](../tester/) agents, not specs.md.
 
 ## Inputs
 

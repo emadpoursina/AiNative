@@ -41,6 +41,8 @@ An agentic coding system has two main parts.
 
 ### Validation
 
+Validation is owned by two in-house agents: [critic](../8.%20agents/critic/) (adversarial review of plan and implementation — design holes, edge cases, spec/code mismatch) and [tester](../8.%20agents/tester/) (prove the code works — run the test flows defined in Plan; browser automation for E2E). Run critic first, then tester.
+
 1. Multi-layer pyramid for catching bugs and problems before they reach PR.
 2. Prove the code actually works.
 3. Use test flows defined in the planning phase.
@@ -50,6 +52,4 @@ An agentic coding system has two main parts.
    2. **Loop back to Plan:** if the failure reveals a misunderstanding about the task itself, do not patch it in Implement. Revise the spec and run a new cycle.
    3. When the AI misses something, fix the problem and update the project AI layer. Also update the universal overall AI layer (AiNative repo) when the lesson applies globally.
    4. Ask the agent to write unit/integration/E2E tests after implementation.
-   5. PR review is the final gate. If the validation layer works correctly there should be little surprise in PR review — problems there mean something slipped through validation.
-
-**Related:** [coordinator-worker.md](./coordinator-worker.md) (phase prompts), [specs-planner agent](../8.%20agents/specs-planner/) (specs.md in app repos).
+   5. [pr-reviewer](../8.%20agents/pr-reviewer/) is the final gate, run **after** Validation passes. If the validation layer works correctly there should be little surprise in PR review — a problem reaching PR review means something slipped through Validation, so feed the gap back into the critic/tester agents.

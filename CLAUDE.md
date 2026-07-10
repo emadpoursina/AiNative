@@ -13,7 +13,7 @@
   ├── scratch/                  # gitignored — raw capture during work
   └── docs/
       ├── 1. systems/           # Universal workflows (task, PR, release)
-      ├── 2. ai-workflows/      # Generic AI templates (coordinator pattern, handoffs)
+      ├── 2. ai-workflows/      # Generic AI templates (PIV methodology, handoffs)
       ├── 8. agents/            # Per-task agents — agent.md, skill.md, rule.md
       ├── 3. reference/         # Evergreen setup, commands, architecture
       ├── 4. debugging/         # Bug pattern library
@@ -25,7 +25,7 @@
 
 ## Workflow
 
-- Always follow: **Research → Plan → Execute** ([coordinator-worker.md](./docs/2.%20ai-workflows/coordinator-worker.md))
+- Always follow: **PIV — Plan → Implementation → Validation** ([agentic-coding.md](./docs/2.%20ai-workflows/agentic-coding.md)). Plan + Implementation use specs.md; Validation uses the critic and tester agents.
 - Do not write code until the plan is confirmed if the change touches 2+ files
 - For ambiguous tasks: ask, do not guess
 - Commit style: Conventional Commits (`feat:`, `fix:`, `chore:`, `refactor:`, `test:`) — short messages
@@ -52,7 +52,7 @@ When working in AiNative or repos using this OS:
 - Architecture spec: [ENGINEERING-OS.md](./ENGINEERING-OS.md)
 - PR review: [pr-review-system.md](./docs/1.%20systems/pr-review-system.md); prompts in [pr-reviewer agent](./docs/8.%20agents/pr-reviewer/) — run Phase 1.5 architecture compliance for feature PRs in existing subsystems
 - Task grooming / meetings: [task-groomer agent](./docs/8.%20agents/task-groomer/)
-- Multi-file features: [cursor-plan agent](./docs/8.%20agents/cursor-plan/) — overview in [coordinator-worker.md](./docs/2.%20ai-workflows/coordinator-worker.md)
+- Multi-file features: PIV — [specs-planner](./docs/8.%20agents/specs-planner/) (Plan + Implementation via specs.md), [critic](./docs/8.%20agents/critic/) + [tester](./docs/8.%20agents/tester/) (Validation), then [pr-reviewer](./docs/8.%20agents/pr-reviewer/) (final gate) — methodology in [agentic-coding.md](./docs/2.%20ai-workflows/agentic-coding.md)
 - Multi-client releases: [client-compatibility-system.md](./docs/1.%20systems/client-compatibility-system.md) — pair with release management; run pre-tag check and post-deploy monitor
 - Commands and setup: [docs/3. reference/](./docs/3.%20reference/) — navigate by domain, do not guess
 - Local shared databases (Docker): [local-shared-services.md](./docs/3.%20reference/setup/local-shared-services.md) — compose at `/Users/emad/docker-infrastructure/docker-compose.yml`
@@ -66,7 +66,6 @@ When working in AiNative or repos using this OS:
 - Terminal commands: check mentally before suggesting — no destructive defaults
 - Never expose secrets, tokens, or credentials in output
 - Never commit `scratch/` contents
-- Only create git commits when explicitly requested
 
 ---
 

@@ -49,10 +49,9 @@ Run [project-bootstrapper](../../8.%20agents/project-bootstrapper/) with your pr
 Add persistent AI rules so agents read your stack and constraints once per session:
 
 - Copy [claude-md-template.md](../../2.%20ai-workflows/claude-md-template.md) to the project root as `CLAUDE.md` (Claude Code) or into `.cursor/rules/ai-rules.mdc` (Cursor)
-- Install [specs-planner agent](../../8.%20agents/specs-planner/) for planning and implementation: `bunx specsmd@latest install` (default: FIRE flow) — this is the default planning tool for application repos
-- Add a planning-gate rule that enforces `/specsmd-fire-planner` approval before multi-file implementation (adapt `.cursor/rules/planning-gate.mdc` from AiNative — swap the `cursor-plan` references for the specs.md FIRE commands)
+- Install [specs-planner agent](../../8.%20agents/specs-planner/) for PIV Plan and Implementation: `bunx specsmd@latest install` (default: FIRE flow)
+- Add a PIV-gate rule that enforces plan approval before multi-file implementation (adapt `.cursor/rules/piv-gate.mdc` from AiNative — point it at `/specsmd-fire-planner` and the critic/tester agents)
 - Fill in project context, stack, and out-of-scope items — see [CLAUDE.md](../../../CLAUDE.md) in AiNative for a live example
-- `cursor-plan` is AiNative-specific (used only for editing this docs repo's own workflows) — do not install it in application repos
 
 When an agent bootstraps a new project, include a local `scratch/` folder for reference files and raw notes during work:
 
@@ -73,13 +72,12 @@ When an agent bootstraps a new project, include a local `scratch/` folder for re
 
 ## Development
 
-Overall process — use the [coordinator-worker pattern](../../2.%20ai-workflows/coordinator-worker.md) via [specs-planner](../../8.%20agents/specs-planner/): `/specsmd-fire-planner` to plan, `/specsmd-fire-builder` to execute. (`cursor-plan` is only used inside AiNative itself.)
+Overall process — follow [PIV (Plan, Implementation, Validation)](../../2.%20ai-workflows/agentic-coding.md) via [specs-planner](../../8.%20agents/specs-planner/): `/specsmd-fire-planner` to plan, `/specsmd-fire-builder` to implement.
 
-1. **Research** — Coordinator agent analyzes the codebase for relevant files
-2. **Synthesis** — Second pass creates a plan from research
-3. **Implementation** — Worker agent writes code
-4. **Verification** — Final check ensures correctness
-5. **Update documents** — Sync docs with changes
+1. **Plan** — specs.md planner captures intent and breaks it into work items (include test flows and validation strategy)
+2. **Implementation** — specs.md builder executes work items with small atomic commits
+3. **Validation** — [critic](../../8.%20agents/critic/) reviews plan + implementation, then [tester](../../8.%20agents/tester/) runs the Plan's test flows; loop back to Implement on fixable failures, or to Plan on a misunderstanding
+4. **PR review** — [pr-reviewer](../../8.%20agents/pr-reviewer/) is the final gate after Validation passes; a surprise there means Validation missed something
 
 ## Design
 
