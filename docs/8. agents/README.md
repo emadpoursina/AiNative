@@ -44,10 +44,11 @@ Reusable skills in [`_skills/`](./_skills/). When tuning an agent, copy needed s
 4. Capture agent-specific constraints in `rule.md`
 5. Add supporting prompt files if the workflow has phases
 6. Register the agent in this README table
-7. Create a matching Cursor Command at `.cursor/commands/<agent-name>.md` (use an existing command as a template), unless the agent is owned by a framework that ships its own command (e.g. specs.md / `specs-planner`)
+7. Create a matching Cursor Command at `.cursor/commands/<agent-name>.md` in AiNative, then symlink it into `~/.cursor/commands/` (global — available in all projects). Use an existing command as a template. Skip for framework-owned agents (e.g. specs.md / `specs-planner`). See [personal-agents-symlinks.md](../3.%20reference/setup/personal-agents-symlinks.md).
 8. Tune all three files as you use the agent
 
 ## Related
 
 - Methodology: [PIV — Plan, Implementation, Validation](../2.%20ai-workflows/agentic-coding.md)
 - Generic templates (not agents): [ai-workflows/](../2.%20ai-workflows/)
+- **App projects:** link agents into other repos — [personal-agents-symlinks.md](../3.%20reference/setup/personal-agents-symlinks.md)

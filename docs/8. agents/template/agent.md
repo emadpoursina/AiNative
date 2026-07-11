@@ -24,4 +24,4 @@
 
 ## Cursor Command
 
-Pair this agent with a Cursor Command at `.cursor/commands/<agent-name>.md` so it can be invoked via slash command (e.g. `/my-agent`). Use an existing command file as a template. Skip this step if the agent is owned by a framework that registers its own command (e.g. specs.md / `specs-planner`).
+Pair this agent with a Cursor Command at `.cursor/commands/<agent-name>.md` in AiNative, then symlink it to `~/.cursor/commands/` so it is available in every project (e.g. `/my-agent`). Use an existing command file as a template. Skip if the agent is owned by a framework that registers its own command (e.g. specs.md / `specs-planner`). See [personal-agents-symlinks.md](../../3.%20reference/setup/personal-agents-symlinks.md).
