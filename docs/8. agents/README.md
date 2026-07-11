@@ -14,14 +14,14 @@ Supporting files (phase prompts, etc.) live in the same folder when the workflow
 
 ## Agents
 
-| Agent | Purpose |
-|-------|---------|
-| [specs-planner](./specs-planner/) | specs.md planning and implementation (Plan + Implementation phases of PIV) |
-| [critic](./critic/) | Adversarial review of plan and implementation (first half of PIV Validation) |
-| [tester](./tester/) | Prove the code works via the Plan's test flows (second half of PIV Validation) |
-| [pr-reviewer](./pr-reviewer/) | Staged PR review — the final gate after Validation passes |
-| [task-groomer](./task-groomer/) | Backlog grooming and Monday/Friday meeting prep |
-| [project-bootstrapper](./project-bootstrapper/) | New-project environment setup from a single spec doc, up to the point specs-planner takes over |
+| Agent | Command | Purpose |
+|-------|---------|---------|
+| [specs-planner](./specs-planner/) | *(specs.md framework)* | specs.md planning and implementation (Plan + Implementation phases of PIV) |
+| [critic](./critic/) | `/critic` | Adversarial review of plan and implementation (first half of PIV Validation) |
+| [tester](./tester/) | `/tester` | Prove the code works via the Plan's test flows (second half of PIV Validation) |
+| [pr-reviewer](./pr-reviewer/) | `/pr-reviewer` | Staged PR review — the final gate after Validation passes |
+| [task-groomer](./task-groomer/) | `/task-groomer` | Backlog grooming and Monday/Friday meeting prep |
+| [project-bootstrapper](./project-bootstrapper/) | `/project-bootstrapper` | New-project environment setup from a single spec doc, up to the point specs-planner takes over |
 
 ## Skill library
 
@@ -44,7 +44,8 @@ Reusable skills in [`_skills/`](./_skills/). When tuning an agent, copy needed s
 4. Capture agent-specific constraints in `rule.md`
 5. Add supporting prompt files if the workflow has phases
 6. Register the agent in this README table
-7. Tune all three files as you use the agent
+7. Create a matching Cursor Command at `.cursor/commands/<agent-name>.md` (use an existing command as a template), unless the agent is owned by a framework that ships its own command (e.g. specs.md / `specs-planner`)
+8. Tune all three files as you use the agent
 
 ## Related
 
