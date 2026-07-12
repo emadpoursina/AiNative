@@ -32,10 +32,13 @@ for dir in "$AGENTS_DIR"/*/; do
   fi
 done
 
-# Check each command has an agent folder (excluding specsmd-agent)
+# Check each command has an agent folder (excluding utility commands)
+UTILITY_COMMANDS=("specsmd-agent" "sync-branch")
 for cmd in "$COMMANDS_DIR"/*.md; do
   name=$(basename "$cmd" .md)
-  [[ "$name" == "specsmd-agent" ]] && continue
+  for util in "${UTILITY_COMMANDS[@]}"; do
+    [[ "$name" == "$util" ]] && continue 2
+  done
   if is_excluded "$name"; then
     continue
   fi

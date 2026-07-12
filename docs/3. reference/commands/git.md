@@ -1,5 +1,6 @@
 # Git commands
 
+- Sync current branch with `development`: `/sync-branch` (or `node "$AINATIVE_HOME/scripts/ainative-link.mjs" machine` after adding new global commands)
 - Removing a branch: `git branch -D [branch-name]`
 - Creating a branch from development:
   - `git checkout development`
