@@ -57,13 +57,19 @@ git clone <your-ainative-remote> "$AINATIVE_HOME"
 Set up once — commands are then available in every project:
 
 ```bash
+node "$AINATIVE_HOME/scripts/ainative-link.mjs" machine
+```
+
+Manual equivalent:
+
+```bash
 mkdir -p ~/.cursor/commands
 for f in "$AINATIVE_HOME/.cursor/commands/"*.md; do
   ln -sf "$f" "$HOME/.cursor/commands/$(basename "$f")"
 done
 ```
 
-After you add a new agent command in AiNative, re-run this loop (or symlink the single new file).
+After you add a new agent command in AiNative, re-run `machine` (or symlink the single new file).
 
 **Note:** `~/.cursor/commands/` is the documented global location. If Cursor does not list them (known issue on some SSH setups), symlink commands into the project `.cursor/commands/` as a fallback — see [Troubleshooting](#troubleshooting).
 
@@ -112,6 +118,22 @@ Run `agents` from any project root to confirm project symlinks and see the loade
 
 Run from the **project root** after `git init` (or anytime you add agents to an existing repo). Assumes [one-time machine setup](#one-time-machine-setup) is done.
 
+**Automated (recommended):**
+
+```bash
+node "$AINATIVE_HOME/scripts/ainative-link.mjs" project
+# or from another directory:
+node "$AINATIVE_HOME/scripts/ainative-link.mjs" project ~/projects/my-app
+```
+
+Then edit `.cursor/rules/ai-rules.mdc` for the project. Use `status` to verify:
+
+```bash
+node "$AINATIVE_HOME/scripts/ainative-link.mjs" status
+```
+
+Manual steps below if you prefer not to use the script.
+
 ### 1. Project-specific rules
 
 ```bash
@@ -159,7 +181,8 @@ docs/2. ai-workflows
 ### 5. Verify
 
 ```bash
-agents
+node "$AINATIVE_HOME/scripts/ainative-link.mjs" status
+# or: agents   (shell helper below)
 ls -la .cursor/rules/personal docs/8.\ agents
 ```
 
