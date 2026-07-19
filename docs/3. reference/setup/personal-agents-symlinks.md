@@ -52,13 +52,15 @@ Adjust the path to wherever you keep the canonical checkout. Reload: `source ~/.
 git clone <your-ainative-remote> "$AINATIVE_HOME"
 ```
 
-### 3. Symlink agent commands globally
+### 3. Symlink agent commands and global hooks
 
-Set up once — commands are then available in every project:
+Set up once — commands and the agent alert hook are then available in every project:
 
 ```bash
 node "$AINATIVE_HOME/scripts/ainative-link.mjs" machine
 ```
+
+This also symlinks `~/.cursor/hooks/agent-alert.sh` and merges alert hook entries into `~/.cursor/hooks.json` (plays a sound when the agent finishes or needs your input). See [cursor-setup.md](./cursor-setup.md#global-agent-alert-hook).
 
 Manual equivalent:
 
@@ -67,6 +69,8 @@ mkdir -p ~/.cursor/commands
 for f in "$AINATIVE_HOME/.cursor/commands/"*.md; do
   ln -sf "$f" "$HOME/.cursor/commands/$(basename "$f")"
 done
+mkdir -p ~/.cursor/hooks
+ln -sf "$AINATIVE_HOME/.cursor/hooks/agent-alert.sh" ~/.cursor/hooks/agent-alert.sh
 ```
 
 After you add a new agent command in AiNative, re-run `machine` (or symlink the single new file).

@@ -17,6 +17,18 @@ import { homedir } from "node:os";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 
+const AGENT_ALERT_HOOK = "./hooks/agent-alert.sh";
+const GLOBAL_HOOK_ENTRIES = {
+  stop: [{ command: `${AGENT_ALERT_HOOK} stop`, timeout: 5 }],
+  preToolUse: [
+    {
+      command: `${AGENT_ALERT_HOOK} ask`,
+      matcher: "^(AskQuestion|SwitchMode)$",
+      timeout: 5,
+    },
+  ],
+};
+
 const GITIGNORE_MARKER = "# Personal AiNative symlinks (machine-local)";
 const GITIGNORE_BLOCK = `
 ${GITIGNORE_MARKER}
@@ -113,6 +125,55 @@ function readGitCommit(ainativeHome) {
   }
 }
 
+function hookUsesAgentAlert(entry) {
+  return typeof entry?.command === "string" && entry.command.includes("agent-alert.sh");
+}
+
+function mergeGlobalHooks(existingHooks) {
+  const merged = { ...(existingHooks ?? {}) };
+
+  for (const [event, entries] of Object.entries(GLOBAL_HOOK_ENTRIES)) {
+    const current = Array.isArray(merged[event]) ? [...merged[event]] : [];
+    if (!current.some(hookUsesAgentAlert)) {
+      current.push(...entries);
+    }
+    merged[event] = current;
+  }
+
+  return merged;
+}
+
+function linkMachineHooks(ainativeHome) {
+  const scriptSource = path.join(ainativeHome, ".cursor", "hooks", "agent-alert.sh");
+  const hooksDir = path.join(homedir(), ".cursor", "hooks");
+  const hooksJsonPath = path.join(homedir(), ".cursor", "hooks.json");
+
+  if (!existsSync(scriptSource)) {
+    console.error(`error: hook script not found: ${scriptSource}`);
+    process.exit(1);
+  }
+
+  ensureDir(hooksDir);
+  forceSymlink(scriptSource, path.join(hooksDir, "agent-alert.sh"));
+
+  let hooksConfig = { version: 1, hooks: {} };
+  if (existsSync(hooksJsonPath)) {
+    try {
+      hooksConfig = JSON.parse(readFileSync(hooksJsonPath, "utf8"));
+    } catch (err) {
+      console.error(`error: could not parse ${hooksJsonPath}`);
+      throw err;
+    }
+  }
+
+  hooksConfig.version = hooksConfig.version ?? 1;
+  hooksConfig.hooks = mergeGlobalHooks(hooksConfig.hooks);
+  writeFileSync(hooksJsonPath, `${JSON.stringify(hooksConfig, null, 2)}\n`, "utf8");
+
+  console.log(`Linked agent alert hook → ${hooksDir}`);
+  console.log(`Updated global hooks → ${hooksJsonPath}`);
+}
+
 function countGlobalCommands() {
   const globalCommandsDir = path.join(homedir(), ".cursor", "commands");
   if (!existsSync(globalCommandsDir)) {
@@ -164,7 +225,32 @@ function showStatus(projectRoot, ainativeHome) {
     console.log("  agents:   missing — run: node $AINATIVE_HOME/scripts/ainative-link.mjs project");
   }
 
+  const hooksJsonPath = path.join(homedir(), ".cursor", "hooks.json");
+  const hookScriptPath = path.join(homedir(), ".cursor", "hooks", "agent-alert.sh");
+
   console.log(`  commands: ${countGlobalCommands()} global (in ~/.cursor/commands/)`);
+
+  if (existsSync(hookScriptPath) && lstatSync(hookScriptPath).isSymbolicLink()) {
+    console.log(`  hooks:    ~/.cursor/hooks/agent-alert.sh → ${readlinkSync(hookScriptPath)}`);
+  } else if (existsSync(hookScriptPath)) {
+    console.log(`  hooks:    ~/.cursor/hooks/agent-alert.sh (present)`);
+  } else {
+    console.log("  hooks:    missing — run: node $AINATIVE_HOME/scripts/ainative-link.mjs machine");
+  }
+
+  if (existsSync(hooksJsonPath)) {
+    try {
+      const hooksConfig = JSON.parse(readFileSync(hooksJsonPath, "utf8"));
+      const events = Object.entries(hooksConfig.hooks ?? {}).filter(([, entries]) =>
+        Array.isArray(entries) && entries.some(hookUsesAgentAlert),
+      );
+      if (events.length > 0) {
+        console.log(`  alerts:   ${events.map(([name]) => name).join(", ")}`);
+      }
+    } catch {
+      console.log("  alerts:   ~/.cursor/hooks.json present (could not parse)");
+    }
+  }
 }
 
 function linkMachine(ainativeHome) {
@@ -184,6 +270,7 @@ function linkMachine(ainativeHome) {
   }
 
   console.log(`Linked ${files.length} global commands → ${commandsTarget}`);
+  linkMachineHooks(ainativeHome);
 }
 
 function linkProject(projectRoot, ainativeHome, forceWorkflows) {
