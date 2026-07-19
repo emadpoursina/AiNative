@@ -33,7 +33,7 @@ for dir in "$AGENTS_DIR"/*/; do
 done
 
 # Check each command has an agent folder (excluding utility commands)
-UTILITY_COMMANDS=("specsmd-agent" "sync-branch")
+UTILITY_COMMANDS=("specsmd-agent" "sync-branch" "short-answer")
 for cmd in "$COMMANDS_DIR"/*.md; do
   name=$(basename "$cmd" .md)
   for util in "${UTILITY_COMMANDS[@]}"; do
