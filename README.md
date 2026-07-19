@@ -21,7 +21,7 @@ It covers work you repeat on every team:
 | **Release management** | [docs/1. systems/release-management-system.md](./docs/1.%20systems/release-management-system.md) |
 | **Client compatibility** | [docs/1. systems/client-compatibility-system.md](./docs/1.%20systems/client-compatibility-system.md) |
 | **Commands & setup** | [docs/reference/](./docs/reference/) |
-| **AI prompts & agents** | [docs/8. agents/](./docs/8.%20agents/), [docs/2. ai-workflows/](./docs/2.%20ai-workflows/) |
+| **AI prompts & agents** | [docs/8. agents/](./docs/8.%20agents/), [agentic system](./docs/2.%20ai-workflows/agentic-system.md), [docs/2. ai-workflows/](./docs/2.%20ai-workflows/) |
 | **Bug patterns & ADRs** | [docs/debugging/](./docs/debugging/), [docs/decisions/](./docs/decisions/) |
 
 ---

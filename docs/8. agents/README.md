@@ -1,6 +1,8 @@
 # Agents
 
-Per-task AI agents. Each agent is a folder with three core files tuned for one job.
+Part **5** of the [agentic system](../2.%20ai-workflows/agentic-system.md) — per-task workflows (Harness, Model, Context, and Tools are the other four parts).
+
+Each agent is a folder with three core files tuned for one job.
 
 ## File contract
 
@@ -49,6 +51,7 @@ Reusable skills in [`_skills/`](./_skills/). When tuning an agent, copy needed s
 
 ## Related
 
+- Five-part model: [agentic-system.md](../2.%20ai-workflows/agentic-system.md)
 - Methodology: [PIV — Plan, Implementation, Validation](../2.%20ai-workflows/agentic-coding.md)
 - Generic templates (not agents): [ai-workflows/](../2.%20ai-workflows/)
 - **App projects:** link agents into other repos — [personal-agents-symlinks.md](../3.%20reference/setup/personal-agents-symlinks.md)

@@ -7,9 +7,9 @@ alwaysApply: true
 
 For any task touching 2 or more files, run the PIV loop — see `docs/2. ai-workflows/agentic-coding.md`:
 
-1. **Plan** — use the specs.md planner (`/specsmd-fire-planner`, default FIRE) to capture intent and break it into work items; include test flows and validation strategy in the plan. Present the plan and wait for confirmation before implementing.
+1. **Plan** — use the specs.md planner (`/specsmd-fire-planner`, default FIRE). Before writing the plan: assess complexity, then ask **5 / 10 / 20** multiple-choice questions (4 options each) and recommend one answer per question; wait for confirmation. The written plan must include: execution plan, **acceptance criteria**, **validation layer** (for critic/tester), **test flows** (user-facing steps), and commit plan. Present the plan and wait for confirmation before implementing.
 2. **Implementation** — use the specs.md builder (`/specsmd-fire-builder`) to execute one work item at a time; small atomic commits.
-3. **Validation** — run the [critic](docs/8.%20agents/critic/) agent (adversarial review of plan + implementation), then the [tester](docs/8.%20agents/tester/) agent (execute the Plan's test flows). See [validation-layer.md](docs/2.%20ai-workflows/validation-layer.md). Loop back to Implementation on fixable failures, or to Plan on a misunderstanding.
+3. **Validation** — run the [critic](docs/8.%20agents/critic/) agent (adversarial review of plan + implementation), then the [tester](docs/8.%20agents/tester/) agent (execute the Plan's test flows) in a **new chat** with a **different model** than Plan or Implementation. See [validation-layer.md](docs/2.%20ai-workflows/validation-layer.md). Loop back to Implementation on fixable failures, or to Plan on a misunderstanding.
 4. **PR review** — only after Validation passes, run the [pr-reviewer](docs/8.%20agents/pr-reviewer/) agent as the final gate. A surprise at PR review means the Validation layer missed something.
 
 Do not write code before the Plan is confirmed. If the task is ambiguous, ask one clarifying question before planning.

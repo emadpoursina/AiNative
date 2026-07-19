@@ -1,6 +1,8 @@
 # Agentic coding system
 
-An agentic coding system has two main parts.
+Canonical five-part model (Harness, Model, Context, Tools, Agents): [agentic-system.md](./agentic-system.md).
+
+This doc covers **Context** (AI layer below) and **Agents** (PIV methodology). Harness, model tiers, and tools are defined in agentic-system.md.
 
 ## AI layer (Specs.md)
 
@@ -20,18 +22,31 @@ An agentic coding system has two main parts.
 ### Plan
 
 1. Brainstorm with AI and explain the idea.
-   1. Interrogation with ~20 multiple-choice questions.
 2. Define the blast radius.
    1. How much autonomy the task needs.
    2. A good measure is number of files touched.
       1. Based on complexity, configure how autonomous the AI should be.
       2. Based on complexity, configure how much the AI should plan and ask.
-3. Plan each agent so they do not touch the same areas and create conflicts. Use small atomic commits.
-4. Define tests and validation strategy here:
-   - unit tests
-   - integration tests
-   - E2E tests with browser automation
-   - Customer/User flow test
+3. **Interrogate before writing the plan.** Based on task complexity, ask multiple-choice questions — **4 options each** — and **recommend one answer** per question with a brief rationale. Wait for confirmation or corrections before drafting the written plan.
+
+   | Complexity | Questions | Typical signal |
+   |------------|-----------|----------------|
+   | Low | 5 | 1–2 files, narrow scope |
+   | Medium | 10 | 3–6 files, some unknowns |
+   | High | 20 | 7+ files, multi-area, or ambiguous requirements |
+
+4. Plan each agent so they do not touch the same areas and create conflicts. Use small atomic commits.
+5. Produce a **written plan artifact** before Implementation starts. Present it and wait for confirmation. Required sections:
+
+   | Section | Purpose |
+   |---------|---------|
+   | **Execution plan** | Work items, blast radius, agent boundaries |
+   | **Acceptance criteria** | Measurable done conditions — testable statements the critic checks against the implementation |
+   | **Validation layer** | What critic and tester will verify later: test types (unit, integration, E2E, user flow), heuristic risks, PASS/FAIL signals — see [validation-layer.md](./validation-layer.md) |
+   | **Test flows** | Step-by-step user/customer flows the tester executes — happy path, edge cases, error paths |
+   | **Commit plan** | Atomic commits per work item |
+
+   Without acceptance criteria, test flows, and a validation layer section, critic and tester lack inputs for the Validation phase.
 
 ### Implementation
 
@@ -41,7 +56,7 @@ An agentic coding system has two main parts.
 
 ### Validation
 
-Validation is owned by two in-house agents: [critic](../8.%20agents/critic/) (adversarial review of plan and implementation — design holes, edge cases, spec/code mismatch) and [tester](../8.%20agents/tester/) (prove the code works — run the test flows defined in Plan; browser automation for E2E). Run critic first, then tester. Full architecture: [validation-layer.md](./validation-layer.md).
+Validation is owned by two in-house agents: [critic](../8.%20agents/critic/) (adversarial review of plan and implementation — design holes, edge cases, spec/code mismatch) and [tester](../8.%20agents/tester/) (prove the code works — run the test flows defined in Plan; browser automation for E2E). Run critic first, then tester. Use a **different LLM model** (and a new chat) than Plan or Implementation — see [validation-layer.md](./validation-layer.md#model-selection). Full architecture: [validation-layer.md](./validation-layer.md).
 
 1. Multi-layer pyramid for catching bugs and problems before they reach PR.
 2. Prove the code actually works.

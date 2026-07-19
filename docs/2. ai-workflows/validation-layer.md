@@ -36,6 +36,16 @@ The [critic](../8.%20agents/critic/) agent is the independent validation layer. 
 - **Focused tasks** — each agent optimizes for one domain
 - **Hallucination mitigation** — independent evaluation breaks self-reinforcing reasoning errors
 
+### Model selection
+
+Model tiers (reasoning, implementation, execution): [agentic-system.md](./agentic-system.md#2-model).
+
+Use a **different LLM model** for Validation (critic and tester) than for Plan and Implementation (specs-planner / specsmd flow). Same-model review inherits the same blind spots and reasoning patterns that produced the plan or code.
+
+- Start critic and tester in a **new chat** — do not continue the Plan or Implementation session
+- Select a model distinct from the one used in Plan or Implementation
+- Keep critic and tester on the Validation model; loop back to Plan or Implementation only after switching back to the planning/implementation model
+
 ---
 
 ## Deterministic stack
@@ -100,8 +110,8 @@ Loop-back rules: [critic rule.md](../8.%20agents/critic/rule.md), [tester rule.m
 
 | Step | Owner | Action |
 |------|-------|--------|
-| 1. Define requirements | Plan (specs.md) | Document scope, objectives, networking requirements |
-| 2. Convert to action plan | Plan (specs.md) | Structured step-by-step technical plan with test flows |
+| 1. Define requirements | Plan (specs.md) | Document scope, objectives, acceptance criteria, networking requirements |
+| 2. Convert to action plan | Plan (specs.md) | Structured execution plan with validation layer section and test flows for critic/tester |
 | 3. Write code/tests | Implementation + tester | Functional scripts in the target language |
 | 4. Execute tests | tester | Run in pinned environment; capture performance and failure data |
 | 5. Fix functional errors | Implementation | Address bugs found during verification |

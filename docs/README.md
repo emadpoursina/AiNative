@@ -16,6 +16,8 @@ How this repo is organized. Full spec: [ENGINEERING-OS.md](../ENGINEERING-OS.md)
 | How to run a release | [1. systems/release-management-system.md](./1.%20systems/release-management-system.md) |
 | Client/server compatibility | [1. systems/client-compatibility-system.md](./1.%20systems/client-compatibility-system.md) |
 | A per-task AI agent | [8. agents/](./8.%20agents/) — start with `agent.md` |
+| Agentic system (Harness, Model, Context, Tools, Agents) | [2. ai-workflows/agentic-system.md](./2.%20ai-workflows/agentic-system.md) |
+| Harness setup (Tmux + Cursor CLI) | [3. reference/setup/harness.md](./3.%20reference/setup/harness.md) |
 | PIV methodology (Plan, Implementation, Validation) | [2. ai-workflows/agentic-coding.md](./2.%20ai-workflows/agentic-coding.md) |
 | Validation layer architecture | [2. ai-workflows/validation-layer.md](./2.%20ai-workflows/validation-layer.md) |
 | specs.md planning & implementation (PIV Plan + Implementation) | [8. agents/specs-planner/](./8.%20agents/specs-planner/) |

@@ -8,6 +8,7 @@ Evergreen technical knowledge — updated in place, no dates.
 |------|-------|
 | [new-project.md](./setup/new-project.md) | Planning, PRD, development phases, design, deployment |
 | [cursor-setup.md](./setup/cursor-setup.md) | MCP, rules, skills, specs.md, indexing |
+| [harness.md](./setup/harness.md) | Tmux + Cursor CLI — agent runtime layout (part 1 of agentic system) |
 | [personal-agents-symlinks.md](./setup/personal-agents-symlinks.md) | Global commands + per-project symlinks for AiNative rules and agents |
 | [server-setup.md](./setup/server-setup.md) | SSH keys, users, remote access |
 | [local-shared-services.md](./setup/local-shared-services.md) | Local Docker databases (MariaDB, MongoDB, Adminer) |

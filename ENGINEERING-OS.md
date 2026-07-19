@@ -32,6 +32,7 @@ AiNative/
     ├── ai-workflows/                  # Generic AI templates — PIV methodology, handoffs, rules
     │   ├── README.md
     │   ├── agentic-coding.md
+    │   ├── agentic-system.md
     │   ├── agent-handoff-template.md
     │   ├── cursor-rules.md
     │   └── ai-rules-template.md
@@ -52,6 +53,7 @@ AiNative/
     │   ├── setup/
     │   │   ├── new-project.md
     │   │   ├── cursor-setup.md
+    │   │   ├── harness.md
     │   │   ├── server-setup.md
     │   │   └── local-shared-services.md
     │   ├── commands/
@@ -117,11 +119,11 @@ scratch/                               # Gitignored — raw capture, no quality 
 
 ### Layer 2 — AI Workflows (`docs/ai-workflows/`)
 
-**What it holds:** Generic AI templates not tied to one task — the PIV methodology (Plan, Implementation, Validation), agent handoff template, Cursor rules template, and `.cursor/rules/ai-rules.mdc` bootstrap template.
+**What it holds:** Generic AI templates not tied to one task — the five-part [agentic system](docs/2.%20ai-workflows/agentic-system.md) (Harness, Model, Context, Tools, Agents), PIV methodology (Plan, Implementation, Validation), agent handoff template, Cursor rules template, and `.cursor/rules/ai-rules.mdc` bootstrap template.
 
 **Why it exists:** Some AI artifacts are shared infrastructure, not task-specific agents. Keeping them here avoids duplicating the methodology in every agent folder.
 
-**How it compounds:** The PIV methodology and handoff template anchor all per-task agents in `agents/`. New generic templates land here; task-specific tuning lives in agent folders.
+**How it compounds:** The five-part model and PIV methodology anchor all per-task agents in `agents/`. New generic templates land here; task-specific tuning lives in agent folders.
 
 **Rule:** No task-specific prompts here — those belong in `agents/<name>/`. No prose workflow explanations — those belong in `systems/`.
 
@@ -302,6 +304,8 @@ The structure is designed so retrieval requires no search. The folder names are 
 | How to run a release | `systems/release-management-system.md` |
 | Agent handoff between AI passes | `ai-workflows/agent-handoff-template.md` |
 | A per-task AI agent | `agents/<name>/` — start with `agent.md` |
+| Agentic system (five parts) | `ai-workflows/agentic-system.md` |
+| Harness setup (Tmux + Cursor CLI) | `reference/setup/harness.md` |
 | PIV methodology (Plan, Implementation, Validation) | `ai-workflows/agentic-coding.md` |
 | Validation layer architecture | `ai-workflows/validation-layer.md` |
 | specs.md planning & implementation (PIV Plan + Implementation) | `agents/specs-planner/` |

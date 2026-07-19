@@ -23,7 +23,7 @@ timestamp: YYYY-MM-DD
 
 ## Input
 
-> What this agent received. Paste the task card, rough requirement, or previous agent's output.
+> What this agent received. Paste the task card, rough requirement, interrogation answers, or previous agent's output.
 
 ```
 PASTE_INPUT_HERE
@@ -44,7 +44,7 @@ PASTE_INPUT_HERE
 
 > The artifact this agent produced. Must be self-contained — the next agent should need nothing else.
 
-When `output_type: plan`, include all three sections from the PIV Plan phase: **Execution plan**, **Test flows**, **Commit plan**.
+When `output_type: plan`, include all required sections from the PIV Plan phase: **Execution plan**, **Acceptance criteria**, **Validation layer**, **Test flows**, **Commit plan**.
 
 ```
 PASTE_OUTPUT_HERE

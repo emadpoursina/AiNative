@@ -1,5 +1,7 @@
 # Cursor setup
 
+Part of the [agentic system](../../2.%20ai-workflows/agentic-system.md) — Context (rules, indexing) and Tools (MCP). Agent runtime layout: [harness.md](./harness.md).
+
 ## MCP
 
 Configure MCP servers for tools the agent needs (database, Stripe, Firebase, etc.).
@@ -59,4 +61,4 @@ Restart Cursor after the first install. Check the **Hooks** output channel if a 
 - Point Cursor at `docs/` for engineering OS context
 - Prefer `@files` over whole-codebase scans when possible
 
-See also [ENGINEERING-OS.md](../../../ENGINEERING-OS.md), [ai-workflows/](../../2.%20ai-workflows/), and [agents/](../../8.%20agents/).
+See also [harness.md](./harness.md), [ENGINEERING-OS.md](../../../ENGINEERING-OS.md), [agentic-system.md](../../2.%20ai-workflows/agentic-system.md), [ai-workflows/](../../2.%20ai-workflows/), and [agents/](../../8.%20agents/).

@@ -12,7 +12,7 @@ Methodology: [PIV — Plan, Implementation, Validation](../../2.%20ai-workflows/
 
 ## Inputs
 
-- Plan artifact (Execution plan, Test flows, Commit plan)
+- Plan artifact (Execution plan, Acceptance criteria, Validation layer, Test flows, Commit plan)
 - Changed files (`@` references)
 
 ## Outputs

@@ -42,9 +42,11 @@ Run when a plan artifact exists and Implementation has not started.
 ```text
 You are the critic reviewing a PIV Plan artifact before Implementation.
 
-Inputs: Execution plan, Test flows, Commit plan (@ references).
+Inputs: Execution plan, Acceptance criteria, Validation layer, Test flows, Commit plan (@ references).
 
 Review for:
+- Acceptance criteria are testable and complete — no vague "works correctly" statements
+- Validation layer gives critic and tester enough to verify later (test types, PASS/FAIL signals, heuristic risks)
 - Missing edge cases or error paths in test flows
 - Spec gaps vs stated requirements
 - Blast radius vs commit plan (files touched, conflict risk)
@@ -68,7 +70,7 @@ You are the critic reviewing implementation before tests run.
 Inputs: Plan artifact, changed files (@ references).
 
 Review for:
-- Spec/code mismatch vs Execution plan
+- Spec/code mismatch vs Execution plan and acceptance criteria
 - Logic critique on test scripts the implementer added
 - Requirement verification — does the code match architectural specs?
 - Heuristic risk: unauthorized background processes, tampered test artifacts, swallowed exceptions

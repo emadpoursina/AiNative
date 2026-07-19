@@ -4,6 +4,8 @@ AiNative conventions to keep when using specs.md in application repos.
 
 ## Must
 
+- Before writing the plan: assess task complexity, ask 5 / 10 / 20 multiple-choice questions (4 options each), recommend one answer per question, and wait for confirmation — see [agentic-coding.md](../../2.%20ai-workflows/agentic-coding.md#plan)
+- Written plan artifact includes acceptance criteria, validation layer, and test flows before Implementation starts — see [agentic-coding.md](../../2.%20ai-workflows/agentic-coding.md#plan)
 - Align commits with [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/) — one complete file set per commit
 - Run [critic](../critic/) then [tester](../tester/) as the PIV Validation phase after the builder passes; run [pr-reviewer](../pr-reviewer/) only after Validation passes
 - Follow [release-management-system.md](../../1.%20systems/release-management-system.md) for releases
