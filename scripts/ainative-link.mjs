@@ -37,6 +37,13 @@ docs/8. agents
 docs/2. ai-workflows
 `;
 
+const SCRATCH_GITIGNORE_MARKER = "# Scratch — agent-accessible temp files (not committed)";
+const SCRATCH_GITIGNORE_BLOCK = `
+${SCRATCH_GITIGNORE_MARKER}
+scratch/*
+!scratch/README.md
+`;
+
 const scriptDir = path.dirname(fileURLToPath(import.meta.url));
 
 function usage() {
@@ -192,13 +199,45 @@ function countGlobalCommands() {
 function ensureGitignore(projectRoot) {
   const gitignorePath = path.join(projectRoot, ".gitignore");
   const existing = existsSync(gitignorePath) ? readFileSync(gitignorePath, "utf8") : "";
+  let updated = existing;
+  let changed = false;
 
-  if (existing.includes(GITIGNORE_MARKER)) {
+  if (!updated.includes(GITIGNORE_MARKER)) {
+    const separator = updated.length > 0 && !updated.endsWith("\n") ? "\n" : "";
+    updated = `${updated}${separator}${GITIGNORE_BLOCK.trimStart()}\n`;
+    changed = true;
+  }
+
+  if (!updated.includes(SCRATCH_GITIGNORE_MARKER) && !/\bscratch\/\s*$/.test(updated)) {
+    const separator = updated.length > 0 && !updated.endsWith("\n") ? "\n" : "";
+    updated = `${updated}${separator}${SCRATCH_GITIGNORE_BLOCK.trimStart()}\n`;
+    changed = true;
+  }
+
+  if (changed) {
+    writeFileSync(gitignorePath, updated, "utf8");
+  }
+
+  return changed;
+}
+
+function ensureScratchFolder(projectRoot, ainativeHome) {
+  const scratchDir = path.join(projectRoot, "scratch");
+  const readmePath = path.join(scratchDir, "README.md");
+  const readmeSource = path.join(ainativeHome, "scratch", "README.md");
+
+  ensureDir(scratchDir);
+
+  if (existsSync(readmePath)) {
     return false;
   }
 
-  const separator = existing.length > 0 && !existing.endsWith("\n") ? "\n" : "";
-  writeFileSync(gitignorePath, `${existing}${separator}${GITIGNORE_BLOCK.trimStart()}\n`, "utf8");
+  if (!existsSync(readmeSource)) {
+    console.warn(`warn: scratch README not found at ${readmeSource}`);
+    return false;
+  }
+
+  copyFileSync(readmeSource, readmePath);
   return true;
 }
 
@@ -223,6 +262,13 @@ function showStatus(projectRoot, ainativeHome) {
     console.log(`  agents:   docs/8. agents → ${readlinkSync(agentsLink)}`);
   } else if (isGitRepo(projectRoot)) {
     console.log("  agents:   missing — run: node $AINATIVE_HOME/scripts/ainative-link.mjs project");
+  }
+
+  const scratchReadme = path.join(projectRoot, "scratch", "README.md");
+  if (existsSync(scratchReadme)) {
+    console.log("  scratch:  scratch/README.md");
+  } else if (isGitRepo(projectRoot)) {
+    console.log("  scratch:  missing — run: node $AINATIVE_HOME/scripts/ainative-link.mjs project");
   }
 
   const hooksJsonPath = path.join(homedir(), ".cursor", "hooks.json");
@@ -319,6 +365,10 @@ function linkProject(projectRoot, ainativeHome, forceWorkflows) {
     }
   } else {
     forceSymlink(workflowsSource, workflowsLink);
+  }
+
+  if (ensureScratchFolder(resolvedRoot, ainativeHome)) {
+    console.log("Created scratch/README.md");
   }
 
   if (ensureGitignore(resolvedRoot)) {

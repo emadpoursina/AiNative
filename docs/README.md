@@ -63,7 +63,7 @@ Copy-paste code only — see [snippets/README.md](./5.%20snippets/README.md).
 
 ## Three rituals
 
-1. **Capture during work** — write raw notes in `scratch/` (gitignored; run `mkdir scratch` locally)
+1. **Capture during work** — write raw notes in `scratch/` (gitignored except `scratch/README.md`)
 2. **Friday review (15 min)** — promote scratch → right layer, update stale reference, delete junk
 3. **After significant events** — debug note (hard bug), ADR (architecture decision), postmortem (incident)
 

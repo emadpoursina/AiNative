@@ -63,6 +63,7 @@ When an agent bootstraps a new project, include a local `scratch/` folder for re
 
 ### Bootstrap checklist
 
+- [ ] `scratch/` folder — copy `scratch/README.md` from AiNative; add `scratch/*` and `!scratch/README.md` to `.gitignore` (or use `ainative-link project`)
 - [Personal agents symlinks](./personal-agents-symlinks.md) — global commands (once per machine) + per-project rules and `docs/8. agents/` symlinks
 - [Cursor setup](./cursor-setup.md) — MCP, rules, skills, indexing
 - [Local shared services](./local-shared-services.md) — MariaDB, MongoDB, Adminer via Docker

@@ -279,11 +279,11 @@ What we considered and why we said no.
 
 ### Scratch (`scratch/`)
 
-**What it holds:** Raw capture. Meeting notes, pasted error logs, half-formed ideas, anything that happens during work.
+**What it holds:** Raw capture and temp files. Meeting notes, pasted error logs, agent handoffs, drafts, half-formed ideas — anything you want in the workspace but not in git.
 
-**Why it exists:** Most knowledge systems fail because people try to write final-quality notes during raw work. The friction is too high and nothing gets written. Scratch has no quality bar. Write badly. The goal is to not lose the information, not to organize it immediately.
+**Why it exists:** Most knowledge systems fail because people try to write final-quality notes during raw work. The friction is too high and nothing gets written. Scratch has no quality bar. Write badly. Agents may read and write here freely. The goal is to not lose the information, not to organize it immediately.
 
-**Rule:** Add `scratch/` to `.gitignore`. Nothing in scratch is retrieved directly — it only exists as a source to promote into real docs. Every Friday, spend ten minutes reviewing scratch and either promoting valuable content to the right layer or deleting it.
+**Rule:** Every project includes `scratch/`. Gitignore contents (`scratch/*`, keep `!scratch/README.md` so the folder exists in clone). Nothing in scratch is canonical — promote into real docs or delete. Every Friday, spend ten minutes reviewing scratch and either promoting valuable content to the right layer or deleting it.
 
 ---
 

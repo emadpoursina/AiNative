@@ -33,6 +33,8 @@ alwaysApply: true
 - After making changes, update related documentation if it exists
 - For ambiguous tasks: ask, do not guess
 - Commit style: Conventional Commits (`feat:`, `fix:`, `chore:`, `refactor:`, `test:`)
+- Capture raw notes in `scratch/` during work; promote on Friday review
+- Never commit `scratch/` contents (folder is gitignored except `scratch/README.md`)
 
 ## Code Rules
 

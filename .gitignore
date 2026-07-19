@@ -52,5 +52,6 @@ venv/
 *.swp
 
 # Engineering OS — raw capture (promote on Friday review)
-scratch/
+scratch/*
+!scratch/README.md
 

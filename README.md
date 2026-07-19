@@ -58,7 +58,7 @@ flowchart LR
 ## Getting started (personal)
 
 1. **Read the OS spec** — [ENGINEERING-OS.md](./ENGINEERING-OS.md) (5 min)
-2. **Create scratch locally** — `mkdir scratch` for raw capture during work
+2. **Use scratch** — `scratch/` is for temp files and agent working material (gitignored; see `scratch/README.md`)
 3. **Pick one workflow** — start with [task management](./docs/1.%20systems/task-management-system.md) on one board
 4. **Use PR review on your next change** — prompts in [pr-reviewer agent](./docs/8.%20agents/pr-reviewer/)
 5. **Run Friday review** — promote scratch, update reference, delete junk (15 min)
@@ -92,7 +92,7 @@ AiNative/
 ├── README.md
 ├── ENGINEERING-OS.md              # Architecture spec
 ├── .cursor/rules/                 # Cursor rules (incl. engineering-os, ai-rules)
-├── scratch/                       # gitignored — create locally
+├── scratch/                       # gitignored temp — README only is tracked
 └── docs/
     ├── README.md
     ├── systems/                   # Universal workflows

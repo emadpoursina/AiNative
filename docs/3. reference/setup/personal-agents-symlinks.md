@@ -171,7 +171,26 @@ ln -sf "$AINATIVE_HOME/docs/2. ai-workflows" "docs/2. ai-workflows"
 
 If the project already has its own `docs/2. ai-workflows/`, symlink only the files agents need instead of the whole folder.
 
-### 4. Gitignore personal symlinks
+### 4. Scratch folder
+
+Every project includes a `scratch/` folder for temp files and agent working material — gitignored so nothing temporary is pushed.
+
+```bash
+mkdir -p scratch
+cp "$AINATIVE_HOME/scratch/README.md" scratch/README.md
+```
+
+Add to `.gitignore` (if not already present):
+
+```gitignore
+# Scratch — agent-accessible temp files (not committed)
+scratch/*
+!scratch/README.md
+```
+
+Or run `node "$AINATIVE_HOME/scripts/ainative-link.mjs" project` — it creates `scratch/` and updates `.gitignore`.
+
+### 5. Gitignore personal symlinks
 
 Add to `.gitignore`:
 
@@ -182,7 +201,7 @@ docs/8. agents
 docs/2. ai-workflows
 ```
 
-### 5. Verify
+### 6. Verify
 
 ```bash
 node "$AINATIVE_HOME/scripts/ainative-link.mjs" status
@@ -244,7 +263,7 @@ Optional: `cd "$AINATIVE_HOME" && git pull` if you edited agents on another mach
 | Global commands not detected (SSH) | Fallback: symlink into project `.cursor/commands/` per file from `$AINATIVE_HOME/.cursor/commands/` |
 | Command cannot find `docs/8. agents/...` | Run step 3 — symlink `docs/8. agents` (and `docs/2. ai-workflows` if needed) |
 | Duplicate or conflicting rules | Keep only one `ai-rules.mdc` at `.cursor/rules/ai-rules.mdc`; shared rules live under `personal/` |
-| Symlinks committed by mistake | Add gitignore entries from step 4; `git rm --cached` any tracked symlinks |
+| Symlinks committed by mistake | Add gitignore entries from step 5; `git rm --cached` any tracked symlinks |
 | `readlink` shows broken path | Re-run `ln -sf` with correct `$AINATIVE_HOME` |
 
 ---
