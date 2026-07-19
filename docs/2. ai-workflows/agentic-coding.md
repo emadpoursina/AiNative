@@ -35,8 +35,16 @@ This doc covers **Context** (AI layer below) and **Agents** (PIV methodology). H
    | Medium | 10 | 3–6 files, some unknowns |
    | High | 20 | 7+ files, multi-area, or ambiguous requirements |
 
-4. Plan each agent so they do not touch the same areas and create conflicts. Use small atomic commits.
-5. Produce a **written plan artifact** before Implementation starts. Present it and wait for confirmation. Required sections:
+4. **Reuse before building.** Before proposing new code, work through this order:
+
+   1. **Library** — Is there a maintained library that solves this? Is adoption worth it (dependency cost, fit, maintenance, team familiarity)?
+   2. **In-repo** — Is there an existing implementation, module, or pattern in this codebase to extend or reuse?
+   3. **Build** — Only if neither applies, plan to implement from scratch.
+
+   Document the choice and rationale in the execution plan.
+
+5. Plan each agent so they do not touch the same areas and create conflicts. Use small atomic commits.
+6. Produce a **written plan artifact** before Implementation starts. Present it and wait for confirmation. Required sections:
 
    | Section | Purpose |
    |---------|---------|

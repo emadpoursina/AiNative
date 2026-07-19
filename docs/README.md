@@ -29,6 +29,7 @@ How this repo is organized. Full spec: [ENGINEERING-OS.md](../ENGINEERING-OS.md)
 | Reusable agent skills | [8. agents/_skills/](./8.%20agents/_skills/) |
 | Agent handoff between AI passes | [2. ai-workflows/agent-handoff-template.md](./2.%20ai-workflows/agent-handoff-template.md) |
 | How to run planning / board setup | [1. systems/task-management-system.md](./1.%20systems/task-management-system.md) |
+| Something new to test (model, tool, workflow) | [9. evaluations/](./9.%20evaluations/) |
 
 ## `1. systems/`
 
@@ -57,6 +58,10 @@ Evergreen technical knowledge — see [reference/README.md](./3.%20reference/REA
 
 Append-only operational records. Use templates in each folder.
 
+## `9. evaluations/`
+
+Candidates worth testing before promotion — models, tools, agents, workflows. See [evaluations/README.md](./9.%20evaluations/README.md).
+
 ## `5. snippets/`
 
 Copy-paste code only — see [snippets/README.md](./5.%20snippets/README.md).
@@ -64,7 +69,7 @@ Copy-paste code only — see [snippets/README.md](./5.%20snippets/README.md).
 ## Three rituals
 
 1. **Capture during work** — write raw notes in `scratch/` (gitignored except `scratch/README.md`)
-2. **Friday review (15 min)** — promote scratch → right layer, update stale reference, delete junk
+2. **Friday review (15 min)** — promote scratch → right layer (including `9. evaluations/` for test candidates), update stale reference, delete junk
 3. **After significant events** — debug note (hard bug), ADR (architecture decision), postmortem (incident)
 
 See [ENGINEERING-OS.md](../ENGINEERING-OS.md) for layer contracts and migration notes.

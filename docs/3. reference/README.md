@@ -18,6 +18,7 @@ Evergreen technical knowledge — updated in place, no dates.
 | File | Topic |
 |------|-------|
 | [linux.md](./commands/linux.md) | Users, disk, ufw, network, jq |
+| [macos.md](./commands/macos.md) | Clipboard (cb2f — image file to clipboard) |
 | [git.md](./commands/git.md) | Branches, stash, fetch |
 | [docker.md](./commands/docker.md) | Containers, images, volumes, Dockerfile |
 | [postgres.md](./commands/postgres.md) | psql, backup, restore |

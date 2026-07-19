@@ -58,6 +58,7 @@ AiNative/
     │   │   └── local-shared-services.md
     │   ├── commands/
     │   │   ├── linux.md
+    │   │   ├── macos.md
     │   │   ├── git.md
     │   │   ├── docker.md
     │   │   ├── postgres.md
@@ -92,10 +93,15 @@ AiNative/
     │   ├── template.md
     │   └── YYYY-MM-title.md
     │
-    └── postmortems/                   # Incident reviews — dated, append-only
+    ├── postmortems/                   # Incident reviews — dated, append-only
+    │   ├── README.md
+    │   ├── template.md
+    │   └── YYYY-MM-DD-title.md
+    │
+    └── evaluations/                   # Candidates to test — models, tools, workflows
         ├── README.md
         ├── template.md
-        └── YYYY-MM-DD-title.md
+        └── YYYY-MM-title.md
 
 scratch/                               # Gitignored — raw capture, no quality bar
 └── .gitignore
@@ -277,6 +283,18 @@ What we considered and why we said no.
 
 ---
 
+### Layer 9 — Evaluations (`docs/evaluations/`)
+
+**What it holds:** Candidates with potential that should be tested before they become canonical — new models, MCP tools, agent patterns, harness changes, workflow experiments. One file per candidate, dated, with hypothesis, test plan, and results.
+
+**Why it exists:** `scratch/` is too unstructured to track “we should try X.” `reference/` and `agentic-system.md` are only for things already proven. Without a middle layer, promising ideas either rot in scratch or get adopted prematurely.
+
+**How it compounds:** You stop re-discovering the same tool every quarter. Rejected evaluations document *why* so you do not re-test blindly. Adopted ones link to where they landed (reference, agents, decisions).
+
+**Rule:** Write hypothesis and test plan before running. Test on a real task when possible. On adoption, promote to the target layer and mark the evaluation **Adopted** with a link. On rejection, keep the file with a short verdict. Categories align with the agentic system five parts where possible.
+
+---
+
 ### Scratch (`scratch/`)
 
 **What it holds:** Raw capture and temp files. Meeting notes, pasted error logs, agent handoffs, drafts, half-formed ideas — anything you want in the workspace but not in git.
@@ -316,6 +334,7 @@ The structure is designed so retrieval requires no search. The folder names are 
 | New-project scaffolding | `agents/project-bootstrapper/` |
 | Reusable agent skills | `agents/_skills/` |
 | How to run a planning meeting | `systems/task-management-system.md` |
+| Something new to test (model, tool, workflow) | `evaluations/` |
 
 Project-specific context (board URL, approvers, stack) belongs in the project repo or `scratch/` — not in this OS repo.
 
@@ -337,7 +356,7 @@ When you solve a hard bug, stop for ten minutes and write the debug note immedia
 
 Every Friday, open `scratch/` and do three things:
 
-1. Promote anything valuable to the right layer (`reference/`, `debugging/`, `decisions/`, `postmortems/`, `snippets/`).
+1. Promote anything valuable to the right layer (`evaluations/`, `reference/`, `debugging/`, `decisions/`, `postmortems/`, `snippets/`).
 2. Update any reference doc that was out of date during the week.
 3. Delete everything that does not need to be kept.
 
@@ -382,6 +401,7 @@ Three rules that do the most work:
 | `snippets/` | Execution speed on familiar problems |
 | `decisions/` | Decision quality and institutional memory |
 | `postmortems/` | Incident pattern recognition and production confidence |
+| `evaluations/` | Disciplined experimentation before changing the stack |
 
 The compounding effect is real but takes time. After three months the system starts paying back. After six months it is indispensable. After a year it is the clearest record of how you think and how you build.
 

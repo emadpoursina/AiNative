@@ -104,7 +104,8 @@ AiNative/
     ├── debugging/                 # Bug pattern library
     ├── snippets/                  # Copy-paste code
     ├── decisions/                 # ADRs
-    └── postmortems/               # Incident reviews
+    ├── postmortems/               # Incident reviews
+    └── evaluations/               # Candidates to test (models, tools, workflows)
 ```
 
 Full index: [docs/README.md](./docs/README.md)

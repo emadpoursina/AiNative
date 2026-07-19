@@ -113,6 +113,7 @@ PIV methodology (Plan → Implementation → Validation loops, handoffs, commit 
 
 ## Related
 
+- [9. evaluations/](../9.%20evaluations/) — candidates to test before updating Model, Tools, or Agents tables above
 - [agentic-coding.md](./agentic-coding.md) — PIV methodology and AI layer (Context)
 - [validation-layer.md](./validation-layer.md) — Validation architecture and model separation
 - [agent-handoff-template.md](./agent-handoff-template.md) — structured handoffs between agents

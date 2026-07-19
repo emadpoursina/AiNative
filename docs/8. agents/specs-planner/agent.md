@@ -31,7 +31,7 @@ Skills and install details: [skill.md](./skill.md). AiNative alignment rules: [r
 
 ## Quick start (FIRE)
 
-1. `/specsmd-fire-planner` — assess complexity, run interrogation (5 / 10 / 20 MCQs; recommend one answer per question), then capture intent and break into work items
+1. `/specsmd-fire-planner` — assess complexity, run interrogation (5 / 10 / 20 MCQs; recommend one answer per question), check library → in-repo reuse → build, then capture intent and break into work items
 2. Review work items and complexity (Autopilot / Confirm / Validate)
 3. `/specsmd-fire-builder` — execute next run
 4. Repeat until intent is done

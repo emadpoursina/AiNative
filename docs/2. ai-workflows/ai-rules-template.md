@@ -30,6 +30,7 @@ alwaysApply: true
 
 - Always follow: **PIV — Plan → Implementation → Validation** (Plan + Implementation via specs.md; Validation via critic and tester agents)
 - Do not write code until the plan is confirmed if the change touches 2+ files
+- During Plan, before proposing new code: library (worth it?) → in-repo reuse → build from scratch
 - After making changes, update related documentation if it exists
 - For ambiguous tasks: ask, do not guess
 - Commit style: Conventional Commits (`feat:`, `fix:`, `chore:`, `refactor:`, `test:`)

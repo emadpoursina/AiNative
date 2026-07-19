@@ -34,7 +34,7 @@ After install, invoke with `/` in Agent chat:
 
 ## FIRE quick start
 
-1. `/specsmd-fire-planner` — assess complexity, run interrogation (5 / 10 / 20 MCQs with 4 options; recommend one per question), then capture intent and break it into work items
+1. `/specsmd-fire-planner` — assess complexity, run interrogation (5 / 10 / 20 MCQs with 4 options; recommend one per question), check library → in-repo reuse → build, then capture intent and break it into work items
 2. Review work items and complexity (Autopilot / Confirm / Validate)
 3. `/specsmd-fire-builder` — execute the next run; walkthrough generated under `.specs-fire/walkthroughs/`
 4. Repeat until intent is done; commit per Conventional Commits plan
