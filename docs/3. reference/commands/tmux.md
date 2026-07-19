@@ -17,3 +17,4 @@ tmux new -s [my_session_name]
 - `rename-session [name]`
 - `rename-window [name]`
 - `setw synchronize-panes [on/off]`
+- `attach-session -t . -c /path/to/directory` — change the session base directory (new panes use this cwd)
